@@ -1,14 +1,8 @@
-# Hyprland Dotfiles
+# dotfiles
 
-Configuración completa de entorno Hyprland para Arch Linux, gestionada con [GNU Stow](https://www.gnu.org/software/stow/).
+Hyprland + Arch Linux. Gestionado con GNU Stow.
 
-## Requisitos previos
-
-- Arch Linux (o derivada)
-- GPU NVIDIA (los paquetes de drivers están incluidos en el instalador)
-- Conexión a internet
-
-## Instalación en un PC nuevo
+## Instalación
 
 ```bash
 git clone <repo-url> ~/dotfiles
@@ -16,37 +10,22 @@ cd ~/dotfiles
 bash install.sh
 ```
 
-Eso hace todo:
-1. Instala paquetes pacman
-2. Instala paquetes AUR (instala `yay` si no está)
-3. Copia fuentes bundled a `~/.local/share/fonts/`
-4. Crea symlinks con stow para todos los módulos
-5. Copia wallpapers a `~/wallpapers/` y `~/Pictures/`
+Instala paquetes (pacman + AUR), fuentes, crea los symlinks y copia los wallpapers.
 
-### Pasos manuales tras la instalación
+Después, a mano:
 
 ```bash
-# Detectar sensores de temperatura (necesario para waybar)
-sudo sensors-detect
-
-# Activar red
+sudo sensors-detect                   # temperaturas en waybar
 sudo systemctl enable --now NetworkManager
-
-# Editar monitores según el hardware del PC nuevo
-nano ~/.config/hypr/hyprland.conf   # sección MONITORS (líneas 26-34)
+# ajustar monitores en hyprland.conf si el hardware es distinto
 ```
 
-## Opciones del instalador
+## Opciones
 
 ```bash
-# Solo instalar módulos específicos (salta paquetes y wallpapers)
-bash install.sh --only hypr waybar kitty
-
-# Simular sin modificar nada
-bash install.sh --dry-run
-
-# Log completo en:
-cat ~/dotfiles/install.log
+bash install.sh --only hypr waybar   # solo esos módulos
+bash install.sh --dry-run            # simula sin tocar nada
+cat ~/dotfiles/install.log           # log completo
 ```
 
 ## Estructura
@@ -65,54 +44,47 @@ dotfiles/
 ├── fastfetch/      → ~/.config/fastfetch/
 ├── btop/           → ~/.config/btop/
 ├── gtk/            → ~/.config/{gtk-2.0,gtk-3.0,gtk-4.0,nwg-look}/
-├── wallpapers/     → ~/wallpapers/ + ~/Pictures/ (copia directa, no stow)
-├── install.sh      — instalador principal
-├── migrate-to-stow.sh  — script de migración (uso único, ya ejecutado)
-└── PACKAGES.md     — dependencias detalladas por módulo
+├── wallpapers/     → ~/wallpapers/ + ~/Pictures/ (copia directa)
+├── install.sh
+└── PACKAGES.md     — dependencias por módulo
 ```
 
-Cada módulo es un **paquete GNU Stow**: sus archivos se corresponden con la ruta que tendrían en `$HOME`. Stow crea los symlinks automáticamente.
+Cada directorio es un paquete stow: la estructura interna refleja `$HOME`, los archivos en `~/.config/` son symlinks a aquí.
 
-## Flujo de trabajo diario
+## Día a día
 
-**Editar configuración existente** — edita directamente en `~/.config/` o en `~/dotfiles/`. Son el mismo archivo (symlink), los cambios son inmediatos.
+Editar configs directamente en `~/.config/` funciona, es el mismo archivo.
 
-**Añadir un archivo nuevo a un módulo existente:**
+Añadir algo a un módulo existente:
 
 ```bash
-# Coloca el archivo en la estructura dotfiles
-cp mi-script.sh ~/dotfiles/hypr/.config/hypr/scripts/
-
-# Recrea los symlinks del módulo
+cp archivo ~/dotfiles/hypr/.config/hypr/scripts/
 cd ~/dotfiles && stow --restow hypr
 ```
 
-**Añadir un módulo nuevo** (ej: `nvim`):
+Módulo nuevo:
 
 ```bash
 mkdir -p ~/dotfiles/nvim/.config/nvim
 cp -r ~/.config/nvim/* ~/dotfiles/nvim/.config/nvim/
-cd ~/dotfiles && stow nvim
+stow nvim
+# añadirlo también a ALL_MODULES en install.sh
 ```
-
-Añade el módulo a `ALL_MODULES` en `install.sh` para que se instale en PCs nuevos.
 
 ## Monitores
 
-El archivo `hypr/.config/hypr/hyprland.conf` incluye dos configuraciones:
+`hyprland.conf` tiene las dos opciones:
 
 ```bash
-# DEFAULT (PC nuevo — detecta automáticamente)
+# para pc nuevo
 #monitor = , preferred, auto, 1
 
-# PERSONAL (2x QHD 180Hz + HDMI desactivado)
+# setup actual
 monitor = DP-3, 2560x1440@180.00Hz, 0x0, 1
 monitor = DP-2, 2560x1440@180.00Hz, 2561x0, 1
 monitor = HDMI-A-1, disable
 ```
 
-En un PC nuevo: comentar las líneas personales y descomentar la línea default.
+## Dependencias
 
-## Dependencias completas
-
-Ver [PACKAGES.md](PACKAGES.md) para la lista detallada de dependencias por módulo, incluyendo fuentes, iconos y dependencias entre módulos.
+Ver [PACKAGES.md](PACKAGES.md).
