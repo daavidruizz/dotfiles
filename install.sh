@@ -227,8 +227,15 @@ stow_module() {
   while IFS= read -r -d '' pkg_file; do
     local rel="${pkg_file#$stow_dir/}"   # ej: .config/hypr/hyprland.conf
     local target="$HOME/$rel"
-    # Archivo real → eliminar
+    # Archivo real → eliminar (pero NO si resuelve dentro del propio dotfiles,
+    # lo que ocurre cuando el directorio padre ya es un symlink de stow)
     if [ -f "$target" ] && [ ! -L "$target" ]; then
+      local real_path
+      real_path="$(realpath "$target" 2>/dev/null)"
+      if [[ "$real_path" == "$DOTFILES"* ]]; then
+        log "  [SKIP] $target (resuelve a dotfile fuente vía symlink de dir)"
+        continue
+      fi
       log "  [RM-FILE] $target"
       $DRY_RUN || rm -f "$target"
     # Symlink no gestionado por stow (apunta a ruta relativa o ajena) → eliminar
