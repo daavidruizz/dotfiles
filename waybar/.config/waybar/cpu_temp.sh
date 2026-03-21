@@ -1,8 +1,10 @@
 #!/bin/bash
-# Temperatura CPU AMD Ryzen
-temp=$(sensors k10temp-pci-00c3 | grep "Tctl:" | awk '{print $2}' | sed 's/+//;s/°C//')
-if [ ! -z "$temp" ]; then
-  echo "$temp"
-else
-  echo "0"
+# AMD Ryzen (k10temp)
+temp=$(sensors k10temp-* 2>/dev/null | grep "Tctl:" | awk '{print $2}' | sed 's/+//;s/°C//' | head -1)
+
+# Intel (coretemp) — fallback
+if [ -z "$temp" ]; then
+  temp=$(sensors coretemp-* 2>/dev/null | grep "Package id 0:" | awk '{print $4}' | sed 's/+//;s/°C//' | head -1)
 fi
+
+echo "${temp:-0}"
