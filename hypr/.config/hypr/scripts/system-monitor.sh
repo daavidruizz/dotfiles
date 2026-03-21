@@ -1,1 +1,2 @@
-$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e htop
+#!/bin/bash
+kitty --class dotfiles-floating -e htop

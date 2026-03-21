@@ -71,7 +71,10 @@ PACMAN_PKGS=(
   kitty thunar
   wlogout
   easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl
-  fastfetch btop brightnessctl networkmanager network-manager-applet
+  fastfetch btop htop brightnessctl networkmanager network-manager-applet
+  bluez bluez-utils
+  wl-clipboard
+  polkit-gnome
   grim slurp
   firefox qalculate-gtk
   nwg-look papirus-icon-theme adwaita-icon-theme
@@ -122,6 +125,7 @@ AUR_PKGS=(
   ttf-sf-pro
   bluetuith
   swayosd
+  mpvpaper
 )
 
 if run yay -S --needed --noconfirm "${AUR_PKGS[@]}"; then
