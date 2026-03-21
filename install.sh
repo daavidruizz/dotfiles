@@ -58,6 +58,18 @@ $DRY_RUN && log " MODO: DRY RUN"
 log "════════════════════════════════════════════════════"
 
 # -------------------------------------------------------
+# 0. GIT PULL
+# -------------------------------------------------------
+log ""
+log "==> [0/5] Sincronizando dotfiles con git..."
+
+if git -C "$DOTFILES" pull --ff-only 2>&1 | tee -a "$LOG_FILE"; then
+  ok "git pull"
+else
+  log "  [!] git pull falló o hay cambios locales sin commitear. Continúa con la versión actual."
+fi
+
+# -------------------------------------------------------
 # 1. PAQUETES PACMAN
 # -------------------------------------------------------
 log ""
@@ -177,10 +189,10 @@ stow_module() {
     return
   fi
 
-  # Verificar que tiene estructura stow (subdirectorio .config o .local)
-  if [ ! -d "$stow_dir/.config" ] && [ ! -d "$stow_dir/.local" ]; then
-    fail "$module (no tiene estructura stow: falta .config/ o .local/)"
-    log "    ¿Ejecutaste migrate-to-stow.sh?"
+  # Verificar que tiene algún contenido stoweable (.config, .local, o dotfiles en ~)
+  if [ ! -d "$stow_dir/.config" ] && [ ! -d "$stow_dir/.local" ] && \
+     [ -z "$(find "$stow_dir" -maxdepth 1 -name '.*' -not -name '.' | head -1)" ]; then
+    fail "$module (no tiene estructura stow válida)"
     return
   fi
 
