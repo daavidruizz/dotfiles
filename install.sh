@@ -154,7 +154,7 @@ fi
 log ""
 log "==> [4/5] Creando symlinks con stow..."
 
-ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk)
+ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim)
 
 # Si se pasó --only, usar solo esos
 if [ ${#ONLY_MODULES[@]} -gt 0 ]; then
@@ -180,8 +180,28 @@ stow_module() {
     return
   fi
 
-  # Eliminar archivos/symlinks que colisionan con lo que stow quiere crear.
-  # Stow falla si encuentra: archivo real O symlink no gestionado por él.
+  # Hacer backup de directorios reales que stow querría convertir en symlinks.
+  # Si el directorio target ya existe como carpeta real (no symlink), stow
+  # desciende en él en vez de crear el symlink limpio → resultado: configs mezcladas.
+  local bak_ts
+  bak_ts="$(date +%Y%m%d_%H%M%S)"
+  for base in .config .local/share .local/bin; do
+    local pkg_base="$stow_dir/$base"
+    [ -d "$pkg_base" ] || continue
+    for pkg_subdir in "$pkg_base"/*/; do
+      [ -d "$pkg_subdir" ] || continue
+      local rel_subdir="${pkg_subdir#$stow_dir/}"   # ej: .config/nvim/
+      rel_subdir="${rel_subdir%/}"                   # quitar trailing slash
+      local target_dir="$HOME/$rel_subdir"
+      # Si existe como directorio real (no symlink) → moverlo a .bak
+      if [ -d "$target_dir" ] && [ ! -L "$target_dir" ]; then
+        log "  [BAK] $target_dir → ${target_dir}.bak.$bak_ts"
+        $DRY_RUN || mv "$target_dir" "${target_dir}.bak.$bak_ts"
+      fi
+    done
+  done
+
+  # Eliminar archivos/symlinks sueltos que colisionan con lo que stow quiere crear.
   log "  Eliminando conflictos para $module..."
   while IFS= read -r -d '' pkg_file; do
     local rel="${pkg_file#$stow_dir/}"   # ej: .config/hypr/hyprland.conf

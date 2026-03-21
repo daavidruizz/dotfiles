@@ -3,7 +3,7 @@ WALLPAPER_DIR="$HOME/wallpapers/LOTR"
 RANDOM_WALL="$WALLPAPER_DIR/$(ls "$WALLPAPER_DIR" | grep -iE '\.(jpg|jpeg|png|webp)$' | shuf -n 1)"
 
 pkill hyprpaper 2>/dev/null
-sleep 0.5
+sleep 1
 hyprpaper &
 sleep 3
 
