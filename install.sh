@@ -120,6 +120,7 @@ AUR_PKGS=(
   ttf-montserrat
   ttf-sf-pro
   bluetuith
+  swayosd
 )
 
 if run yay -S --needed --noconfirm "${AUR_PKGS[@]}"; then
@@ -154,7 +155,7 @@ fi
 log ""
 log "==> [4/5] Creando symlinks con stow..."
 
-ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim)
+ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim swayosd)
 
 # Si se pasó --only, usar solo esos
 if [ ${#ONLY_MODULES[@]} -gt 0 ]; then
