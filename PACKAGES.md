@@ -118,6 +118,21 @@
 
 ---
 
+### qt
+**Paquetes de tema requeridos:**
+- `qt5ct` → configurador de tema para apps QT5
+- `qt6ct` → configurador de tema para apps QT6
+- `kvantum` → motor de temas QT (incluye KvGnomeDark)
+
+**Variables de entorno (hyprland.conf):**
+- `QT_QPA_PLATFORM=wayland` → apps QT nativas en Wayland
+- `QT_QPA_PLATFORMTHEME=qt5ct` → aplica config de qt5ct a apps QT5
+- `QT6_QPA_PLATFORMTHEME=qt6ct` → aplica config de qt6ct a apps QT6
+
+**Tema configurado:** KvGnomeDark (kvantum) + iconos WhiteSur-dark + fuente Noto Sans
+
+---
+
 ## Pacman (instalación de golpe)
 
 ```bash
@@ -139,6 +154,7 @@ sudo pacman -S --needed \
   lm_sensors \
   jq curl libnotify \
   pacman-contrib \
+  qt5ct qt6ct kvantum \
   stow
 ```
 

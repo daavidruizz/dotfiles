@@ -97,6 +97,7 @@ PACMAN_PKGS=(
   vim neovim
   swayosd
   stow
+  qt5ct qt6ct kvantum
 )
 
 if run sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"; then
@@ -170,7 +171,7 @@ fi
 log ""
 log "==> [4/5] Creando symlinks con stow..."
 
-ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim swayosd vim bash)
+ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt)
 
 # Si se pasó --only, usar solo esos
 if [ ${#ONLY_MODULES[@]} -gt 0 ]; then
