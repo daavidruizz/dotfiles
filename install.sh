@@ -209,6 +209,11 @@ stow_module() {
       local rel_subdir="${pkg_subdir#$stow_dir/}"   # ej: .config/nvim/
       rel_subdir="${rel_subdir%/}"                   # quitar trailing slash
       local target_dir="$HOME/$rel_subdir"
+      # Si es symlink roto → eliminarlo
+      if [ -L "$target_dir" ] && [ ! -e "$target_dir" ]; then
+        log "  [RM-BROKEN] $target_dir (symlink roto)"
+        $DRY_RUN || rm "$target_dir"
+      fi
       # Si existe como directorio real (no symlink) → moverlo a .bak
       if [ -d "$target_dir" ] && [ ! -L "$target_dir" ]; then
         log "  [BAK] $target_dir → ${target_dir}.bak.$bak_ts"
