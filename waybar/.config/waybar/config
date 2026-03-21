@@ -10,7 +10,7 @@
   //LOAD MODULES
   "include" :
   [
-    "~/.config/waybar/dev/modules.json" 
+    "~/.config/waybar/modules.json" 
   ],
 
   /*====MODULES ORDER====*/

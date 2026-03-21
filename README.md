@@ -33,7 +33,7 @@ cat ~/dotfiles/install.log           # log completo
 ```
 dotfiles/
 ├── hypr/           → ~/.config/hypr/
-├── waybar/         → ~/.config/waybar/dev/
+├── waybar/         → ~/.config/waybar/
 ├── dunst/          → ~/.config/dunst/
 ├── rofi/           → ~/.config/rofi/ + ~/.local/share/rofi/themes/
 ├── kitty/          → ~/.config/kitty/
