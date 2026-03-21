@@ -1,0 +1,44 @@
+{
+  "layer": "top",
+  "position": "top",
+  "autohide": true,
+  "autohide-blocked": false,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+
+  //LOAD MODULES
+  "include" :
+  [
+    "~/.config/waybar/dev/modules.json" 
+  ],
+
+  /*====MODULES ORDER====*/
+  
+  /*MODULES LEFT*/
+  "modules-left" : 
+  [
+    "custom/archicon",
+    "hyprland/workspaces",
+    "custom/mail"
+  ],
+
+  /*MODULES CENTER*/
+  "modules-center" :
+  [
+    "hyprland/window"
+  ],
+
+  /*MODULES RIGHT*/
+  "modules-right" :
+  [
+   "custom/updates",
+   "group/hardware",
+   "network",
+   "pulseaudio",
+   "bluetooth",
+   "clock",
+   "tray",
+   "custom/power"
+  ]
+}

@@ -1,0 +1,33 @@
+* {
+  font-family: "JetbrainsMono Nerd Font";
+}
+
+window {
+  background: #161320;
+  border-radius: 15px;
+  padding: 4px 8px;
+  border: 1px solid rgba(137, 180, 250, 0.3);
+}
+
+button {
+  background: transparent;
+  border-radius: 10px;
+  padding: 4px;
+  margin: 2px 3px;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: rgba(137, 180, 250, 0.2);
+  border-radius: 10px;
+}
+
+button:checked {
+  background: rgba(49, 50, 68, 0.8);
+  border-radius: 10px;
+  border-bottom: 2px solid #89B4FA;
+}
+
+image {
+  padding: 2px;
+}

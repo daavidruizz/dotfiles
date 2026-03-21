@@ -1,0 +1,6 @@
+^migrate-to-stow\.sh$
+^PACKAGES\.md$
+^README
+^.*\.log$
+^.*\.md$
+^wallpapers$

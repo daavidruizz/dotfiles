@@ -1,0 +1,14 @@
+/*
+* Paleta azulilla simplificada
+*/
+@define-color background #1a110f;
+@define-color surface #271d1b;
+@define-color surface_high #322825;
+@define-color primary #7db3d3;       /* Azul principal */
+@define-color primary_dark #4a90b8;  /* Azul oscuro */
+@define-color on_primary #ffffff;    /* Texto sobre azul */
+@define-color secondary #9bb8d3;     /* Azul claro */
+@define-color outline #6b8ca3;       /* Bordes azulillos */
+@define-color error #ff6b6b;         /* Rojo para power off */
+@define-color warning #ffb347;       /* Naranja para logout */
+@define-color text #f1dfda;          /* Texto principal */

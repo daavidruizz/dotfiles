@@ -1,0 +1,16 @@
+[Presets]
+lastLoadedOutputPreset=Hiphop
+
+[StreamInputs]
+# inputDevice se autodetecta al primer arranque de easyeffects
+
+[StreamOutputs]
+mostUsedPresets=Hiphop
+# outputDevice se autodetecta al primer arranque de easyeffects
+plugins=equalizer#0,autogain#0
+usedPresets=Hiphop:3
+visiblePlugin=equalizer#0
+
+[Window]
+height=1013
+width=945

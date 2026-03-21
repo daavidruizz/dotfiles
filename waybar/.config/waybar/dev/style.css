@@ -1,0 +1,80 @@
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    font-family: "SF Pro Display", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    -gtk-dpi: 144;
+}
+
+#waybar {
+    background: transparent;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+#custom-archicon,
+#custom-mail,
+#workspaces,
+#window,
+#custom-updates,
+#custom-system,
+#cpu,
+#memory,
+#disk,
+#custom-cpu_temp,
+#custom-nvidia_gpu,
+#group-hardware,
+#network,
+#pulseaudio,
+#clock,
+#custom-power,
+#bluetooth,
+#tray {
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    padding: 0px 10px;
+    margin: 8px 3px;
+    border-radius: 8px;
+    border: none;
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "SF Pro Display", sans-serif;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+/* Bluetooth estados */
+#bluetooth.connected    { color: #a6e3a1; }
+#bluetooth.disconnected { color: #ffffff; }
+#bluetooth.disabled     { color: #6c7086; }
+#bluetooth.off          { color: #f38ba8; }
+
+/* Hover */
+#custom-archicon:hover,
+#workspaces button:hover,
+#custom-updates:hover,
+#network:hover,
+#bluetooth:hover,
+#pulseaudio:hover,
+#custom-power:hover,
+#clock:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Workspaces */
+#workspaces button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 4px 8px;
+    margin: 2px 4px;
+    border-radius: 8px;
+    font-family: "SF Pro Display", sans-serif;
+    font-weight: 600;
+}
+
+#workspaces button.active {
+    background: rgba(255, 255, 255, 0.3);
+    color: #000000;
+}

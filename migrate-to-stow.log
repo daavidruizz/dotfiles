@@ -1,0 +1,329 @@
+
+════════════════════════════════════════════
+ migrate-to-stow.sh  2026-03-21 00:53:17
+ MODO: DRY RUN (no se mueve nada)
+════════════════════════════════════════════
+
+── hypr → .config/hypr
+  CMD: mkdir -p /home/rzzz/dotfiles/hypr/.config/hypr
+  [MOVE] hypridle.conf → .config/hypr/hypridle.conf
+  CMD: mv /home/rzzz/dotfiles/hypr/hypridle.conf /home/rzzz/dotfiles/hypr/.config/hypr/hypridle.conf
+  [MOVE] hyprland.conf → .config/hypr/hyprland.conf
+  CMD: mv /home/rzzz/dotfiles/hypr/hyprland.conf /home/rzzz/dotfiles/hypr/.config/hypr/hyprland.conf
+  [MOVE] hyprlock → .config/hypr/hyprlock
+  CMD: mv /home/rzzz/dotfiles/hypr/hyprlock /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock
+  [MOVE] hyprlock.conf → .config/hypr/hyprlock.conf
+  CMD: mv /home/rzzz/dotfiles/hypr/hyprlock.conf /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock.conf
+  [MOVE] hyprpaper.conf → .config/hypr/hyprpaper.conf
+  CMD: mv /home/rzzz/dotfiles/hypr/hyprpaper.conf /home/rzzz/dotfiles/hypr/.config/hypr/hyprpaper.conf
+  [SKIP] install.sh (protegido)
+  [MOVE] scripts → .config/hypr/scripts
+  CMD: mv /home/rzzz/dotfiles/hypr/scripts /home/rzzz/dotfiles/hypr/.config/hypr/scripts
+  [MOVE] settings → .config/hypr/settings
+  CMD: mv /home/rzzz/dotfiles/hypr/settings /home/rzzz/dotfiles/hypr/.config/hypr/settings
+  [OK] hypr listo
+
+── waybar → .config/waybar/dev
+  CMD: mkdir -p /home/rzzz/dotfiles/waybar/.config/waybar/dev
+  [MOVE] config → .config/waybar/dev/config
+  CMD: mv /home/rzzz/dotfiles/waybar/config /home/rzzz/dotfiles/waybar/.config/waybar/dev/config
+  [MOVE] cpu_temp.sh → .config/waybar/dev/cpu_temp.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/cpu_temp.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/cpu_temp.sh
+  [MOVE] gpu_temp.sh → .config/waybar/dev/gpu_temp.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/gpu_temp.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/gpu_temp.sh
+  [SKIP] install.sh (protegido)
+  [MOVE] installupdates.sh → .config/waybar/dev/installupdates.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/installupdates.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/installupdates.sh
+  [MOVE] lanzador-installupdates.sh → .config/waybar/dev/lanzador-installupdates.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/lanzador-installupdates.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/lanzador-installupdates.sh
+  [MOVE] modules.json → .config/waybar/dev/modules.json
+  CMD: mv /home/rzzz/dotfiles/waybar/modules.json /home/rzzz/dotfiles/waybar/.config/waybar/dev/modules.json
+  [MOVE] networkmanager.sh → .config/waybar/dev/networkmanager.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/networkmanager.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/networkmanager.sh
+  [MOVE] nm-applet.sh → .config/waybar/dev/nm-applet.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/nm-applet.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/nm-applet.sh
+  [MOVE] style.css → .config/waybar/dev/style.css
+  CMD: mv /home/rzzz/dotfiles/waybar/style.css /home/rzzz/dotfiles/waybar/.config/waybar/dev/style.css
+  [MOVE] system-monitor.sh → .config/waybar/dev/system-monitor.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/system-monitor.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/system-monitor.sh
+  [MOVE] updates.sh → .config/waybar/dev/updates.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/updates.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/updates.sh
+  [OK] waybar listo
+
+── dunst → .config/dunst
+  CMD: mkdir -p /home/rzzz/dotfiles/dunst/.config/dunst
+  [MOVE] dunstrc → .config/dunst/dunstrc
+  CMD: mv /home/rzzz/dotfiles/dunst/dunstrc /home/rzzz/dotfiles/dunst/.config/dunst/dunstrc
+  [SKIP] install.sh (protegido)
+  [OK] dunst listo
+
+── kitty → .config/kitty
+  CMD: mkdir -p /home/rzzz/dotfiles/kitty/.config/kitty
+  [SKIP] install.sh (protegido)
+  [MOVE] kitty.conf → .config/kitty/kitty.conf
+  CMD: mv /home/rzzz/dotfiles/kitty/kitty.conf /home/rzzz/dotfiles/kitty/.config/kitty/kitty.conf
+  [MOVE] theme.conf → .config/kitty/theme.conf
+  CMD: mv /home/rzzz/dotfiles/kitty/theme.conf /home/rzzz/dotfiles/kitty/.config/kitty/theme.conf
+  [MOVE] themes → .config/kitty/themes
+  CMD: mv /home/rzzz/dotfiles/kitty/themes /home/rzzz/dotfiles/kitty/.config/kitty/themes
+  [OK] kitty listo
+
+── nwg-dock → .config/nwg-dock-hyprland
+  CMD: mkdir -p /home/rzzz/dotfiles/nwg-dock/.config/nwg-dock-hyprland
+  [MOVE] colors.css → .config/nwg-dock-hyprland/colors.css
+  CMD: mv /home/rzzz/dotfiles/nwg-dock/colors.css /home/rzzz/dotfiles/nwg-dock/.config/nwg-dock-hyprland/colors.css
+  [MOVE] config → .config/nwg-dock-hyprland/config
+  CMD: mv /home/rzzz/dotfiles/nwg-dock/config /home/rzzz/dotfiles/nwg-dock/.config/nwg-dock-hyprland/config
+  [SKIP] install.sh (protegido)
+  [MOVE] themes → .config/nwg-dock-hyprland/themes
+  CMD: mv /home/rzzz/dotfiles/nwg-dock/themes /home/rzzz/dotfiles/nwg-dock/.config/nwg-dock-hyprland/themes
+  [OK] nwg-dock listo
+
+── wlogout → .config/wlogout
+  CMD: mkdir -p /home/rzzz/dotfiles/wlogout/.config/wlogout
+  [MOVE] colors.css → .config/wlogout/colors.css
+  CMD: mv /home/rzzz/dotfiles/wlogout/colors.css /home/rzzz/dotfiles/wlogout/.config/wlogout/colors.css
+  [MOVE] icons → .config/wlogout/icons
+  CMD: mv /home/rzzz/dotfiles/wlogout/icons /home/rzzz/dotfiles/wlogout/.config/wlogout/icons
+  [SKIP] install.sh (protegido)
+  [MOVE] layout → .config/wlogout/layout
+  CMD: mv /home/rzzz/dotfiles/wlogout/layout /home/rzzz/dotfiles/wlogout/.config/wlogout/layout
+  [MOVE] style.css → .config/wlogout/style.css
+  CMD: mv /home/rzzz/dotfiles/wlogout/style.css /home/rzzz/dotfiles/wlogout/.config/wlogout/style.css
+  [OK] wlogout listo
+
+── thunar → .config/Thunar
+  CMD: mkdir -p /home/rzzz/dotfiles/thunar/.config/Thunar
+  [MOVE] accels.scm → .config/Thunar/accels.scm
+  CMD: mv /home/rzzz/dotfiles/thunar/accels.scm /home/rzzz/dotfiles/thunar/.config/Thunar/accels.scm
+  [SKIP] install.sh (protegido)
+  [MOVE] uca.xml → .config/Thunar/uca.xml
+  CMD: mv /home/rzzz/dotfiles/thunar/uca.xml /home/rzzz/dotfiles/thunar/.config/Thunar/uca.xml
+  [OK] thunar listo
+
+── easyeffects → .config/easyeffects
+  CMD: mkdir -p /home/rzzz/dotfiles/easyeffects/.config/easyeffects
+  [MOVE] db → .config/easyeffects/db
+  CMD: mv /home/rzzz/dotfiles/easyeffects/db /home/rzzz/dotfiles/easyeffects/.config/easyeffects/db
+  [SKIP] install.sh (protegido)
+  [OK] easyeffects listo
+
+── fastfetch → .config/fastfetch
+  CMD: mkdir -p /home/rzzz/dotfiles/fastfetch/.config/fastfetch
+  [MOVE] config.jsonc → .config/fastfetch/config.jsonc
+  CMD: mv /home/rzzz/dotfiles/fastfetch/config.jsonc /home/rzzz/dotfiles/fastfetch/.config/fastfetch/config.jsonc
+  [SKIP] install.sh (protegido)
+  [OK] fastfetch listo
+
+── btop → .config/btop
+  CMD: mkdir -p /home/rzzz/dotfiles/btop/.config/btop
+  [MOVE] btop.conf → .config/btop/btop.conf
+  CMD: mv /home/rzzz/dotfiles/btop/btop.conf /home/rzzz/dotfiles/btop/.config/btop/btop.conf
+  [SKIP] install.sh (protegido)
+  [OK] btop listo
+
+── rofi (multi-destino)
+  CMD: mkdir -p /home/rzzz/dotfiles/rofi/.config/rofi/template
+  CMD: mkdir -p /home/rzzz/dotfiles/rofi/.local/share/rofi/themes
+  CMD: mv /home/rzzz/dotfiles/rofi/config.rasi /home/rzzz/dotfiles/rofi/.config/rofi/config.rasi
+  [MOVE] config.rasi → .config/rofi/
+  CMD: mv /home/rzzz/dotfiles/rofi/launchpad.rasi /home/rzzz/dotfiles/rofi/.config/rofi/launchpad.rasi
+  [MOVE] launchpad.rasi → .config/rofi/
+  CMD: mv /home/rzzz/dotfiles/rofi/rounded-nord-dark.rasi /home/rzzz/dotfiles/rofi/.config/rofi/rounded-nord-dark.rasi
+  [MOVE] rounded-nord-dark.rasi → .config/rofi/
+  CMD: mv /home/rzzz/dotfiles/rofi/template /home/rzzz/dotfiles/rofi/.config/rofi/template
+  [MOVE] template/ → .config/rofi/template/
+  [OK] rofi listo
+
+── gtk (multi-destino)
+  CMD: mkdir -p /home/rzzz/dotfiles/gtk/.config/gtk-2.0
+  CMD: mv /home/rzzz/dotfiles/gtk/gtk-2.0 /home/rzzz/dotfiles/gtk/.config/
+  [MOVE] gtk-2.0 → .config/gtk-2.0
+  CMD: mkdir -p /home/rzzz/dotfiles/gtk/.config/gtk-3.0
+  CMD: mv /home/rzzz/dotfiles/gtk/gtk-3.0 /home/rzzz/dotfiles/gtk/.config/
+  [MOVE] gtk-3.0 → .config/gtk-3.0
+  CMD: mkdir -p /home/rzzz/dotfiles/gtk/.config/gtk-4.0
+  CMD: mv /home/rzzz/dotfiles/gtk/gtk-4.0 /home/rzzz/dotfiles/gtk/.config/
+  [MOVE] gtk-4.0 → .config/gtk-4.0
+  CMD: mkdir -p /home/rzzz/dotfiles/gtk/.config/nwg-look
+  CMD: mv /home/rzzz/dotfiles/gtk/nwg-look /home/rzzz/dotfiles/gtk/.config/
+  [MOVE] nwg-look → .config/nwg-look
+  [OK] gtk listo
+
+── wallpapers (no-stow: van a ~ directamente)
+  Los wallpapers NO se gestionan con stow.
+  Se copian con install.sh de wallpapers (ya existe).
+  [SKIP] wallpapers — sin cambios
+
+════════════════════════════════════════════
+ Migración completada.
+ Siguiente paso: bash install.sh
+ Log guardado en: /home/rzzz/dotfiles/migrate-to-stow.log
+════════════════════════════════════════════
+
+
+════════════════════════════════════════════
+ migrate-to-stow.sh  2026-03-21 00:53:27
+════════════════════════════════════════════
+
+── hypr → .config/hypr
+  CMD: mkdir -p /home/rzzz/dotfiles/hypr/.config/hypr
+  [MOVE] hypridle.conf → .config/hypr/hypridle.conf
+  CMD: mv /home/rzzz/dotfiles/hypr/hypridle.conf /home/rzzz/dotfiles/hypr/.config/hypr/hypridle.conf
+  [MOVE] hyprland.conf → .config/hypr/hyprland.conf
+  CMD: mv /home/rzzz/dotfiles/hypr/hyprland.conf /home/rzzz/dotfiles/hypr/.config/hypr/hyprland.conf
+  [MOVE] hyprlock → .config/hypr/hyprlock
+  CMD: mv /home/rzzz/dotfiles/hypr/hyprlock /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock
+  [MOVE] hyprlock.conf → .config/hypr/hyprlock.conf
+  CMD: mv /home/rzzz/dotfiles/hypr/hyprlock.conf /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock.conf
+  [MOVE] hyprpaper.conf → .config/hypr/hyprpaper.conf
+  CMD: mv /home/rzzz/dotfiles/hypr/hyprpaper.conf /home/rzzz/dotfiles/hypr/.config/hypr/hyprpaper.conf
+  [SKIP] install.sh (protegido)
+  [MOVE] scripts → .config/hypr/scripts
+  CMD: mv /home/rzzz/dotfiles/hypr/scripts /home/rzzz/dotfiles/hypr/.config/hypr/scripts
+  [MOVE] settings → .config/hypr/settings
+  CMD: mv /home/rzzz/dotfiles/hypr/settings /home/rzzz/dotfiles/hypr/.config/hypr/settings
+  [OK] hypr listo
+
+── waybar → .config/waybar/dev
+  CMD: mkdir -p /home/rzzz/dotfiles/waybar/.config/waybar/dev
+  [MOVE] config → .config/waybar/dev/config
+  CMD: mv /home/rzzz/dotfiles/waybar/config /home/rzzz/dotfiles/waybar/.config/waybar/dev/config
+  [MOVE] cpu_temp.sh → .config/waybar/dev/cpu_temp.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/cpu_temp.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/cpu_temp.sh
+  [MOVE] gpu_temp.sh → .config/waybar/dev/gpu_temp.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/gpu_temp.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/gpu_temp.sh
+  [SKIP] install.sh (protegido)
+  [MOVE] installupdates.sh → .config/waybar/dev/installupdates.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/installupdates.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/installupdates.sh
+  [MOVE] lanzador-installupdates.sh → .config/waybar/dev/lanzador-installupdates.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/lanzador-installupdates.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/lanzador-installupdates.sh
+  [MOVE] modules.json → .config/waybar/dev/modules.json
+  CMD: mv /home/rzzz/dotfiles/waybar/modules.json /home/rzzz/dotfiles/waybar/.config/waybar/dev/modules.json
+  [MOVE] networkmanager.sh → .config/waybar/dev/networkmanager.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/networkmanager.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/networkmanager.sh
+  [MOVE] nm-applet.sh → .config/waybar/dev/nm-applet.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/nm-applet.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/nm-applet.sh
+  [MOVE] style.css → .config/waybar/dev/style.css
+  CMD: mv /home/rzzz/dotfiles/waybar/style.css /home/rzzz/dotfiles/waybar/.config/waybar/dev/style.css
+  [MOVE] system-monitor.sh → .config/waybar/dev/system-monitor.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/system-monitor.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/system-monitor.sh
+  [MOVE] updates.sh → .config/waybar/dev/updates.sh
+  CMD: mv /home/rzzz/dotfiles/waybar/updates.sh /home/rzzz/dotfiles/waybar/.config/waybar/dev/updates.sh
+  [OK] waybar listo
+
+── dunst → .config/dunst
+  CMD: mkdir -p /home/rzzz/dotfiles/dunst/.config/dunst
+  [MOVE] dunstrc → .config/dunst/dunstrc
+  CMD: mv /home/rzzz/dotfiles/dunst/dunstrc /home/rzzz/dotfiles/dunst/.config/dunst/dunstrc
+  [SKIP] install.sh (protegido)
+  [OK] dunst listo
+
+── kitty → .config/kitty
+  CMD: mkdir -p /home/rzzz/dotfiles/kitty/.config/kitty
+  [SKIP] install.sh (protegido)
+  [MOVE] kitty.conf → .config/kitty/kitty.conf
+  CMD: mv /home/rzzz/dotfiles/kitty/kitty.conf /home/rzzz/dotfiles/kitty/.config/kitty/kitty.conf
+  [MOVE] theme.conf → .config/kitty/theme.conf
+  CMD: mv /home/rzzz/dotfiles/kitty/theme.conf /home/rzzz/dotfiles/kitty/.config/kitty/theme.conf
+  [MOVE] themes → .config/kitty/themes
+  CMD: mv /home/rzzz/dotfiles/kitty/themes /home/rzzz/dotfiles/kitty/.config/kitty/themes
+  [OK] kitty listo
+
+── nwg-dock → .config/nwg-dock-hyprland
+  CMD: mkdir -p /home/rzzz/dotfiles/nwg-dock/.config/nwg-dock-hyprland
+  [MOVE] colors.css → .config/nwg-dock-hyprland/colors.css
+  CMD: mv /home/rzzz/dotfiles/nwg-dock/colors.css /home/rzzz/dotfiles/nwg-dock/.config/nwg-dock-hyprland/colors.css
+  [MOVE] config → .config/nwg-dock-hyprland/config
+  CMD: mv /home/rzzz/dotfiles/nwg-dock/config /home/rzzz/dotfiles/nwg-dock/.config/nwg-dock-hyprland/config
+  [SKIP] install.sh (protegido)
+  [MOVE] themes → .config/nwg-dock-hyprland/themes
+  CMD: mv /home/rzzz/dotfiles/nwg-dock/themes /home/rzzz/dotfiles/nwg-dock/.config/nwg-dock-hyprland/themes
+  [OK] nwg-dock listo
+
+── wlogout → .config/wlogout
+  CMD: mkdir -p /home/rzzz/dotfiles/wlogout/.config/wlogout
+  [MOVE] colors.css → .config/wlogout/colors.css
+  CMD: mv /home/rzzz/dotfiles/wlogout/colors.css /home/rzzz/dotfiles/wlogout/.config/wlogout/colors.css
+  [MOVE] icons → .config/wlogout/icons
+  CMD: mv /home/rzzz/dotfiles/wlogout/icons /home/rzzz/dotfiles/wlogout/.config/wlogout/icons
+  [SKIP] install.sh (protegido)
+  [MOVE] layout → .config/wlogout/layout
+  CMD: mv /home/rzzz/dotfiles/wlogout/layout /home/rzzz/dotfiles/wlogout/.config/wlogout/layout
+  [MOVE] style.css → .config/wlogout/style.css
+  CMD: mv /home/rzzz/dotfiles/wlogout/style.css /home/rzzz/dotfiles/wlogout/.config/wlogout/style.css
+  [OK] wlogout listo
+
+── thunar → .config/Thunar
+  CMD: mkdir -p /home/rzzz/dotfiles/thunar/.config/Thunar
+  [MOVE] accels.scm → .config/Thunar/accels.scm
+  CMD: mv /home/rzzz/dotfiles/thunar/accels.scm /home/rzzz/dotfiles/thunar/.config/Thunar/accels.scm
+  [SKIP] install.sh (protegido)
+  [MOVE] uca.xml → .config/Thunar/uca.xml
+  CMD: mv /home/rzzz/dotfiles/thunar/uca.xml /home/rzzz/dotfiles/thunar/.config/Thunar/uca.xml
+  [OK] thunar listo
+
+── easyeffects → .config/easyeffects
+  CMD: mkdir -p /home/rzzz/dotfiles/easyeffects/.config/easyeffects
+  [MOVE] db → .config/easyeffects/db
+  CMD: mv /home/rzzz/dotfiles/easyeffects/db /home/rzzz/dotfiles/easyeffects/.config/easyeffects/db
+  [SKIP] install.sh (protegido)
+  [OK] easyeffects listo
+
+── fastfetch → .config/fastfetch
+  CMD: mkdir -p /home/rzzz/dotfiles/fastfetch/.config/fastfetch
+  [MOVE] config.jsonc → .config/fastfetch/config.jsonc
+  CMD: mv /home/rzzz/dotfiles/fastfetch/config.jsonc /home/rzzz/dotfiles/fastfetch/.config/fastfetch/config.jsonc
+  [SKIP] install.sh (protegido)
+  [OK] fastfetch listo
+
+── btop → .config/btop
+  CMD: mkdir -p /home/rzzz/dotfiles/btop/.config/btop
+  [MOVE] btop.conf → .config/btop/btop.conf
+  CMD: mv /home/rzzz/dotfiles/btop/btop.conf /home/rzzz/dotfiles/btop/.config/btop/btop.conf
+  [SKIP] install.sh (protegido)
+  [OK] btop listo
+
+── rofi (multi-destino)
+  CMD: mkdir -p /home/rzzz/dotfiles/rofi/.config/rofi/template
+  CMD: mkdir -p /home/rzzz/dotfiles/rofi/.local/share/rofi/themes
+  CMD: mv /home/rzzz/dotfiles/rofi/config.rasi /home/rzzz/dotfiles/rofi/.config/rofi/config.rasi
+  [MOVE] config.rasi → .config/rofi/
+  CMD: mv /home/rzzz/dotfiles/rofi/launchpad.rasi /home/rzzz/dotfiles/rofi/.config/rofi/launchpad.rasi
+  [MOVE] launchpad.rasi → .config/rofi/
+  CMD: mv /home/rzzz/dotfiles/rofi/rounded-nord-dark.rasi /home/rzzz/dotfiles/rofi/.config/rofi/rounded-nord-dark.rasi
+  [MOVE] rounded-nord-dark.rasi → .config/rofi/
+  CMD: mv /home/rzzz/dotfiles/rofi/template /home/rzzz/dotfiles/rofi/.config/rofi/template
+  [MOVE] template/ → .config/rofi/template/
+  CMD: cp /home/rzzz/dotfiles/rofi/.config/rofi/launchpad.rasi /home/rzzz/dotfiles/rofi/.local/share/rofi/themes/launchpad.rasi
+  [COPY] launchpad.rasi → .local/share/rofi/themes/
+  CMD: cp /home/rzzz/dotfiles/rofi/.config/rofi/rounded-nord-dark.rasi /home/rzzz/dotfiles/rofi/.local/share/rofi/themes/rounded-nord-dark.rasi
+  [COPY] rounded-nord-dark.rasi → .local/share/rofi/themes/
+  [OK] rofi listo
+
+── gtk (multi-destino)
+  CMD: mkdir -p /home/rzzz/dotfiles/gtk/.config/gtk-2.0
+  CMD: mv /home/rzzz/dotfiles/gtk/gtk-2.0 /home/rzzz/dotfiles/gtk/.config/
+  [MOVE] gtk-2.0 → .config/gtk-2.0
+  CMD: mkdir -p /home/rzzz/dotfiles/gtk/.config/gtk-3.0
+  CMD: mv /home/rzzz/dotfiles/gtk/gtk-3.0 /home/rzzz/dotfiles/gtk/.config/
+  [MOVE] gtk-3.0 → .config/gtk-3.0
+  CMD: mkdir -p /home/rzzz/dotfiles/gtk/.config/gtk-4.0
+  CMD: mv /home/rzzz/dotfiles/gtk/gtk-4.0 /home/rzzz/dotfiles/gtk/.config/
+  [MOVE] gtk-4.0 → .config/gtk-4.0
+  CMD: mkdir -p /home/rzzz/dotfiles/gtk/.config/nwg-look
+  CMD: mv /home/rzzz/dotfiles/gtk/nwg-look /home/rzzz/dotfiles/gtk/.config/
+  [MOVE] nwg-look → .config/nwg-look
+  [OK] gtk listo
+
+── wallpapers (no-stow: van a ~ directamente)
+  Los wallpapers NO se gestionan con stow.
+  Se copian con install.sh de wallpapers (ya existe).
+  [SKIP] wallpapers — sin cambios
+
+════════════════════════════════════════════
+ Migración completada.
+ Siguiente paso: bash install.sh
+ Log guardado en: /home/rzzz/dotfiles/migrate-to-stow.log
+════════════════════════════════════════════
+

@@ -1,0 +1,1515 @@
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-03-21 00:59:14
+ MODO: DRY RUN
+════════════════════════════════════════════════════
+
+==> [1/5] Paquetes pacman...
+  CMD: sudo pacman -S --needed --noconfirm hyprland hypridle hyprlock hyprpaper xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar dunst rofi wofi kitty thunar wlogout easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl fastfetch btop brightnessctl networkmanager network-manager-applet grim slurp firefox qalculate-gtk nwg-look papirus-icon-theme adwaita-icon-theme noto-fonts noto-fonts-emoji ttf-font-awesome ttf-fira-sans ttf-roboto ttf-jetbrains-mono-nerd nvidia nvidia-utils lm_sensors jq curl libnotify pacman-contrib stow
+  [OK]   pacman
+
+==> [2/5] Paquetes AUR...
+  CMD: yay -S --needed --noconfirm nwg-dock-hyprland grimblast-git google-chrome adw-gtk3 whitesur-icon-theme bibata-cursor-theme whitesur-cursor-theme ttf-montserrat ttf-sf-pro bluetuith
+  [OK]   AUR
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -rv /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf /home/rzzz/.local/share/fonts/
+  CMD: cp -rv /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf /home/rzzz/.local/share/fonts/
+  CMD: cp -rv /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf /home/rzzz/.local/share/fonts/
+  CMD: cp -rv /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+  CMD: fc-cache -fv
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  Limpiando symlinks rotos para hypr...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate hypr
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: hypr ...
+Planning unstow of package hypr...
+    .config/hypr/hypridle.conf doesn't need to be unstowed
+    .config/hypr/hyprland.conf doesn't need to be unstowed
+    .config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/hyprlock/Fonts/JetBrains (pwd=/home/rzzz)
+    .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf doesn't need to be unstowed
+    .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/hyprlock/Fonts/SF Pro Display (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/hypr/hyprlock/Fonts (pwd=/home/rzzz)
+    .config/hypr/hyprlock/Scripts/songdetail.sh doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/hyprlock/Scripts (pwd=/home/rzzz)
+    .config/hypr/hyprlock/hyprlock.conf doesn't need to be unstowed
+    .config/hypr/hyprlock/hyprlock.png doesn't need to be unstowed
+    .config/hypr/hyprlock/vivek.png doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/hyprlock (pwd=/home/rzzz)
+    .config/hypr/hyprpaper.conf doesn't need to be unstowed
+    .config/hypr/scripts/power.sh doesn't need to be unstowed
+    .config/hypr/scripts/random-wall-video.sh doesn't need to be unstowed
+    .config/hypr/scripts/random-wall.sh doesn't need to be unstowed
+    .config/hypr/scripts/screenshot-simple.sh doesn't need to be unstowed
+    .config/hypr/scripts/screenshot.sh doesn't need to be unstowed
+    .config/hypr/scripts/sidepad.sh doesn't need to be unstowed
+    .config/hypr/scripts/songcover.sh doesn't need to be unstowed
+    .config/hypr/scripts/songdetail.sh doesn't need to be unstowed
+    .config/hypr/scripts/system-monitor.sh doesn't need to be unstowed
+    .config/hypr/scripts/toggle_tv.sh doesn't need to be unstowed
+    .config/hypr/scripts/updates.sh doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/scripts (pwd=/home/rzzz)
+    .config/hypr/settings/installupdates.sh doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/settings (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/hypr (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package hypr... done
+Planning stow of: hypr ...
+Planning stow of package hypr...
+    level of .config is 0
+    level of .config/hypr is 1
+    level of .config/hypr/hypridle.conf is 2
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hypridle.conf over existing target .config/hypr/hypridle.conf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprland.conf is 2
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock is 2
+    level of .config/hypr/hyprlock/Fonts is 3
+    level of .config/hypr/hyprlock/Fonts/JetBrains is 4
+    level of .config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf is 5
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf over existing target .config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/Fonts/SF Pro Display is 4
+    level of .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf is 5
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf over existing target .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf is 5
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf over existing target .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/Scripts is 3
+    level of .config/hypr/hyprlock/Scripts/songdetail.sh is 4
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/Scripts/songdetail.sh over existing target .config/hypr/hyprlock/Scripts/songdetail.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/hyprlock.conf is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/hyprlock.conf over existing target .config/hypr/hyprlock/hyprlock.conf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/hyprlock.png is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/hyprlock.png over existing target .config/hypr/hyprlock/hyprlock.png since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/vivek.png is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/vivek.png over existing target .config/hypr/hyprlock/vivek.png since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock.conf is 2
+CONFLICT when stowing hypr: existing target is not owned by stow: .config/hypr/hyprlock.conf
+    level of .config/hypr/hyprpaper.conf is 2
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprpaper.conf over existing target .config/hypr/hyprpaper.conf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts is 2
+    level of .config/hypr/scripts/power.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/power.sh over existing target .config/hypr/scripts/power.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/random-wall-video.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/random-wall-video.sh over existing target .config/hypr/scripts/random-wall-video.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/random-wall.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/random-wall.sh over existing target .config/hypr/scripts/random-wall.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/screenshot-simple.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/screenshot-simple.sh over existing target .config/hypr/scripts/screenshot-simple.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/screenshot.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/screenshot.sh over existing target .config/hypr/scripts/screenshot.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/sidepad.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/sidepad.sh over existing target .config/hypr/scripts/sidepad.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/songcover.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/songcover.sh over existing target .config/hypr/scripts/songcover.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/songdetail.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/songdetail.sh over existing target .config/hypr/scripts/songdetail.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/system-monitor.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/system-monitor.sh over existing target .config/hypr/scripts/system-monitor.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/toggle_tv.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/toggle_tv.sh over existing target .config/hypr/scripts/toggle_tv.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/updates.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/updates.sh over existing target .config/hypr/scripts/updates.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/settings is 2
+    level of .config/hypr/settings/installupdates.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/settings/installupdates.sh over existing target .config/hypr/settings/installupdates.sh since neither a link nor a directory and --adopt not specified
+Planning stow of package hypr... done
+WARNING! stowing hypr would cause conflicts:
+  * cannot stow dotfiles/hypr/.config/hypr/hypridle.conf over existing target .config/hypr/hypridle.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf over existing target .config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf over existing target .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf over existing target .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/Scripts/songdetail.sh over existing target .config/hypr/hyprlock/Scripts/songdetail.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/hyprlock.conf over existing target .config/hypr/hyprlock/hyprlock.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/hyprlock.png over existing target .config/hypr/hyprlock/hyprlock.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/vivek.png over existing target .config/hypr/hyprlock/vivek.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprpaper.conf over existing target .config/hypr/hyprpaper.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/power.sh over existing target .config/hypr/scripts/power.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/random-wall-video.sh over existing target .config/hypr/scripts/random-wall-video.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/random-wall.sh over existing target .config/hypr/scripts/random-wall.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/screenshot-simple.sh over existing target .config/hypr/scripts/screenshot-simple.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/screenshot.sh over existing target .config/hypr/scripts/screenshot.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/sidepad.sh over existing target .config/hypr/scripts/sidepad.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/songcover.sh over existing target .config/hypr/scripts/songcover.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/songdetail.sh over existing target .config/hypr/scripts/songdetail.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/system-monitor.sh over existing target .config/hypr/scripts/system-monitor.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/toggle_tv.sh over existing target .config/hypr/scripts/toggle_tv.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/updates.sh over existing target .config/hypr/scripts/updates.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/settings/installupdates.sh over existing target .config/hypr/settings/installupdates.sh since neither a link nor a directory and --adopt not specified
+  * existing target is not owned by stow: .config/hypr/hyprlock.conf
+All operations aborted.
+  [FAIL] hypr
+  Limpiando symlinks rotos para waybar...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate waybar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: waybar ...
+Planning unstow of package waybar...
+    .config/waybar/dev/config doesn't need to be unstowed
+    .config/waybar/dev/cpu_temp.sh doesn't need to be unstowed
+    .config/waybar/dev/gpu_temp.sh doesn't need to be unstowed
+    .config/waybar/dev/installupdates.sh doesn't need to be unstowed
+    .config/waybar/dev/lanzador-installupdates.sh doesn't need to be unstowed
+    .config/waybar/dev/modules.json doesn't need to be unstowed
+    .config/waybar/dev/networkmanager.sh doesn't need to be unstowed
+    .config/waybar/dev/nm-applet.sh doesn't need to be unstowed
+    .config/waybar/dev/style.css doesn't need to be unstowed
+    .config/waybar/dev/system-monitor.sh doesn't need to be unstowed
+    .config/waybar/dev/updates.sh doesn't need to be unstowed
+Cleaning up any invalid links in .config/waybar/dev (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/waybar (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package waybar... done
+Planning stow of: waybar ...
+Planning stow of package waybar...
+    level of .config is 0
+    level of .config/waybar is 1
+    level of .config/waybar/dev is 2
+    level of .config/waybar/dev/config is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/config over existing target .config/waybar/dev/config since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/cpu_temp.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/cpu_temp.sh over existing target .config/waybar/dev/cpu_temp.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/gpu_temp.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/gpu_temp.sh over existing target .config/waybar/dev/gpu_temp.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/installupdates.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/installupdates.sh over existing target .config/waybar/dev/installupdates.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/lanzador-installupdates.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/lanzador-installupdates.sh over existing target .config/waybar/dev/lanzador-installupdates.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/modules.json is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/modules.json over existing target .config/waybar/dev/modules.json since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/networkmanager.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/networkmanager.sh over existing target .config/waybar/dev/networkmanager.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/nm-applet.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/nm-applet.sh over existing target .config/waybar/dev/nm-applet.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/style.css is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/style.css over existing target .config/waybar/dev/style.css since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/system-monitor.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/system-monitor.sh over existing target .config/waybar/dev/system-monitor.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/updates.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/updates.sh over existing target .config/waybar/dev/updates.sh since neither a link nor a directory and --adopt not specified
+Planning stow of package waybar... done
+WARNING! stowing waybar would cause conflicts:
+  * cannot stow dotfiles/waybar/.config/waybar/dev/config over existing target .config/waybar/dev/config since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/cpu_temp.sh over existing target .config/waybar/dev/cpu_temp.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/gpu_temp.sh over existing target .config/waybar/dev/gpu_temp.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/installupdates.sh over existing target .config/waybar/dev/installupdates.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/lanzador-installupdates.sh over existing target .config/waybar/dev/lanzador-installupdates.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/modules.json over existing target .config/waybar/dev/modules.json since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/networkmanager.sh over existing target .config/waybar/dev/networkmanager.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/nm-applet.sh over existing target .config/waybar/dev/nm-applet.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/style.css over existing target .config/waybar/dev/style.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/system-monitor.sh over existing target .config/waybar/dev/system-monitor.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/updates.sh over existing target .config/waybar/dev/updates.sh since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] waybar
+  Limpiando symlinks rotos para dunst...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate dunst
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: dunst ...
+Planning unstow of package dunst...
+    .config/dunst/dunstrc doesn't need to be unstowed
+Cleaning up any invalid links in .config/dunst (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package dunst... done
+Planning stow of: dunst ...
+Planning stow of package dunst...
+    level of .config is 0
+    level of .config/dunst is 1
+    level of .config/dunst/dunstrc is 2
+CONFLICT when stowing dunst: cannot stow dotfiles/dunst/.config/dunst/dunstrc over existing target .config/dunst/dunstrc since neither a link nor a directory and --adopt not specified
+Planning stow of package dunst... done
+WARNING! stowing dunst would cause conflicts:
+  * cannot stow dotfiles/dunst/.config/dunst/dunstrc over existing target .config/dunst/dunstrc since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] dunst
+  Limpiando symlinks rotos para rofi...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate rofi
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: rofi ...
+Planning unstow of package rofi...
+    .config/rofi/config.rasi doesn't need to be unstowed
+    .config/rofi/launchpad.rasi doesn't need to be unstowed
+    .config/rofi/rounded-nord-dark.rasi doesn't need to be unstowed
+    .config/rofi/template/template did not exist to be unstowed
+Cleaning up any invalid links in .config/rofi/template (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/rofi (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+    .local/share/rofi/themes/launchpad.rasi doesn't need to be unstowed
+    .local/share/rofi/themes/rounded-nord-dark.rasi doesn't need to be unstowed
+Cleaning up any invalid links in .local/share/rofi/themes (pwd=/home/rzzz)
+Cleaning up any invalid links in .local/share/rofi (pwd=/home/rzzz)
+Cleaning up any invalid links in .local/share (pwd=/home/rzzz)
+Cleaning up any invalid links in .local (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package rofi... done
+Planning stow of: rofi ...
+Planning stow of package rofi...
+    level of .config is 0
+    level of .config/rofi is 1
+    level of .config/rofi/config.rasi is 2
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.config/rofi/config.rasi over existing target .config/rofi/config.rasi since neither a link nor a directory and --adopt not specified
+    level of .config/rofi/launchpad.rasi is 2
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.config/rofi/launchpad.rasi over existing target .config/rofi/launchpad.rasi since neither a link nor a directory and --adopt not specified
+    level of .config/rofi/rounded-nord-dark.rasi is 2
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.config/rofi/rounded-nord-dark.rasi over existing target .config/rofi/rounded-nord-dark.rasi since neither a link nor a directory and --adopt not specified
+    level of .config/rofi/template is 2
+    level of .config/rofi/template/template is 3
+LINK: .config/rofi/template/template => ../../../dotfiles/rofi/.config/rofi/template/template
+    level of .local is 0
+    level of .local/share is 1
+    level of .local/share/rofi is 2
+    level of .local/share/rofi/themes is 3
+    level of .local/share/rofi/themes/launchpad.rasi is 4
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.local/share/rofi/themes/launchpad.rasi over existing target .local/share/rofi/themes/launchpad.rasi since neither a link nor a directory and --adopt not specified
+    level of .local/share/rofi/themes/rounded-nord-dark.rasi is 4
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.local/share/rofi/themes/rounded-nord-dark.rasi over existing target .local/share/rofi/themes/rounded-nord-dark.rasi since neither a link nor a directory and --adopt not specified
+Planning stow of package rofi... done
+WARNING! stowing rofi would cause conflicts:
+  * cannot stow dotfiles/rofi/.config/rofi/config.rasi over existing target .config/rofi/config.rasi since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/rofi/.config/rofi/launchpad.rasi over existing target .config/rofi/launchpad.rasi since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/rofi/.config/rofi/rounded-nord-dark.rasi over existing target .config/rofi/rounded-nord-dark.rasi since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/rofi/.local/share/rofi/themes/launchpad.rasi over existing target .local/share/rofi/themes/launchpad.rasi since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/rofi/.local/share/rofi/themes/rounded-nord-dark.rasi over existing target .local/share/rofi/themes/rounded-nord-dark.rasi since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] rofi
+  Limpiando symlinks rotos para nwg-dock...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate nwg-dock
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: nwg-dock ...
+Planning unstow of package nwg-dock...
+    .config/nwg-dock-hyprland/colors.css doesn't need to be unstowed
+    .config/nwg-dock-hyprland/config doesn't need to be unstowed
+    .config/nwg-dock-hyprland/themes/glass/style.css doesn't need to be unstowed
+Cleaning up any invalid links in .config/nwg-dock-hyprland/themes/glass (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/nwg-dock-hyprland/themes (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/nwg-dock-hyprland (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package nwg-dock... done
+Planning stow of: nwg-dock ...
+Planning stow of package nwg-dock...
+    level of .config is 0
+    level of .config/nwg-dock-hyprland is 1
+    level of .config/nwg-dock-hyprland/colors.css is 2
+CONFLICT when stowing nwg-dock: cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/colors.css over existing target .config/nwg-dock-hyprland/colors.css since neither a link nor a directory and --adopt not specified
+    level of .config/nwg-dock-hyprland/config is 2
+CONFLICT when stowing nwg-dock: cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/config over existing target .config/nwg-dock-hyprland/config since neither a link nor a directory and --adopt not specified
+    level of .config/nwg-dock-hyprland/themes is 2
+    level of .config/nwg-dock-hyprland/themes/glass is 3
+    level of .config/nwg-dock-hyprland/themes/glass/style.css is 4
+CONFLICT when stowing nwg-dock: cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/themes/glass/style.css over existing target .config/nwg-dock-hyprland/themes/glass/style.css since neither a link nor a directory and --adopt not specified
+Planning stow of package nwg-dock... done
+WARNING! stowing nwg-dock would cause conflicts:
+  * cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/colors.css over existing target .config/nwg-dock-hyprland/colors.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/config over existing target .config/nwg-dock-hyprland/config since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/themes/glass/style.css over existing target .config/nwg-dock-hyprland/themes/glass/style.css since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] nwg-dock
+  Limpiando symlinks rotos para kitty...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate kitty
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: kitty ...
+Planning unstow of package kitty...
+    .config/kitty/kitty.conf doesn't need to be unstowed
+    .config/kitty/themes/hybrid.conf doesn't need to be unstowed
+Cleaning up any invalid links in .config/kitty/themes (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/kitty (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package kitty... done
+Planning stow of: kitty ...
+Planning stow of package kitty...
+    level of .config is 0
+    level of .config/kitty is 1
+    level of .config/kitty/kitty.conf is 2
+CONFLICT when stowing kitty: cannot stow dotfiles/kitty/.config/kitty/kitty.conf over existing target .config/kitty/kitty.conf since neither a link nor a directory and --adopt not specified
+    level of .config/kitty/theme.conf is 2
+CONFLICT when stowing kitty: existing target is not owned by stow: .config/kitty/theme.conf
+    level of .config/kitty/themes is 2
+    level of .config/kitty/themes/hybrid.conf is 3
+CONFLICT when stowing kitty: cannot stow dotfiles/kitty/.config/kitty/themes/hybrid.conf over existing target .config/kitty/themes/hybrid.conf since neither a link nor a directory and --adopt not specified
+Planning stow of package kitty... done
+WARNING! stowing kitty would cause conflicts:
+  * cannot stow dotfiles/kitty/.config/kitty/kitty.conf over existing target .config/kitty/kitty.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/kitty/.config/kitty/themes/hybrid.conf over existing target .config/kitty/themes/hybrid.conf since neither a link nor a directory and --adopt not specified
+  * existing target is not owned by stow: .config/kitty/theme.conf
+All operations aborted.
+  [FAIL] kitty
+  Limpiando symlinks rotos para wlogout...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate wlogout
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: wlogout ...
+Planning unstow of package wlogout...
+    .config/wlogout/colors.css doesn't need to be unstowed
+    .config/wlogout/icons/hibernate.png doesn't need to be unstowed
+    .config/wlogout/icons/lock.png doesn't need to be unstowed
+    .config/wlogout/icons/logout.png doesn't need to be unstowed
+    .config/wlogout/icons/reboot.png doesn't need to be unstowed
+    .config/wlogout/icons/shutdown.png doesn't need to be unstowed
+    .config/wlogout/icons/suspend.png doesn't need to be unstowed
+Cleaning up any invalid links in .config/wlogout/icons (pwd=/home/rzzz)
+    .config/wlogout/layout doesn't need to be unstowed
+    .config/wlogout/style.css doesn't need to be unstowed
+Cleaning up any invalid links in .config/wlogout (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package wlogout... done
+Planning stow of: wlogout ...
+Planning stow of package wlogout...
+    level of .config is 0
+    level of .config/wlogout is 1
+    level of .config/wlogout/colors.css is 2
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/colors.css over existing target .config/wlogout/colors.css since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons is 2
+    level of .config/wlogout/icons/hibernate.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/hibernate.png over existing target .config/wlogout/icons/hibernate.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/lock.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/lock.png over existing target .config/wlogout/icons/lock.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/logout.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/logout.png over existing target .config/wlogout/icons/logout.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/reboot.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/reboot.png over existing target .config/wlogout/icons/reboot.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/shutdown.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/shutdown.png over existing target .config/wlogout/icons/shutdown.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/suspend.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/suspend.png over existing target .config/wlogout/icons/suspend.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/layout is 2
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/layout over existing target .config/wlogout/layout since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/style.css is 2
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/style.css over existing target .config/wlogout/style.css since neither a link nor a directory and --adopt not specified
+Planning stow of package wlogout... done
+WARNING! stowing wlogout would cause conflicts:
+  * cannot stow dotfiles/wlogout/.config/wlogout/colors.css over existing target .config/wlogout/colors.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/hibernate.png over existing target .config/wlogout/icons/hibernate.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/lock.png over existing target .config/wlogout/icons/lock.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/logout.png over existing target .config/wlogout/icons/logout.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/reboot.png over existing target .config/wlogout/icons/reboot.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/shutdown.png over existing target .config/wlogout/icons/shutdown.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/suspend.png over existing target .config/wlogout/icons/suspend.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/layout over existing target .config/wlogout/layout since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/style.css over existing target .config/wlogout/style.css since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] wlogout
+  Limpiando symlinks rotos para thunar...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate thunar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: thunar ...
+Planning unstow of package thunar...
+    .config/Thunar/accels.scm doesn't need to be unstowed
+    .config/Thunar/uca.xml doesn't need to be unstowed
+Cleaning up any invalid links in .config/Thunar (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package thunar... done
+Planning stow of: thunar ...
+Planning stow of package thunar...
+    level of .config is 0
+    level of .config/Thunar is 1
+    level of .config/Thunar/accels.scm is 2
+CONFLICT when stowing thunar: cannot stow dotfiles/thunar/.config/Thunar/accels.scm over existing target .config/Thunar/accels.scm since neither a link nor a directory and --adopt not specified
+    level of .config/Thunar/uca.xml is 2
+CONFLICT when stowing thunar: cannot stow dotfiles/thunar/.config/Thunar/uca.xml over existing target .config/Thunar/uca.xml since neither a link nor a directory and --adopt not specified
+Planning stow of package thunar... done
+WARNING! stowing thunar would cause conflicts:
+  * cannot stow dotfiles/thunar/.config/Thunar/accels.scm over existing target .config/Thunar/accels.scm since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/thunar/.config/Thunar/uca.xml over existing target .config/Thunar/uca.xml since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] thunar
+  Limpiando symlinks rotos para easyeffects...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate easyeffects
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: easyeffects ...
+Planning unstow of package easyeffects...
+    .config/easyeffects/db/autogainrc doesn't need to be unstowed
+    .config/easyeffects/db/bassEnhancerrc doesn't need to be unstowed
+    .config/easyeffects/db/easyeffectsrc doesn't need to be unstowed
+    .config/easyeffects/db/equalizerrc doesn't need to be unstowed
+Cleaning up any invalid links in .config/easyeffects/db (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/easyeffects (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package easyeffects... done
+Planning stow of: easyeffects ...
+Planning stow of package easyeffects...
+    level of .config is 0
+    level of .config/easyeffects is 1
+    level of .config/easyeffects/db is 2
+    level of .config/easyeffects/db/autogainrc is 3
+CONFLICT when stowing easyeffects: cannot stow dotfiles/easyeffects/.config/easyeffects/db/autogainrc over existing target .config/easyeffects/db/autogainrc since neither a link nor a directory and --adopt not specified
+    level of .config/easyeffects/db/bassEnhancerrc is 3
+CONFLICT when stowing easyeffects: cannot stow dotfiles/easyeffects/.config/easyeffects/db/bassEnhancerrc over existing target .config/easyeffects/db/bassEnhancerrc since neither a link nor a directory and --adopt not specified
+    level of .config/easyeffects/db/easyeffectsrc is 3
+CONFLICT when stowing easyeffects: cannot stow dotfiles/easyeffects/.config/easyeffects/db/easyeffectsrc over existing target .config/easyeffects/db/easyeffectsrc since neither a link nor a directory and --adopt not specified
+    level of .config/easyeffects/db/equalizerrc is 3
+CONFLICT when stowing easyeffects: cannot stow dotfiles/easyeffects/.config/easyeffects/db/equalizerrc over existing target .config/easyeffects/db/equalizerrc since neither a link nor a directory and --adopt not specified
+Planning stow of package easyeffects... done
+WARNING! stowing easyeffects would cause conflicts:
+  * cannot stow dotfiles/easyeffects/.config/easyeffects/db/autogainrc over existing target .config/easyeffects/db/autogainrc since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/easyeffects/.config/easyeffects/db/bassEnhancerrc over existing target .config/easyeffects/db/bassEnhancerrc since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/easyeffects/.config/easyeffects/db/easyeffectsrc over existing target .config/easyeffects/db/easyeffectsrc since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/easyeffects/.config/easyeffects/db/equalizerrc over existing target .config/easyeffects/db/equalizerrc since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] easyeffects
+  Limpiando symlinks rotos para fastfetch...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate fastfetch
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: fastfetch ...
+Planning unstow of package fastfetch...
+UNLINK: .config/fastfetch
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package fastfetch... done
+Planning stow of: fastfetch ...
+Planning stow of package fastfetch...
+    level of .config is 0
+    level of .config/fastfetch is 1
+LINK: .config/fastfetch => ../dotfiles/fastfetch/.config/fastfetch (reverts previous action)
+Planning stow of package fastfetch... done
+WARNING: in simulation mode so not modifying filesystem.
+  [OK]   fastfetch
+  Limpiando symlinks rotos para btop...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate btop
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: btop ...
+Planning unstow of package btop...
+    .config/btop/btop.conf doesn't need to be unstowed
+Cleaning up any invalid links in .config/btop (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package btop... done
+Planning stow of: btop ...
+Planning stow of package btop...
+    level of .config is 0
+    level of .config/btop is 1
+    level of .config/btop/btop.conf is 2
+CONFLICT when stowing btop: cannot stow dotfiles/btop/.config/btop/btop.conf over existing target .config/btop/btop.conf since neither a link nor a directory and --adopt not specified
+Planning stow of package btop... done
+WARNING! stowing btop would cause conflicts:
+  * cannot stow dotfiles/btop/.config/btop/btop.conf over existing target .config/btop/btop.conf since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] btop
+  Limpiando symlinks rotos para gtk...
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate gtk
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: gtk ...
+Planning unstow of package gtk...
+    .config/gtk-2.0/gtkfilechooser.ini doesn't need to be unstowed
+Cleaning up any invalid links in .config/gtk-2.0 (pwd=/home/rzzz)
+    .config/gtk-3.0/assets/close-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-backdrop-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-backdrop-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-backdrop-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-backdrop-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-backdrop-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-backdrop-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-backdrop-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-backdrop-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-backdrop-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-backdrop-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-backdrop-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-backdrop-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-normal.svg doesn't need to be unstowed
+Cleaning up any invalid links in .config/gtk-3.0/assets (pwd=/home/rzzz)
+    .config/gtk-3.0/colors.css doesn't need to be unstowed
+    .config/gtk-3.0/gtk.css doesn't need to be unstowed
+    .config/gtk-3.0/settings.ini doesn't need to be unstowed
+Cleaning up any invalid links in .config/gtk-3.0 (pwd=/home/rzzz)
+    .config/gtk-4.0/colors.css doesn't need to be unstowed
+    .config/gtk-4.0/gtk.css doesn't need to be unstowed
+    .config/gtk-4.0/settings.ini doesn't need to be unstowed
+Cleaning up any invalid links in .config/gtk-4.0 (pwd=/home/rzzz)
+    .config/nwg-look/config doesn't need to be unstowed
+Cleaning up any invalid links in .config/nwg-look (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package gtk... done
+Planning stow of: gtk ...
+Planning stow of package gtk...
+    level of .config is 0
+    level of .config/gtk-2.0 is 1
+    level of .config/gtk-2.0/gtkfilechooser.ini is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-2.0/gtkfilechooser.ini over existing target .config/gtk-2.0/gtkfilechooser.ini since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0 is 1
+    level of .config/gtk-3.0/assets is 2
+    level of .config/gtk-3.0/assets/close-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-active.svg over existing target .config/gtk-3.0/assets/close-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-backdrop-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-active.svg over existing target .config/gtk-3.0/assets/close-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-backdrop-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-hover.svg over existing target .config/gtk-3.0/assets/close-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-backdrop-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-normal.svg over existing target .config/gtk-3.0/assets/close-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-hover.svg over existing target .config/gtk-3.0/assets/close-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-normal.svg over existing target .config/gtk-3.0/assets/close-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-active.svg over existing target .config/gtk-3.0/assets/maximize-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-backdrop-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-active.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-backdrop-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-hover.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-backdrop-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-normal.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-hover.svg over existing target .config/gtk-3.0/assets/maximize-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-normal.svg over existing target .config/gtk-3.0/assets/maximize-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-active.svg over existing target .config/gtk-3.0/assets/maximized-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-backdrop-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-active.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-backdrop-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-hover.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-backdrop-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-normal.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-hover.svg over existing target .config/gtk-3.0/assets/maximized-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-normal.svg over existing target .config/gtk-3.0/assets/maximized-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-active.svg over existing target .config/gtk-3.0/assets/minimize-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-backdrop-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-active.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-backdrop-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-hover.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-backdrop-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-normal.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-hover.svg over existing target .config/gtk-3.0/assets/minimize-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-normal.svg over existing target .config/gtk-3.0/assets/minimize-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/colors.css is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/colors.css over existing target .config/gtk-3.0/colors.css since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/gtk.css is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/gtk.css over existing target .config/gtk-3.0/gtk.css since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/settings.ini is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/settings.ini over existing target .config/gtk-3.0/settings.ini since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-4.0 is 1
+    level of .config/gtk-4.0/colors.css is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-4.0/colors.css over existing target .config/gtk-4.0/colors.css since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-4.0/gtk.css is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-4.0/gtk.css over existing target .config/gtk-4.0/gtk.css since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-4.0/settings.ini is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-4.0/settings.ini over existing target .config/gtk-4.0/settings.ini since neither a link nor a directory and --adopt not specified
+    level of .config/nwg-look is 1
+    level of .config/nwg-look/config is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/nwg-look/config over existing target .config/nwg-look/config since neither a link nor a directory and --adopt not specified
+Planning stow of package gtk... done
+WARNING! stowing gtk would cause conflicts:
+  * cannot stow dotfiles/gtk/.config/gtk-2.0/gtkfilechooser.ini over existing target .config/gtk-2.0/gtkfilechooser.ini since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-active.svg over existing target .config/gtk-3.0/assets/close-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-active.svg over existing target .config/gtk-3.0/assets/close-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-hover.svg over existing target .config/gtk-3.0/assets/close-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-normal.svg over existing target .config/gtk-3.0/assets/close-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-hover.svg over existing target .config/gtk-3.0/assets/close-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-normal.svg over existing target .config/gtk-3.0/assets/close-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-active.svg over existing target .config/gtk-3.0/assets/maximize-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-active.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-hover.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-normal.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-hover.svg over existing target .config/gtk-3.0/assets/maximize-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-normal.svg over existing target .config/gtk-3.0/assets/maximize-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-active.svg over existing target .config/gtk-3.0/assets/maximized-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-active.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-hover.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-normal.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-hover.svg over existing target .config/gtk-3.0/assets/maximized-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-normal.svg over existing target .config/gtk-3.0/assets/maximized-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-active.svg over existing target .config/gtk-3.0/assets/minimize-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-active.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-hover.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-normal.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-hover.svg over existing target .config/gtk-3.0/assets/minimize-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-normal.svg over existing target .config/gtk-3.0/assets/minimize-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/colors.css over existing target .config/gtk-3.0/colors.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/gtk.css over existing target .config/gtk-3.0/gtk.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/settings.ini over existing target .config/gtk-3.0/settings.ini since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-4.0/colors.css over existing target .config/gtk-4.0/colors.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-4.0/gtk.css over existing target .config/gtk-4.0/gtk.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-4.0/settings.ini over existing target .config/gtk-4.0/settings.ini since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/nwg-look/config over existing target .config/nwg-look/config since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] gtk
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/LOTR
+  CMD: cp -rv /home/rzzz/dotfiles/wallpapers/LOTR/1216364.jpg /home/rzzz/dotfiles/wallpapers/LOTR/1969894.jpg /home/rzzz/dotfiles/wallpapers/LOTR/2865485.jpg /home/rzzz/dotfiles/wallpapers/LOTR/844182.jpg /home/rzzz/dotfiles/wallpapers/LOTR/92756.jpg /home/rzzz/dotfiles/wallpapers/LOTR/wallhaven-mppzmm.png /home/rzzz/dotfiles/wallpapers/LOTR/wp5252093-lord-of-the-rings-4k-wallpapers.jpg /home/rzzz/dotfiles/wallpapers/LOTR/wp8865386.jpg /home/rzzz/wallpapers/LOTR/
+  CMD: cp -rv /home/rzzz/dotfiles/wallpapers/LOTR/1216364.jpg /home/rzzz/dotfiles/wallpapers/LOTR/1969894.jpg /home/rzzz/dotfiles/wallpapers/LOTR/2865485.jpg /home/rzzz/dotfiles/wallpapers/LOTR/844182.jpg /home/rzzz/dotfiles/wallpapers/LOTR/92756.jpg /home/rzzz/dotfiles/wallpapers/LOTR/wallhaven-mppzmm.png /home/rzzz/dotfiles/wallpapers/LOTR/wp5252093-lord-of-the-rings-4k-wallpapers.jpg /home/rzzz/dotfiles/wallpapers/LOTR/wp8865386.jpg /home/rzzz/wallpapers/LOTR/
+  [OK]   wallpapers/LOTR
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -rv /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/arch_black.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/catillo_paisaje.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/clase.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/puente_nubes.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/tokio.jpg /home/rzzz/Pictures/wallpapers/
+  CMD: cp -rv /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/arch_black.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/catillo_paisaje.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/clase.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/puente_nubes.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/tokio.jpg /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp -v /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  CMD: cp -v /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp -v /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  CMD: cp -v /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-03-21 00:59:14
+════════════════════════════════════════════════════
+ Fallos detectados (11):
+   ✗ hypr
+   ✗ waybar
+   ✗ dunst
+   ✗ rofi
+   ✗ nwg-dock
+   ✗ kitty
+   ✗ wlogout
+   ✗ thunar
+   ✗ easyeffects
+   ✗ btop
+   ✗ gtk
+
+ Para re-ejecutar un módulo:
+   cd /home/rzzz/dotfiles && stow --restow --verbose=2 <modulo>
+
+ Log completo: /home/rzzz/dotfiles/install.log
+
+ [DRY RUN] Nada fue modificado.
+
+ Pasos manuales pendientes:
+   1. Editar ~/.config/hypr/hyprland.conf → sección MONITORS
+   2. sudo sensors-detect           (temperaturas CPU en waybar)
+   3. sudo systemctl enable --now NetworkManager
+   4. Reiniciar sesión o ejecutar: Hyprland
+
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-03-21 01:00:00
+ MODO: DRY RUN
+════════════════════════════════════════════════════
+
+==> [1/5] Paquetes pacman...
+  CMD: sudo pacman -S --needed --noconfirm hyprland hypridle hyprlock hyprpaper xdg-desktop-portal-hyprland xdg-desktop-portal-gtk waybar dunst rofi wofi kitty thunar wlogout easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl fastfetch btop brightnessctl networkmanager network-manager-applet grim slurp firefox qalculate-gtk nwg-look papirus-icon-theme adwaita-icon-theme noto-fonts noto-fonts-emoji ttf-font-awesome ttf-fira-sans ttf-roboto ttf-jetbrains-mono-nerd nvidia nvidia-utils lm_sensors jq curl libnotify pacman-contrib stow
+  [OK]   pacman
+
+==> [2/5] Paquetes AUR...
+  CMD: yay -S --needed --noconfirm nwg-dock-hyprland grimblast-git google-chrome adw-gtk3 whitesur-icon-theme bibata-cursor-theme whitesur-cursor-theme ttf-montserrat ttf-sf-pro bluetuith
+  [OK]   AUR
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -rv /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf /home/rzzz/.local/share/fonts/
+  CMD: cp -rv /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf /home/rzzz/.local/share/fonts/
+  CMD: cp -rv /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf /home/rzzz/.local/share/fonts/
+  CMD: cp -rv /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+  CMD: fc-cache -fv
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/hypr/hypridle.conf
+  [RM] /home/rzzz/.config/hypr/hyprland.conf
+  [RM] /home/rzzz/.config/hypr/hyprlock/hyprlock.conf
+  [RM] /home/rzzz/.config/hypr/hyprlock/hyprlock.png
+  [RM] /home/rzzz/.config/hypr/hyprlock/vivek.png
+  [RM] /home/rzzz/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf
+  [RM] /home/rzzz/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf
+  [RM] /home/rzzz/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf
+  [RM] /home/rzzz/.config/hypr/hyprlock/Scripts/songdetail.sh
+  [RM] /home/rzzz/.config/hypr/hyprpaper.conf
+  [RM] /home/rzzz/.config/hypr/scripts/toggle_tv.sh
+  [RM] /home/rzzz/.config/hypr/scripts/power.sh
+  [RM] /home/rzzz/.config/hypr/scripts/screenshot.sh
+  [RM] /home/rzzz/.config/hypr/scripts/screenshot-simple.sh
+  [RM] /home/rzzz/.config/hypr/scripts/updates.sh
+  [RM] /home/rzzz/.config/hypr/scripts/system-monitor.sh
+  [RM] /home/rzzz/.config/hypr/scripts/sidepad.sh
+  [RM] /home/rzzz/.config/hypr/scripts/random-wall-video.sh
+  [RM] /home/rzzz/.config/hypr/scripts/random-wall.sh
+  [RM] /home/rzzz/.config/hypr/scripts/songdetail.sh
+  [RM] /home/rzzz/.config/hypr/scripts/songcover.sh
+  [RM] /home/rzzz/.config/hypr/settings/installupdates.sh
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow hypr
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: hypr ...
+Planning unstow of package hypr...
+    .config/hypr/hypridle.conf doesn't need to be unstowed
+    .config/hypr/hyprland.conf doesn't need to be unstowed
+    .config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/hyprlock/Fonts/JetBrains (pwd=/home/rzzz)
+    .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf doesn't need to be unstowed
+    .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/hyprlock/Fonts/SF Pro Display (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/hypr/hyprlock/Fonts (pwd=/home/rzzz)
+    .config/hypr/hyprlock/Scripts/songdetail.sh doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/hyprlock/Scripts (pwd=/home/rzzz)
+    .config/hypr/hyprlock/hyprlock.conf doesn't need to be unstowed
+    .config/hypr/hyprlock/hyprlock.png doesn't need to be unstowed
+    .config/hypr/hyprlock/vivek.png doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/hyprlock (pwd=/home/rzzz)
+    .config/hypr/hyprpaper.conf doesn't need to be unstowed
+    .config/hypr/scripts/power.sh doesn't need to be unstowed
+    .config/hypr/scripts/random-wall-video.sh doesn't need to be unstowed
+    .config/hypr/scripts/random-wall.sh doesn't need to be unstowed
+    .config/hypr/scripts/screenshot-simple.sh doesn't need to be unstowed
+    .config/hypr/scripts/screenshot.sh doesn't need to be unstowed
+    .config/hypr/scripts/sidepad.sh doesn't need to be unstowed
+    .config/hypr/scripts/songcover.sh doesn't need to be unstowed
+    .config/hypr/scripts/songdetail.sh doesn't need to be unstowed
+    .config/hypr/scripts/system-monitor.sh doesn't need to be unstowed
+    .config/hypr/scripts/toggle_tv.sh doesn't need to be unstowed
+    .config/hypr/scripts/updates.sh doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/scripts (pwd=/home/rzzz)
+    .config/hypr/settings/installupdates.sh doesn't need to be unstowed
+Cleaning up any invalid links in .config/hypr/settings (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/hypr (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package hypr... done
+Planning stow of: hypr ...
+Planning stow of package hypr...
+    level of .config is 0
+    level of .config/hypr is 1
+    level of .config/hypr/hypridle.conf is 2
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hypridle.conf over existing target .config/hypr/hypridle.conf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprland.conf is 2
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock is 2
+    level of .config/hypr/hyprlock/Fonts is 3
+    level of .config/hypr/hyprlock/Fonts/JetBrains is 4
+    level of .config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf is 5
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf over existing target .config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/Fonts/SF Pro Display is 4
+    level of .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf is 5
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf over existing target .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf is 5
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf over existing target .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/Scripts is 3
+    level of .config/hypr/hyprlock/Scripts/songdetail.sh is 4
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/Scripts/songdetail.sh over existing target .config/hypr/hyprlock/Scripts/songdetail.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/hyprlock.conf is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/hyprlock.conf over existing target .config/hypr/hyprlock/hyprlock.conf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/hyprlock.png is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/hyprlock.png over existing target .config/hypr/hyprlock/hyprlock.png since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock/vivek.png is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprlock/vivek.png over existing target .config/hypr/hyprlock/vivek.png since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/hyprlock.conf is 2
+CONFLICT when stowing hypr: existing target is not owned by stow: .config/hypr/hyprlock.conf
+    level of .config/hypr/hyprpaper.conf is 2
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/hyprpaper.conf over existing target .config/hypr/hyprpaper.conf since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts is 2
+    level of .config/hypr/scripts/power.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/power.sh over existing target .config/hypr/scripts/power.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/random-wall-video.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/random-wall-video.sh over existing target .config/hypr/scripts/random-wall-video.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/random-wall.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/random-wall.sh over existing target .config/hypr/scripts/random-wall.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/screenshot-simple.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/screenshot-simple.sh over existing target .config/hypr/scripts/screenshot-simple.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/screenshot.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/screenshot.sh over existing target .config/hypr/scripts/screenshot.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/sidepad.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/sidepad.sh over existing target .config/hypr/scripts/sidepad.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/songcover.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/songcover.sh over existing target .config/hypr/scripts/songcover.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/songdetail.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/songdetail.sh over existing target .config/hypr/scripts/songdetail.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/system-monitor.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/system-monitor.sh over existing target .config/hypr/scripts/system-monitor.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/toggle_tv.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/toggle_tv.sh over existing target .config/hypr/scripts/toggle_tv.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/scripts/updates.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/scripts/updates.sh over existing target .config/hypr/scripts/updates.sh since neither a link nor a directory and --adopt not specified
+    level of .config/hypr/settings is 2
+    level of .config/hypr/settings/installupdates.sh is 3
+CONFLICT when stowing hypr: cannot stow dotfiles/hypr/.config/hypr/settings/installupdates.sh over existing target .config/hypr/settings/installupdates.sh since neither a link nor a directory and --adopt not specified
+Planning stow of package hypr... done
+WARNING! stowing hypr would cause conflicts:
+  * cannot stow dotfiles/hypr/.config/hypr/hypridle.conf over existing target .config/hypr/hypridle.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprland.conf over existing target .config/hypr/hyprland.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf over existing target .config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf over existing target .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf over existing target .config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/Scripts/songdetail.sh over existing target .config/hypr/hyprlock/Scripts/songdetail.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/hyprlock.conf over existing target .config/hypr/hyprlock/hyprlock.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/hyprlock.png over existing target .config/hypr/hyprlock/hyprlock.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprlock/vivek.png over existing target .config/hypr/hyprlock/vivek.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/hyprpaper.conf over existing target .config/hypr/hyprpaper.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/power.sh over existing target .config/hypr/scripts/power.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/random-wall-video.sh over existing target .config/hypr/scripts/random-wall-video.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/random-wall.sh over existing target .config/hypr/scripts/random-wall.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/screenshot-simple.sh over existing target .config/hypr/scripts/screenshot-simple.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/screenshot.sh over existing target .config/hypr/scripts/screenshot.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/sidepad.sh over existing target .config/hypr/scripts/sidepad.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/songcover.sh over existing target .config/hypr/scripts/songcover.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/songdetail.sh over existing target .config/hypr/scripts/songdetail.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/system-monitor.sh over existing target .config/hypr/scripts/system-monitor.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/toggle_tv.sh over existing target .config/hypr/scripts/toggle_tv.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/scripts/updates.sh over existing target .config/hypr/scripts/updates.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/hypr/.config/hypr/settings/installupdates.sh over existing target .config/hypr/settings/installupdates.sh since neither a link nor a directory and --adopt not specified
+  * existing target is not owned by stow: .config/hypr/hyprlock.conf
+All operations aborted.
+  [FAIL] hypr
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/waybar/dev/config
+  [RM] /home/rzzz/.config/waybar/dev/cpu_temp.sh
+  [RM] /home/rzzz/.config/waybar/dev/gpu_temp.sh
+  [RM] /home/rzzz/.config/waybar/dev/installupdates.sh
+  [RM] /home/rzzz/.config/waybar/dev/lanzador-installupdates.sh
+  [RM] /home/rzzz/.config/waybar/dev/modules.json
+  [RM] /home/rzzz/.config/waybar/dev/networkmanager.sh
+  [RM] /home/rzzz/.config/waybar/dev/nm-applet.sh
+  [RM] /home/rzzz/.config/waybar/dev/style.css
+  [RM] /home/rzzz/.config/waybar/dev/system-monitor.sh
+  [RM] /home/rzzz/.config/waybar/dev/updates.sh
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow waybar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: waybar ...
+Planning unstow of package waybar...
+    .config/waybar/dev/config doesn't need to be unstowed
+    .config/waybar/dev/cpu_temp.sh doesn't need to be unstowed
+    .config/waybar/dev/gpu_temp.sh doesn't need to be unstowed
+    .config/waybar/dev/installupdates.sh doesn't need to be unstowed
+    .config/waybar/dev/lanzador-installupdates.sh doesn't need to be unstowed
+    .config/waybar/dev/modules.json doesn't need to be unstowed
+    .config/waybar/dev/networkmanager.sh doesn't need to be unstowed
+    .config/waybar/dev/nm-applet.sh doesn't need to be unstowed
+    .config/waybar/dev/style.css doesn't need to be unstowed
+    .config/waybar/dev/system-monitor.sh doesn't need to be unstowed
+    .config/waybar/dev/updates.sh doesn't need to be unstowed
+Cleaning up any invalid links in .config/waybar/dev (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/waybar (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package waybar... done
+Planning stow of: waybar ...
+Planning stow of package waybar...
+    level of .config is 0
+    level of .config/waybar is 1
+    level of .config/waybar/dev is 2
+    level of .config/waybar/dev/config is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/config over existing target .config/waybar/dev/config since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/cpu_temp.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/cpu_temp.sh over existing target .config/waybar/dev/cpu_temp.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/gpu_temp.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/gpu_temp.sh over existing target .config/waybar/dev/gpu_temp.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/installupdates.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/installupdates.sh over existing target .config/waybar/dev/installupdates.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/lanzador-installupdates.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/lanzador-installupdates.sh over existing target .config/waybar/dev/lanzador-installupdates.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/modules.json is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/modules.json over existing target .config/waybar/dev/modules.json since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/networkmanager.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/networkmanager.sh over existing target .config/waybar/dev/networkmanager.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/nm-applet.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/nm-applet.sh over existing target .config/waybar/dev/nm-applet.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/style.css is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/style.css over existing target .config/waybar/dev/style.css since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/system-monitor.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/system-monitor.sh over existing target .config/waybar/dev/system-monitor.sh since neither a link nor a directory and --adopt not specified
+    level of .config/waybar/dev/updates.sh is 3
+CONFLICT when stowing waybar: cannot stow dotfiles/waybar/.config/waybar/dev/updates.sh over existing target .config/waybar/dev/updates.sh since neither a link nor a directory and --adopt not specified
+Planning stow of package waybar... done
+WARNING! stowing waybar would cause conflicts:
+  * cannot stow dotfiles/waybar/.config/waybar/dev/config over existing target .config/waybar/dev/config since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/cpu_temp.sh over existing target .config/waybar/dev/cpu_temp.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/gpu_temp.sh over existing target .config/waybar/dev/gpu_temp.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/installupdates.sh over existing target .config/waybar/dev/installupdates.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/lanzador-installupdates.sh over existing target .config/waybar/dev/lanzador-installupdates.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/modules.json over existing target .config/waybar/dev/modules.json since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/networkmanager.sh over existing target .config/waybar/dev/networkmanager.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/nm-applet.sh over existing target .config/waybar/dev/nm-applet.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/style.css over existing target .config/waybar/dev/style.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/system-monitor.sh over existing target .config/waybar/dev/system-monitor.sh since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/waybar/.config/waybar/dev/updates.sh over existing target .config/waybar/dev/updates.sh since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] waybar
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/dunst/dunstrc
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow dunst
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: dunst ...
+Planning unstow of package dunst...
+    .config/dunst/dunstrc doesn't need to be unstowed
+Cleaning up any invalid links in .config/dunst (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package dunst... done
+Planning stow of: dunst ...
+Planning stow of package dunst...
+    level of .config is 0
+    level of .config/dunst is 1
+    level of .config/dunst/dunstrc is 2
+CONFLICT when stowing dunst: cannot stow dotfiles/dunst/.config/dunst/dunstrc over existing target .config/dunst/dunstrc since neither a link nor a directory and --adopt not specified
+Planning stow of package dunst... done
+WARNING! stowing dunst would cause conflicts:
+  * cannot stow dotfiles/dunst/.config/dunst/dunstrc over existing target .config/dunst/dunstrc since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] dunst
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/rofi/config.rasi
+  [RM] /home/rzzz/.config/rofi/launchpad.rasi
+  [RM] /home/rzzz/.config/rofi/rounded-nord-dark.rasi
+  [RM] /home/rzzz/.local/share/rofi/themes/launchpad.rasi
+  [RM] /home/rzzz/.local/share/rofi/themes/rounded-nord-dark.rasi
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow rofi
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: rofi ...
+Planning unstow of package rofi...
+    .config/rofi/config.rasi doesn't need to be unstowed
+    .config/rofi/launchpad.rasi doesn't need to be unstowed
+    .config/rofi/rounded-nord-dark.rasi doesn't need to be unstowed
+    .config/rofi/template/template did not exist to be unstowed
+Cleaning up any invalid links in .config/rofi/template (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/rofi (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+    .local/share/rofi/themes/launchpad.rasi doesn't need to be unstowed
+    .local/share/rofi/themes/rounded-nord-dark.rasi doesn't need to be unstowed
+Cleaning up any invalid links in .local/share/rofi/themes (pwd=/home/rzzz)
+Cleaning up any invalid links in .local/share/rofi (pwd=/home/rzzz)
+Cleaning up any invalid links in .local/share (pwd=/home/rzzz)
+Cleaning up any invalid links in .local (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package rofi... done
+Planning stow of: rofi ...
+Planning stow of package rofi...
+    level of .config is 0
+    level of .config/rofi is 1
+    level of .config/rofi/config.rasi is 2
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.config/rofi/config.rasi over existing target .config/rofi/config.rasi since neither a link nor a directory and --adopt not specified
+    level of .config/rofi/launchpad.rasi is 2
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.config/rofi/launchpad.rasi over existing target .config/rofi/launchpad.rasi since neither a link nor a directory and --adopt not specified
+    level of .config/rofi/rounded-nord-dark.rasi is 2
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.config/rofi/rounded-nord-dark.rasi over existing target .config/rofi/rounded-nord-dark.rasi since neither a link nor a directory and --adopt not specified
+    level of .config/rofi/template is 2
+    level of .config/rofi/template/template is 3
+LINK: .config/rofi/template/template => ../../../dotfiles/rofi/.config/rofi/template/template
+    level of .local is 0
+    level of .local/share is 1
+    level of .local/share/rofi is 2
+    level of .local/share/rofi/themes is 3
+    level of .local/share/rofi/themes/launchpad.rasi is 4
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.local/share/rofi/themes/launchpad.rasi over existing target .local/share/rofi/themes/launchpad.rasi since neither a link nor a directory and --adopt not specified
+    level of .local/share/rofi/themes/rounded-nord-dark.rasi is 4
+CONFLICT when stowing rofi: cannot stow dotfiles/rofi/.local/share/rofi/themes/rounded-nord-dark.rasi over existing target .local/share/rofi/themes/rounded-nord-dark.rasi since neither a link nor a directory and --adopt not specified
+Planning stow of package rofi... done
+WARNING! stowing rofi would cause conflicts:
+  * cannot stow dotfiles/rofi/.config/rofi/config.rasi over existing target .config/rofi/config.rasi since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/rofi/.config/rofi/launchpad.rasi over existing target .config/rofi/launchpad.rasi since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/rofi/.config/rofi/rounded-nord-dark.rasi over existing target .config/rofi/rounded-nord-dark.rasi since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/rofi/.local/share/rofi/themes/launchpad.rasi over existing target .local/share/rofi/themes/launchpad.rasi since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/rofi/.local/share/rofi/themes/rounded-nord-dark.rasi over existing target .local/share/rofi/themes/rounded-nord-dark.rasi since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] rofi
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/nwg-dock-hyprland/colors.css
+  [RM] /home/rzzz/.config/nwg-dock-hyprland/config
+  [RM] /home/rzzz/.config/nwg-dock-hyprland/themes/glass/style.css
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow nwg-dock
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: nwg-dock ...
+Planning unstow of package nwg-dock...
+    .config/nwg-dock-hyprland/colors.css doesn't need to be unstowed
+    .config/nwg-dock-hyprland/config doesn't need to be unstowed
+    .config/nwg-dock-hyprland/themes/glass/style.css doesn't need to be unstowed
+Cleaning up any invalid links in .config/nwg-dock-hyprland/themes/glass (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/nwg-dock-hyprland/themes (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/nwg-dock-hyprland (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package nwg-dock... done
+Planning stow of: nwg-dock ...
+Planning stow of package nwg-dock...
+    level of .config is 0
+    level of .config/nwg-dock-hyprland is 1
+    level of .config/nwg-dock-hyprland/colors.css is 2
+CONFLICT when stowing nwg-dock: cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/colors.css over existing target .config/nwg-dock-hyprland/colors.css since neither a link nor a directory and --adopt not specified
+    level of .config/nwg-dock-hyprland/config is 2
+CONFLICT when stowing nwg-dock: cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/config over existing target .config/nwg-dock-hyprland/config since neither a link nor a directory and --adopt not specified
+    level of .config/nwg-dock-hyprland/themes is 2
+    level of .config/nwg-dock-hyprland/themes/glass is 3
+    level of .config/nwg-dock-hyprland/themes/glass/style.css is 4
+CONFLICT when stowing nwg-dock: cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/themes/glass/style.css over existing target .config/nwg-dock-hyprland/themes/glass/style.css since neither a link nor a directory and --adopt not specified
+Planning stow of package nwg-dock... done
+WARNING! stowing nwg-dock would cause conflicts:
+  * cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/colors.css over existing target .config/nwg-dock-hyprland/colors.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/config over existing target .config/nwg-dock-hyprland/config since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/nwg-dock/.config/nwg-dock-hyprland/themes/glass/style.css over existing target .config/nwg-dock-hyprland/themes/glass/style.css since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] nwg-dock
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/kitty/kitty.conf
+  [RM] /home/rzzz/.config/kitty/themes/hybrid.conf
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow kitty
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: kitty ...
+Planning unstow of package kitty...
+    .config/kitty/kitty.conf doesn't need to be unstowed
+    .config/kitty/themes/hybrid.conf doesn't need to be unstowed
+Cleaning up any invalid links in .config/kitty/themes (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/kitty (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package kitty... done
+Planning stow of: kitty ...
+Planning stow of package kitty...
+    level of .config is 0
+    level of .config/kitty is 1
+    level of .config/kitty/kitty.conf is 2
+CONFLICT when stowing kitty: cannot stow dotfiles/kitty/.config/kitty/kitty.conf over existing target .config/kitty/kitty.conf since neither a link nor a directory and --adopt not specified
+    level of .config/kitty/theme.conf is 2
+CONFLICT when stowing kitty: existing target is not owned by stow: .config/kitty/theme.conf
+    level of .config/kitty/themes is 2
+    level of .config/kitty/themes/hybrid.conf is 3
+CONFLICT when stowing kitty: cannot stow dotfiles/kitty/.config/kitty/themes/hybrid.conf over existing target .config/kitty/themes/hybrid.conf since neither a link nor a directory and --adopt not specified
+Planning stow of package kitty... done
+WARNING! stowing kitty would cause conflicts:
+  * cannot stow dotfiles/kitty/.config/kitty/kitty.conf over existing target .config/kitty/kitty.conf since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/kitty/.config/kitty/themes/hybrid.conf over existing target .config/kitty/themes/hybrid.conf since neither a link nor a directory and --adopt not specified
+  * existing target is not owned by stow: .config/kitty/theme.conf
+All operations aborted.
+  [FAIL] kitty
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/wlogout/colors.css
+  [RM] /home/rzzz/.config/wlogout/icons/hibernate.png
+  [RM] /home/rzzz/.config/wlogout/icons/lock.png
+  [RM] /home/rzzz/.config/wlogout/icons/logout.png
+  [RM] /home/rzzz/.config/wlogout/icons/reboot.png
+  [RM] /home/rzzz/.config/wlogout/icons/shutdown.png
+  [RM] /home/rzzz/.config/wlogout/icons/suspend.png
+  [RM] /home/rzzz/.config/wlogout/layout
+  [RM] /home/rzzz/.config/wlogout/style.css
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow wlogout
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: wlogout ...
+Planning unstow of package wlogout...
+    .config/wlogout/colors.css doesn't need to be unstowed
+    .config/wlogout/icons/hibernate.png doesn't need to be unstowed
+    .config/wlogout/icons/lock.png doesn't need to be unstowed
+    .config/wlogout/icons/logout.png doesn't need to be unstowed
+    .config/wlogout/icons/reboot.png doesn't need to be unstowed
+    .config/wlogout/icons/shutdown.png doesn't need to be unstowed
+    .config/wlogout/icons/suspend.png doesn't need to be unstowed
+Cleaning up any invalid links in .config/wlogout/icons (pwd=/home/rzzz)
+    .config/wlogout/layout doesn't need to be unstowed
+    .config/wlogout/style.css doesn't need to be unstowed
+Cleaning up any invalid links in .config/wlogout (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package wlogout... done
+Planning stow of: wlogout ...
+Planning stow of package wlogout...
+    level of .config is 0
+    level of .config/wlogout is 1
+    level of .config/wlogout/colors.css is 2
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/colors.css over existing target .config/wlogout/colors.css since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons is 2
+    level of .config/wlogout/icons/hibernate.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/hibernate.png over existing target .config/wlogout/icons/hibernate.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/lock.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/lock.png over existing target .config/wlogout/icons/lock.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/logout.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/logout.png over existing target .config/wlogout/icons/logout.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/reboot.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/reboot.png over existing target .config/wlogout/icons/reboot.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/shutdown.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/shutdown.png over existing target .config/wlogout/icons/shutdown.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/icons/suspend.png is 3
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/icons/suspend.png over existing target .config/wlogout/icons/suspend.png since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/layout is 2
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/layout over existing target .config/wlogout/layout since neither a link nor a directory and --adopt not specified
+    level of .config/wlogout/style.css is 2
+CONFLICT when stowing wlogout: cannot stow dotfiles/wlogout/.config/wlogout/style.css over existing target .config/wlogout/style.css since neither a link nor a directory and --adopt not specified
+Planning stow of package wlogout... done
+WARNING! stowing wlogout would cause conflicts:
+  * cannot stow dotfiles/wlogout/.config/wlogout/colors.css over existing target .config/wlogout/colors.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/hibernate.png over existing target .config/wlogout/icons/hibernate.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/lock.png over existing target .config/wlogout/icons/lock.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/logout.png over existing target .config/wlogout/icons/logout.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/reboot.png over existing target .config/wlogout/icons/reboot.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/shutdown.png over existing target .config/wlogout/icons/shutdown.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/icons/suspend.png over existing target .config/wlogout/icons/suspend.png since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/layout over existing target .config/wlogout/layout since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/wlogout/.config/wlogout/style.css over existing target .config/wlogout/style.css since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] wlogout
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/Thunar/accels.scm
+  [RM] /home/rzzz/.config/Thunar/uca.xml
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow thunar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: thunar ...
+Planning unstow of package thunar...
+    .config/Thunar/accels.scm doesn't need to be unstowed
+    .config/Thunar/uca.xml doesn't need to be unstowed
+Cleaning up any invalid links in .config/Thunar (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package thunar... done
+Planning stow of: thunar ...
+Planning stow of package thunar...
+    level of .config is 0
+    level of .config/Thunar is 1
+    level of .config/Thunar/accels.scm is 2
+CONFLICT when stowing thunar: cannot stow dotfiles/thunar/.config/Thunar/accels.scm over existing target .config/Thunar/accels.scm since neither a link nor a directory and --adopt not specified
+    level of .config/Thunar/uca.xml is 2
+CONFLICT when stowing thunar: cannot stow dotfiles/thunar/.config/Thunar/uca.xml over existing target .config/Thunar/uca.xml since neither a link nor a directory and --adopt not specified
+Planning stow of package thunar... done
+WARNING! stowing thunar would cause conflicts:
+  * cannot stow dotfiles/thunar/.config/Thunar/accels.scm over existing target .config/Thunar/accels.scm since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/thunar/.config/Thunar/uca.xml over existing target .config/Thunar/uca.xml since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] thunar
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/easyeffects/db/autogainrc
+  [RM] /home/rzzz/.config/easyeffects/db/bassEnhancerrc
+  [RM] /home/rzzz/.config/easyeffects/db/equalizerrc
+  [RM] /home/rzzz/.config/easyeffects/db/easyeffectsrc
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow easyeffects
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: easyeffects ...
+Planning unstow of package easyeffects...
+    .config/easyeffects/db/autogainrc doesn't need to be unstowed
+    .config/easyeffects/db/bassEnhancerrc doesn't need to be unstowed
+    .config/easyeffects/db/easyeffectsrc doesn't need to be unstowed
+    .config/easyeffects/db/equalizerrc doesn't need to be unstowed
+Cleaning up any invalid links in .config/easyeffects/db (pwd=/home/rzzz)
+Cleaning up any invalid links in .config/easyeffects (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package easyeffects... done
+Planning stow of: easyeffects ...
+Planning stow of package easyeffects...
+    level of .config is 0
+    level of .config/easyeffects is 1
+    level of .config/easyeffects/db is 2
+    level of .config/easyeffects/db/autogainrc is 3
+CONFLICT when stowing easyeffects: cannot stow dotfiles/easyeffects/.config/easyeffects/db/autogainrc over existing target .config/easyeffects/db/autogainrc since neither a link nor a directory and --adopt not specified
+    level of .config/easyeffects/db/bassEnhancerrc is 3
+CONFLICT when stowing easyeffects: cannot stow dotfiles/easyeffects/.config/easyeffects/db/bassEnhancerrc over existing target .config/easyeffects/db/bassEnhancerrc since neither a link nor a directory and --adopt not specified
+    level of .config/easyeffects/db/easyeffectsrc is 3
+CONFLICT when stowing easyeffects: cannot stow dotfiles/easyeffects/.config/easyeffects/db/easyeffectsrc over existing target .config/easyeffects/db/easyeffectsrc since neither a link nor a directory and --adopt not specified
+    level of .config/easyeffects/db/equalizerrc is 3
+CONFLICT when stowing easyeffects: cannot stow dotfiles/easyeffects/.config/easyeffects/db/equalizerrc over existing target .config/easyeffects/db/equalizerrc since neither a link nor a directory and --adopt not specified
+Planning stow of package easyeffects... done
+WARNING! stowing easyeffects would cause conflicts:
+  * cannot stow dotfiles/easyeffects/.config/easyeffects/db/autogainrc over existing target .config/easyeffects/db/autogainrc since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/easyeffects/.config/easyeffects/db/bassEnhancerrc over existing target .config/easyeffects/db/bassEnhancerrc since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/easyeffects/.config/easyeffects/db/easyeffectsrc over existing target .config/easyeffects/db/easyeffectsrc since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/easyeffects/.config/easyeffects/db/equalizerrc over existing target .config/easyeffects/db/equalizerrc since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] easyeffects
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/fastfetch/config.jsonc
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow fastfetch
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: fastfetch ...
+Planning unstow of package fastfetch...
+UNLINK: .config/fastfetch
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package fastfetch... done
+Planning stow of: fastfetch ...
+Planning stow of package fastfetch...
+    level of .config is 0
+    level of .config/fastfetch is 1
+LINK: .config/fastfetch => ../dotfiles/fastfetch/.config/fastfetch (reverts previous action)
+Planning stow of package fastfetch... done
+WARNING: in simulation mode so not modifying filesystem.
+  [OK]   fastfetch
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/btop/btop.conf
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow btop
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: btop ...
+Planning unstow of package btop...
+    .config/btop/btop.conf doesn't need to be unstowed
+Cleaning up any invalid links in .config/btop (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package btop... done
+Planning stow of: btop ...
+Planning stow of package btop...
+    level of .config is 0
+    level of .config/btop is 1
+    level of .config/btop/btop.conf is 2
+CONFLICT when stowing btop: cannot stow dotfiles/btop/.config/btop/btop.conf over existing target .config/btop/btop.conf since neither a link nor a directory and --adopt not specified
+Planning stow of package btop... done
+WARNING! stowing btop would cause conflicts:
+  * cannot stow dotfiles/btop/.config/btop/btop.conf over existing target .config/btop/btop.conf since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] btop
+  Eliminando archivos reales que colisionan...
+  [RM] /home/rzzz/.config/gtk-2.0/gtkfilechooser.ini
+  [RM] /home/rzzz/.config/gtk-3.0/assets/close-active.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-active.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-hover.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-normal.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/close-hover.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/close-normal.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximize-active.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-active.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-hover.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-normal.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximized-active.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-active.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-hover.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-normal.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximized-hover.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximized-normal.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximize-hover.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/maximize-normal.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/minimize-active.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-active.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-hover.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-normal.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/minimize-hover.svg
+  [RM] /home/rzzz/.config/gtk-3.0/assets/minimize-normal.svg
+  [RM] /home/rzzz/.config/gtk-3.0/settings.ini
+  [RM] /home/rzzz/.config/gtk-3.0/gtk.css
+  [RM] /home/rzzz/.config/gtk-3.0/colors.css
+  [RM] /home/rzzz/.config/gtk-4.0/settings.ini
+  [RM] /home/rzzz/.config/gtk-4.0/gtk.css
+  [RM] /home/rzzz/.config/gtk-4.0/colors.css
+  [RM] /home/rzzz/.config/nwg-look/config
+  Ejecutando: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --simulate --restow gtk
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: gtk ...
+Planning unstow of package gtk...
+    .config/gtk-2.0/gtkfilechooser.ini doesn't need to be unstowed
+Cleaning up any invalid links in .config/gtk-2.0 (pwd=/home/rzzz)
+    .config/gtk-3.0/assets/close-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-backdrop-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-backdrop-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-backdrop-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/close-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-backdrop-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-backdrop-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-backdrop-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximize-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-backdrop-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-backdrop-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-backdrop-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/maximized-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-backdrop-active.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-backdrop-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-backdrop-normal.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-hover.svg doesn't need to be unstowed
+    .config/gtk-3.0/assets/minimize-normal.svg doesn't need to be unstowed
+Cleaning up any invalid links in .config/gtk-3.0/assets (pwd=/home/rzzz)
+    .config/gtk-3.0/colors.css doesn't need to be unstowed
+    .config/gtk-3.0/gtk.css doesn't need to be unstowed
+    .config/gtk-3.0/settings.ini doesn't need to be unstowed
+Cleaning up any invalid links in .config/gtk-3.0 (pwd=/home/rzzz)
+    .config/gtk-4.0/colors.css doesn't need to be unstowed
+    .config/gtk-4.0/gtk.css doesn't need to be unstowed
+    .config/gtk-4.0/settings.ini doesn't need to be unstowed
+Cleaning up any invalid links in .config/gtk-4.0 (pwd=/home/rzzz)
+    .config/nwg-look/config doesn't need to be unstowed
+Cleaning up any invalid links in .config/nwg-look (pwd=/home/rzzz)
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package gtk... done
+Planning stow of: gtk ...
+Planning stow of package gtk...
+    level of .config is 0
+    level of .config/gtk-2.0 is 1
+    level of .config/gtk-2.0/gtkfilechooser.ini is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-2.0/gtkfilechooser.ini over existing target .config/gtk-2.0/gtkfilechooser.ini since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0 is 1
+    level of .config/gtk-3.0/assets is 2
+    level of .config/gtk-3.0/assets/close-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-active.svg over existing target .config/gtk-3.0/assets/close-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-backdrop-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-active.svg over existing target .config/gtk-3.0/assets/close-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-backdrop-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-hover.svg over existing target .config/gtk-3.0/assets/close-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-backdrop-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-normal.svg over existing target .config/gtk-3.0/assets/close-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-hover.svg over existing target .config/gtk-3.0/assets/close-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/close-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-normal.svg over existing target .config/gtk-3.0/assets/close-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-active.svg over existing target .config/gtk-3.0/assets/maximize-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-backdrop-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-active.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-backdrop-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-hover.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-backdrop-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-normal.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-hover.svg over existing target .config/gtk-3.0/assets/maximize-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximize-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-normal.svg over existing target .config/gtk-3.0/assets/maximize-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-active.svg over existing target .config/gtk-3.0/assets/maximized-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-backdrop-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-active.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-backdrop-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-hover.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-backdrop-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-normal.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-hover.svg over existing target .config/gtk-3.0/assets/maximized-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/maximized-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-normal.svg over existing target .config/gtk-3.0/assets/maximized-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-active.svg over existing target .config/gtk-3.0/assets/minimize-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-backdrop-active.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-active.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-backdrop-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-hover.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-backdrop-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-normal.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-hover.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-hover.svg over existing target .config/gtk-3.0/assets/minimize-hover.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/assets/minimize-normal.svg is 3
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-normal.svg over existing target .config/gtk-3.0/assets/minimize-normal.svg since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/colors.css is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/colors.css over existing target .config/gtk-3.0/colors.css since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/gtk.css is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/gtk.css over existing target .config/gtk-3.0/gtk.css since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-3.0/settings.ini is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-3.0/settings.ini over existing target .config/gtk-3.0/settings.ini since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-4.0 is 1
+    level of .config/gtk-4.0/colors.css is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-4.0/colors.css over existing target .config/gtk-4.0/colors.css since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-4.0/gtk.css is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-4.0/gtk.css over existing target .config/gtk-4.0/gtk.css since neither a link nor a directory and --adopt not specified
+    level of .config/gtk-4.0/settings.ini is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/gtk-4.0/settings.ini over existing target .config/gtk-4.0/settings.ini since neither a link nor a directory and --adopt not specified
+    level of .config/nwg-look is 1
+    level of .config/nwg-look/config is 2
+CONFLICT when stowing gtk: cannot stow dotfiles/gtk/.config/nwg-look/config over existing target .config/nwg-look/config since neither a link nor a directory and --adopt not specified
+Planning stow of package gtk... done
+WARNING! stowing gtk would cause conflicts:
+  * cannot stow dotfiles/gtk/.config/gtk-2.0/gtkfilechooser.ini over existing target .config/gtk-2.0/gtkfilechooser.ini since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-active.svg over existing target .config/gtk-3.0/assets/close-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-active.svg over existing target .config/gtk-3.0/assets/close-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-hover.svg over existing target .config/gtk-3.0/assets/close-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-backdrop-normal.svg over existing target .config/gtk-3.0/assets/close-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-hover.svg over existing target .config/gtk-3.0/assets/close-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/close-normal.svg over existing target .config/gtk-3.0/assets/close-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-active.svg over existing target .config/gtk-3.0/assets/maximize-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-active.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-hover.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-backdrop-normal.svg over existing target .config/gtk-3.0/assets/maximize-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-hover.svg over existing target .config/gtk-3.0/assets/maximize-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximize-normal.svg over existing target .config/gtk-3.0/assets/maximize-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-active.svg over existing target .config/gtk-3.0/assets/maximized-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-active.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-hover.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-backdrop-normal.svg over existing target .config/gtk-3.0/assets/maximized-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-hover.svg over existing target .config/gtk-3.0/assets/maximized-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/maximized-normal.svg over existing target .config/gtk-3.0/assets/maximized-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-active.svg over existing target .config/gtk-3.0/assets/minimize-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-active.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-active.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-hover.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-backdrop-normal.svg over existing target .config/gtk-3.0/assets/minimize-backdrop-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-hover.svg over existing target .config/gtk-3.0/assets/minimize-hover.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/assets/minimize-normal.svg over existing target .config/gtk-3.0/assets/minimize-normal.svg since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/colors.css over existing target .config/gtk-3.0/colors.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/gtk.css over existing target .config/gtk-3.0/gtk.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-3.0/settings.ini over existing target .config/gtk-3.0/settings.ini since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-4.0/colors.css over existing target .config/gtk-4.0/colors.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-4.0/gtk.css over existing target .config/gtk-4.0/gtk.css since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/gtk-4.0/settings.ini over existing target .config/gtk-4.0/settings.ini since neither a link nor a directory and --adopt not specified
+  * cannot stow dotfiles/gtk/.config/nwg-look/config over existing target .config/nwg-look/config since neither a link nor a directory and --adopt not specified
+All operations aborted.
+  [FAIL] gtk
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/LOTR
+  CMD: cp -rv /home/rzzz/dotfiles/wallpapers/LOTR/1216364.jpg /home/rzzz/dotfiles/wallpapers/LOTR/1969894.jpg /home/rzzz/dotfiles/wallpapers/LOTR/2865485.jpg /home/rzzz/dotfiles/wallpapers/LOTR/844182.jpg /home/rzzz/dotfiles/wallpapers/LOTR/92756.jpg /home/rzzz/dotfiles/wallpapers/LOTR/wallhaven-mppzmm.png /home/rzzz/dotfiles/wallpapers/LOTR/wp5252093-lord-of-the-rings-4k-wallpapers.jpg /home/rzzz/dotfiles/wallpapers/LOTR/wp8865386.jpg /home/rzzz/wallpapers/LOTR/
+  CMD: cp -rv /home/rzzz/dotfiles/wallpapers/LOTR/1216364.jpg /home/rzzz/dotfiles/wallpapers/LOTR/1969894.jpg /home/rzzz/dotfiles/wallpapers/LOTR/2865485.jpg /home/rzzz/dotfiles/wallpapers/LOTR/844182.jpg /home/rzzz/dotfiles/wallpapers/LOTR/92756.jpg /home/rzzz/dotfiles/wallpapers/LOTR/wallhaven-mppzmm.png /home/rzzz/dotfiles/wallpapers/LOTR/wp5252093-lord-of-the-rings-4k-wallpapers.jpg /home/rzzz/dotfiles/wallpapers/LOTR/wp8865386.jpg /home/rzzz/wallpapers/LOTR/
+  [OK]   wallpapers/LOTR
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -rv /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/arch_black.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/catillo_paisaje.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/clase.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/puente_nubes.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/tokio.jpg /home/rzzz/Pictures/wallpapers/
+  CMD: cp -rv /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/arch_black.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/catillo_paisaje.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/clase.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/puente_nubes.jpg /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/tokio.jpg /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp -v /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  CMD: cp -v /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp -v /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  CMD: cp -v /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-03-21 01:00:01
+════════════════════════════════════════════════════
+ Fallos detectados (11):
+   ✗ hypr
+   ✗ waybar
+   ✗ dunst
+   ✗ rofi
+   ✗ nwg-dock
+   ✗ kitty
+   ✗ wlogout
+   ✗ thunar
+   ✗ easyeffects
+   ✗ btop
+   ✗ gtk
+
+ Para re-ejecutar un módulo:
+   cd /home/rzzz/dotfiles && stow --restow --verbose=2 <modulo>
+
+ Log completo: /home/rzzz/dotfiles/install.log
+
+ [DRY RUN] Nada fue modificado.
+
+ Pasos manuales pendientes:
+   1. Editar ~/.config/hypr/hyprland.conf → sección MONITORS
+   2. sudo sensors-detect           (temperaturas CPU en waybar)
+   3. sudo systemctl enable --now NetworkManager
+   4. Reiniciar sesión o ejecutar: Hyprland
+
