@@ -81,7 +81,6 @@ PACMAN_PKGS=(
   waybar dunst
   rofi wofi
   kitty thunar
-  wlogout
   easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl
   fastfetch btop htop brightnessctl networkmanager network-manager-applet
   bluez bluez-utils
@@ -92,7 +91,7 @@ PACMAN_PKGS=(
   nwg-look nwg-dock-hyprland papirus-icon-theme adwaita-icon-theme
   noto-fonts noto-fonts-emoji
   ttf-font-awesome ttf-fira-sans ttf-roboto ttf-jetbrains-mono-nerd ttf-montserrat
-  nvidia nvidia-utils lm_sensors
+  lm_sensors
   jq curl libnotify
   pacman-contrib
   vim neovim
@@ -136,6 +135,7 @@ AUR_PKGS=(
   ttf-sf-pro
   bluetuith
   mpvpaper
+  wlogout
 )
 
 if run yay -S --needed --noconfirm "${AUR_PKGS[@]}"; then
