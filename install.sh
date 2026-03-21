@@ -77,13 +77,14 @@ PACMAN_PKGS=(
   polkit-gnome
   grim slurp
   firefox qalculate-gtk
-  nwg-look papirus-icon-theme adwaita-icon-theme
+  nwg-look nwg-dock-hyprland papirus-icon-theme adwaita-icon-theme
   noto-fonts noto-fonts-emoji
-  ttf-font-awesome ttf-fira-sans ttf-roboto ttf-jetbrains-mono-nerd
+  ttf-font-awesome ttf-fira-sans ttf-roboto ttf-jetbrains-mono-nerd ttf-montserrat
   nvidia nvidia-utils lm_sensors
   jq curl libnotify
   pacman-contrib
-  vim
+  vim neovim
+  swayosd
   stow
 )
 
@@ -114,17 +115,14 @@ if ! command -v yay &>/dev/null; then
 fi
 
 AUR_PKGS=(
-  nwg-dock-hyprland
   grimblast-git
   google-chrome
   adw-gtk3
   whitesur-icon-theme
   bibata-cursor-theme
   whitesur-cursor-theme
-  ttf-montserrat
   ttf-sf-pro
   bluetuith
-  swayosd
   mpvpaper
 )
 
