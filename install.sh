@@ -4,9 +4,11 @@
 # PRERREQUISITO: haber ejecutado migrate-to-stow.sh antes.
 #
 # USO:
-#   bash install.sh                        # instala todo
+#   bash install.sh                           # instala todo
 #   bash install.sh --only hypr waybar kitty  # solo esos módulos
-#   bash install.sh --dry-run              # simula sin aplicar nada
+#   bash install.sh --dry-run                 # simula sin aplicar nada
+#   bash install.sh --stow-only               # solo fuentes + stow + wallpapers (sin git pull ni paquetes)
+#   bash install.sh --stow-only --only hypr   # igual pero solo ese módulo
 #
 # LOG: se guarda en ~/dotfiles/install.log
 
@@ -15,14 +17,56 @@ set -uo pipefail
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_FILE="$DOTFILES/install.log"
 DRY_RUN=false
+STOW_ONLY=false
 ONLY_MODULES=()
 
 # -------------------------------------------------------
-# Parse argumentos
+# Menú interactivo (solo si no se pasan argumentos)
+# -------------------------------------------------------
+ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt)
+
+if [[ $# -eq 0 ]]; then
+  echo ""
+  echo "╔══════════════════════════════════════════╗"
+  echo "║   Hyprland Dotfiles - Instalador         ║"
+  echo "╠══════════════════════════════════════════╣"
+  echo "║  1) Instalación completa                 ║"
+  echo "║  2) Solo stow (fuentes + links + walls)  ║"
+  echo "║  3) Stow de un módulo concreto           ║"
+  echo "╚══════════════════════════════════════════╝"
+  echo ""
+  read -rp "Opción [1-3]: " menu_opt
+
+  case "$menu_opt" in
+    1) ;;  # todo por defecto
+    2) STOW_ONLY=true ;;
+    3)
+      echo ""
+      echo "Módulos disponibles:"
+      echo "  ${ALL_MODULES[*]}"
+      echo ""
+      read -rp "Módulo: " menu_module
+      if [[ -z "$menu_module" ]]; then
+        echo "No se especificó módulo. Saliendo."
+        exit 1
+      fi
+      STOW_ONLY=true
+      ONLY_MODULES=("$menu_module")
+      ;;
+    *)
+      echo "Opción no válida. Saliendo."
+      exit 1
+      ;;
+  esac
+fi
+
+# -------------------------------------------------------
+# Parse argumentos (modo no interactivo)
 # -------------------------------------------------------
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --dry-run) DRY_RUN=true; shift ;;
+    --dry-run)   DRY_RUN=true; shift ;;
+    --stow-only) STOW_ONLY=true; shift ;;
     --only) shift; while [[ $# -gt 0 && "$1" != --* ]]; do ONLY_MODULES+=("$1"); shift; done ;;
     *) echo "Argumento desconocido: $1"; exit 1 ;;
   esac
@@ -54,96 +98,112 @@ log ""
 log "════════════════════════════════════════════════════"
 log " Hyprland Dotfiles - Instalador (stow)"
 log " $(date '+%Y-%m-%d %H:%M:%S')"
-$DRY_RUN && log " MODO: DRY RUN"
+$DRY_RUN   && log " MODO: DRY RUN"
+$STOW_ONLY && log " MODO: STOW ONLY (sin git pull ni paquetes)"
 log "════════════════════════════════════════════════════"
 
 # -------------------------------------------------------
 # 0. GIT PULL
 # -------------------------------------------------------
-log ""
-log "==> [0/5] Sincronizando dotfiles con git..."
+if ! $STOW_ONLY; then
+  log ""
+  log "==> [0/5] Sincronizando dotfiles con git..."
 
-if git -C "$DOTFILES" pull --ff-only 2>&1 | tee -a "$LOG_FILE"; then
-  ok "git pull"
+  if git -C "$DOTFILES" pull --ff-only 2>&1 | tee -a "$LOG_FILE"; then
+    ok "git pull"
+  else
+    log "  [!] git pull falló o hay cambios locales sin commitear. Continúa con la versión actual."
+  fi
 else
-  log "  [!] git pull falló o hay cambios locales sin commitear. Continúa con la versión actual."
+  log ""
+  log "==> [0/5] git pull... OMITIDO (--stow-only)"
 fi
 
 # -------------------------------------------------------
 # 1. PAQUETES PACMAN
 # -------------------------------------------------------
-log ""
-log "==> [1/5] Paquetes pacman..."
+if ! $STOW_ONLY; then
+  log ""
+  log "==> [1/5] Paquetes pacman..."
 
-PACMAN_PKGS=(
-  hyprland hypridle hyprlock hyprpaper
-  xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
-  waybar dunst
-  rofi wofi
-  kitty thunar
-  easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl
-  fastfetch btop htop brightnessctl networkmanager network-manager-applet
-  bluez bluez-utils
-  wl-clipboard
-  polkit-gnome
-  grim slurp
-  firefox qalculate-gtk
-  nwg-look nwg-dock-hyprland papirus-icon-theme adwaita-icon-theme
-  noto-fonts noto-fonts-emoji
-  ttf-font-awesome ttf-fira-sans ttf-roboto ttf-jetbrains-mono-nerd ttf-montserrat
-  lm_sensors
-  jq curl libnotify
-  pacman-contrib
-  vim neovim
-  swayosd
-  stow
-  qt5ct qt6ct kvantum
-)
+  PACMAN_PKGS=(
+    hyprland hypridle hyprlock hyprpaper
+    xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
+    waybar dunst
+    rofi wofi
+    kitty thunar
+    easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl
+    fastfetch btop htop brightnessctl networkmanager network-manager-applet
+    bluez bluez-utils
+    wl-clipboard
+    polkit-gnome
+    grim slurp
+    firefox qalculate-gtk
+    nwg-look nwg-dock-hyprland papirus-icon-theme adwaita-icon-theme
+    noto-fonts noto-fonts-emoji
+    ttf-font-awesome ttf-fira-sans ttf-roboto ttf-jetbrains-mono-nerd ttf-montserrat
+    lm_sensors
+    jq curl libnotify
+    pacman-contrib
+    vim neovim
+    swayosd
+    stow
+    qt5ct qt6ct kvantum
+  )
 
-if run sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"; then
-  ok "pacman"
+  if run sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"; then
+    ok "pacman"
+  else
+    fail "pacman"
+    log "  [!] Fallo en pacman, abortando (dependencia crítica)"
+    exit 1
+  fi
 else
-  fail "pacman"
-  log "  [!] Fallo en pacman, abortando (dependencia crítica)"
-  exit 1
+  log ""
+  log "==> [1/5] Paquetes pacman... OMITIDO (--stow-only)"
 fi
 
 # -------------------------------------------------------
 # 2. PAQUETES AUR
 # -------------------------------------------------------
-log ""
-log "==> [2/5] Paquetes AUR..."
+if ! $STOW_ONLY; then
+  log ""
+  log "==> [2/5] Paquetes AUR..."
 
-if ! command -v yay &>/dev/null; then
-  info "yay no encontrado, instalando..."
-  if run bash -c "sudo pacman -S --needed --noconfirm git base-devel && \
-                  git clone https://aur.archlinux.org/yay.git /tmp/yay-install && \
-                  cd /tmp/yay-install && makepkg -si --noconfirm"; then
-    ok "yay instalado"
-  else
-    fail "yay bootstrap"
-    exit 1
+  if ! command -v yay &>/dev/null; then
+    info "yay no encontrado, instalando..."
+    if run bash -c "sudo pacman -S --needed --noconfirm git base-devel && \
+                    git clone https://aur.archlinux.org/yay.git /tmp/yay-install && \
+                    cd /tmp/yay-install && makepkg -si --noconfirm"; then
+      ok "yay instalado"
+    else
+      fail "yay bootstrap"
+      exit 1
+    fi
   fi
-fi
 
-AUR_PKGS=(
-  grimblast-git
-  google-chrome
-  adw-gtk3
-  whitesur-icon-theme
-  bibata-cursor-theme
-  whitesur-cursor-theme
-  ttf-sf-pro
-  bluetuith
-  mpvpaper
-  wlogout
-)
+  AUR_PKGS=(
+    grimblast-git
+    google-chrome
+    adw-gtk3
+    whitesur-icon-theme
+    bibata-cursor-theme
+    whitesur-cursor-theme
+    ttf-sf-pro
+    bluetuith
+    mpvpaper
+    wlogout
+  )
 
-if run yay -S --needed --noconfirm "${AUR_PKGS[@]}"; then
-  ok "AUR"
+  if run yay -S --needed --noconfirm "${AUR_PKGS[@]}"; then
+    ok "AUR"
+  else
+    fail "AUR"
+    log "  [!] Algunos paquetes AUR fallaron. Continúa con el resto..."
+  fi
 else
-  fail "AUR"
-  log "  [!] Algunos paquetes AUR fallaron. Continúa con el resto..."
+  log ""
+  log "==> [2/5] Paquetes AUR... OMITIDO (--stow-only)"
 fi
 
 # -------------------------------------------------------
@@ -170,8 +230,6 @@ fi
 # -------------------------------------------------------
 log ""
 log "==> [4/5] Creando symlinks con stow..."
-
-ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt)
 
 # Si se pasó --only, usar solo esos
 if [ ${#ONLY_MODULES[@]} -gt 0 ]; then
