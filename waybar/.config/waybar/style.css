@@ -32,6 +32,12 @@
 #pulseaudio,
 #clock,
 #custom-power,
+#custom-power-lock,
+#custom-power-logout,
+#custom-power-suspend,
+#custom-power-reboot,
+#custom-power-shutdown,
+#group-power,
 #bluetooth,
 #tray {
     background: rgba(0, 0, 0, 0.6);
@@ -60,6 +66,15 @@
 #pulseaudio:hover,
 #custom-power:hover,
 #clock:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Power group hover */
+#custom-power-lock:hover,
+#custom-power-logout:hover,
+#custom-power-suspend:hover,
+#custom-power-reboot:hover,
+#custom-power-shutdown:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 

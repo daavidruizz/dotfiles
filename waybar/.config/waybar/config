@@ -39,6 +39,6 @@
    "bluetooth",
    "clock",
    "tray",
-   "custom/power"
+   "group/power"
   ]
 }

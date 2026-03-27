@@ -166,6 +166,47 @@
       },
   "custom/power": {
     "format": "⏻",
-    "on-click": "wlogout"
+    "tooltip-format": "Power Off",
+    "on-click": "~/.config/hypr/scripts/power.sh shutdown"
+  },
+  "custom/power-lock": {
+    "format": "󰌾",
+    "tooltip-format": "Lock",
+    "on-click": "~/.config/hypr/scripts/power.sh lock"
+  },
+  "custom/power-logout": {
+    "format": "󰍃",
+    "tooltip-format": "Log Out",
+    "on-click": "~/.config/hypr/scripts/power.sh exit"
+  },
+  "custom/power-suspend": {
+    "format": "󰒲",
+    "tooltip-format": "Suspend",
+    "on-click": "~/.config/hypr/scripts/power.sh suspend"
+  },
+  "custom/power-reboot": {
+    "format": "󰑓",
+    "tooltip-format": "Restart",
+    "on-click": "~/.config/hypr/scripts/power.sh reboot"
+  },
+  "custom/power-shutdown": {
+    "format": "",
+    "tooltip-format": "Power Off",
+    "on-click": "~/.config/hypr/scripts/power.sh shutdown"
+  },
+  "group/power": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "power-child",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/power",
+      "custom/power-lock",
+      "custom/power-logout",
+      "custom/power-suspend",
+      "custom/power-reboot"
+    ]
   }
 }
