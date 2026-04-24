@@ -20,7 +20,8 @@
   [
     "custom/archicon",
     "hyprland/workspaces",
-    "custom/mail"
+    "custom/mail",
+   "tray"
   ],
 
   /*MODULES CENTER*/
@@ -38,7 +39,6 @@
    "pulseaudio",
    "bluetooth",
    "clock",
-   "tray",
    "group/power"
   ]
 }
