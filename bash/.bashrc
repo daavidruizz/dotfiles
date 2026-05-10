@@ -10,6 +10,7 @@ export XDG_FILE_MANAGER=thunar
 
 export XDG_CURRENT_DESKTOP=Hyprland
 export XDG_SESSION_TYPE=wayland
+export LIBVA_DRIVER_NAME=radeonsi
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -76,3 +77,7 @@ alias ollama-stop='pkill -f "ollama serve" && echo "Ollama detenido"'
 alias ollama-start='OLLAMA_LLM_LIBRARY="cuda_v13" ollama serve > /dev/null 2>&1 & sleep 2 && echo "Ollama listo"'
 alias chat-code='OLLAMA_LLM_LIBRARY="cuda_v13" ollama run qwen-coder'
 alias chat='OLLAMA_LLM_LIBRARY="cuda_v13" ollama run qwen2.5:7b'
+alias llama-cli="~/.cache/yay/llama-cpp-rocm-git/src/llama.cpp/build/bin/llama-cli"
+alias llama-server="~/.cache/yay/llama-cpp-rocm-git/src/llama.cpp/build/bin/llama-server"
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/opt/rocm/bin

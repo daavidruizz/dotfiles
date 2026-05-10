@@ -19,10 +19,10 @@
         // "persistent-workspaces": {
         //       "*": [1, 2, 3, 4, 5]
         //   },
-        // SETUP PERSONAL (2 monitores DP-2 + DP-3):
+        // SETUP PERSONAL (2 monitores DP-2 izq + DP-1 der):
         "persistent-workspaces": {
-              "DP-2": [1, 2, 3, 4, 5],
-              "DP-3": [6, 7, 8, 9, 10]
+              "DP-2": [6, 7, 8, 9, 10],
+              "DP-1": [1, 2, 3, 4, 5]
           },
         "sort-by-number": true,
         "all-outputs": false
