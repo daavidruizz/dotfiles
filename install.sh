@@ -1,16 +1,14 @@
 #!/bin/bash
 # install.sh - Setup completo del entorno Hyprland (vía GNU Stow)
 #
-# PRERREQUISITO: haber ejecutado migrate-to-stow.sh antes.
-#
 # USO:
 #   bash install.sh                           # instala todo
 #   bash install.sh --only hypr waybar kitty  # solo esos módulos
 #   bash install.sh --dry-run                 # simula sin aplicar nada
-#   bash install.sh --stow-only               # solo fuentes + stow + wallpapers (sin git pull ni paquetes)
+#   bash install.sh --stow-only               # solo fuentes + stow + wallpapers
 #   bash install.sh --stow-only --only hypr   # igual pero solo ese módulo
 #
-# LOG: se guarda en ~/dotfiles/install.log
+# LOG: se guarda en install.log (en el directorio del script)
 
 set -uo pipefail
 
@@ -18,13 +16,13 @@ DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_FILE="$DOTFILES/install.log"
 DRY_RUN=false
 STOW_ONLY=false
-ONLY_MODULES=()
+declare -a ONLY_MODULES=()
+declare -a FAILED=()
+declare -a ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt)
 
 # -------------------------------------------------------
 # Menú interactivo (solo si no se pasan argumentos)
 # -------------------------------------------------------
-ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt)
-
 if [[ $# -eq 0 ]]; then
   echo ""
   echo "╔══════════════════════════════════════════╗"
@@ -38,7 +36,7 @@ if [[ $# -eq 0 ]]; then
   read -rp "Opción [1-3]: " menu_opt
 
   case "$menu_opt" in
-    1) ;;  # todo por defecto
+    1) ;;
     2) STOW_ONLY=true ;;
     3)
       echo ""
@@ -65,7 +63,7 @@ fi
 # -------------------------------------------------------
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --dry-run)   DRY_RUN=true; shift ;;
+    --dry-run)   DRY_RUN=true;  shift ;;
     --stow-only) STOW_ONLY=true; shift ;;
     --only) shift; while [[ $# -gt 0 && "$1" != --* ]]; do ONLY_MODULES+=("$1"); shift; done ;;
     *) echo "Argumento desconocido: $1"; exit 1 ;;
@@ -81,15 +79,14 @@ fail() { log "  [FAIL] $1"; FAILED+=("$1"); }
 skip() { log "  [SKIP] $1"; }
 info() { log "  [INFO] $1"; }
 
+# Ejecuta un comando, envía stdout+stderr a terminal Y al log.
+# Retorna el exit code del comando (no el de tee).
 run() {
   log "  CMD: $*"
-  if ! $DRY_RUN; then
-    if "$@"; then return 0; else return 1; fi
-  fi
-  return 0
+  $DRY_RUN && return 0
+  "$@" 2>&1 | tee -a "$LOG_FILE"
+  return "${PIPESTATUS[0]}"
 }
-
-FAILED=()
 
 # -------------------------------------------------------
 # Header
@@ -108,11 +105,10 @@ log "═════════════════════════
 if ! $STOW_ONLY; then
   log ""
   log "==> [0/5] Sincronizando dotfiles con git..."
-
-  if git -C "$DOTFILES" pull --ff-only 2>&1 | tee -a "$LOG_FILE"; then
+  if run git -C "$DOTFILES" pull --ff-only; then
     ok "git pull"
   else
-    log "  [!] git pull falló o hay cambios locales sin commitear. Continúa con la versión actual."
+    log "  [!] git pull falló o hay cambios locales. Continúa con la versión actual."
   fi
 else
   log ""
@@ -126,7 +122,7 @@ if ! $STOW_ONLY; then
   log ""
   log "==> [1/5] Paquetes pacman..."
 
-  PACMAN_PKGS=(
+  declare -a PACMAN_PKGS=(
     hyprland hypridle hyprlock hyprpaper
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
     waybar dunst
@@ -170,11 +166,15 @@ if ! $STOW_ONLY; then
   log ""
   log "==> [2/5] Paquetes AUR..."
 
+  install_yay() {
+    run sudo pacman -S --needed --noconfirm git base-devel || return 1
+    run git clone https://aur.archlinux.org/yay.git /tmp/yay-install || return 1
+    (cd /tmp/yay-install && run makepkg -si --noconfirm) || return 1
+  }
+
   if ! command -v yay &>/dev/null; then
     info "yay no encontrado, instalando..."
-    if run bash -c "sudo pacman -S --needed --noconfirm git base-devel && \
-                    git clone https://aur.archlinux.org/yay.git /tmp/yay-install && \
-                    cd /tmp/yay-install && makepkg -si --noconfirm"; then
+    if install_yay; then
       ok "yay instalado"
     else
       fail "yay bootstrap"
@@ -182,7 +182,7 @@ if ! $STOW_ONLY; then
     fi
   fi
 
-  AUR_PKGS=(
+  declare -a AUR_PKGS=(
     grimblast-git
     google-chrome
     adw-gtk3
@@ -195,7 +195,7 @@ if ! $STOW_ONLY; then
     wlogout
   )
 
-  if run yay -S --needed --noconfirm "${AUR_PKGS[@]}"; then
+  if run yay -S --needed --noconfirm --answerdiff=None --answerclean=None "${AUR_PKGS[@]}"; then
     ok "AUR"
   else
     fail "AUR"
@@ -215,14 +215,24 @@ log "==> [3/5] Fuentes bundled..."
 FONTS_SRC="$DOTFILES/hypr/.config/hypr/hyprlock/Fonts"
 FONTS_DEST="$HOME/.local/share/fonts"
 
-if [ -d "$FONTS_SRC" ]; then
-  run mkdir -p "$FONTS_DEST"
-  run cp -rv "$FONTS_SRC/SF Pro Display/"* "$FONTS_DEST/" 2>&1 | tee -a "$LOG_FILE"
-  run cp -rv "$FONTS_SRC/JetBrains/"*      "$FONTS_DEST/" 2>&1 | tee -a "$LOG_FILE"
-  run fc-cache -fv 2>&1 | tee -a "$LOG_FILE"
-  ok "fuentes bundled"
-else
+if [ ! -d "$FONTS_SRC" ]; then
   fail "fuentes bundled (ruta no encontrada: $FONTS_SRC)"
+else
+  run mkdir -p "$FONTS_DEST"
+  fonts_ok=true
+  for font_dir in "SF Pro Display" "JetBrains"; do
+    if [ -d "$FONTS_SRC/$font_dir" ]; then
+      run cp -r "$FONTS_SRC/$font_dir/." "$FONTS_DEST/" || fonts_ok=false
+    else
+      log "  [SKIP] Fuente no encontrada en repo: $font_dir"
+    fi
+  done
+  if $fonts_ok; then
+    run fc-cache -fv
+    ok "fuentes bundled"
+  else
+    fail "fuentes bundled (algunos archivos no se copiaron)"
+  fi
 fi
 
 # -------------------------------------------------------
@@ -231,12 +241,16 @@ fi
 log ""
 log "==> [4/5] Creando symlinks con stow..."
 
-# Si se pasó --only, usar solo esos
+if ! command -v stow &>/dev/null; then
+  fail "stow no encontrado — instalar con: sudo pacman -S stow"
+  exit 1
+fi
+
 if [ ${#ONLY_MODULES[@]} -gt 0 ]; then
-  MODULES=("${ONLY_MODULES[@]}")
+  declare -a MODULES=("${ONLY_MODULES[@]}")
   info "Modo --only: ${MODULES[*]}"
 else
-  MODULES=("${ALL_MODULES[@]}")
+  declare -a MODULES=("${ALL_MODULES[@]}")
 fi
 
 stow_module() {
@@ -248,16 +262,13 @@ stow_module() {
     return
   fi
 
-  # Verificar que tiene algún contenido stoweable (.config, .local, o dotfiles en ~)
   if [ ! -d "$stow_dir/.config" ] && [ ! -d "$stow_dir/.local" ] && \
      [ -z "$(find "$stow_dir" -maxdepth 1 -name '.*' -not -name '.' | head -1)" ]; then
     fail "$module (no tiene estructura stow válida)"
     return
   fi
 
-  # Hacer backup de directorios reales que stow querría convertir en symlinks.
-  # Si el directorio target ya existe como carpeta real (no symlink), stow
-  # desciende en él en vez de crear el symlink limpio → resultado: configs mezcladas.
+  # Backup de directorios reales que stow querría convertir en symlinks
   local bak_ts
   bak_ts="$(date +%Y%m%d_%H%M%S)"
   for base in .config .local/share .local/bin; do
@@ -265,15 +276,13 @@ stow_module() {
     [ -d "$pkg_base" ] || continue
     for pkg_subdir in "$pkg_base"/*/; do
       [ -d "$pkg_subdir" ] || continue
-      local rel_subdir="${pkg_subdir#$stow_dir/}"   # ej: .config/nvim/
-      rel_subdir="${rel_subdir%/}"                   # quitar trailing slash
+      local rel_subdir="${pkg_subdir#"$stow_dir/"}"
+      rel_subdir="${rel_subdir%/}"
       local target_dir="$HOME/$rel_subdir"
-      # Si es symlink roto → eliminarlo
       if [ -L "$target_dir" ] && [ ! -e "$target_dir" ]; then
         log "  [RM-BROKEN] $target_dir (symlink roto)"
         $DRY_RUN || rm "$target_dir"
       fi
-      # Si existe como directorio real (no symlink) → moverlo a .bak
       if [ -d "$target_dir" ] && [ ! -L "$target_dir" ]; then
         log "  [BAK] $target_dir → ${target_dir}.bak.$bak_ts"
         $DRY_RUN || mv "$target_dir" "${target_dir}.bak.$bak_ts"
@@ -281,38 +290,34 @@ stow_module() {
     done
   done
 
-  # Eliminar archivos/symlinks sueltos que colisionan con lo que stow quiere crear.
-  log "  Eliminando conflictos para $module..."
+  # Eliminar archivos/symlinks que colisionan con lo que stow quiere crear
+  log "  Resolviendo conflictos para $module..."
   while IFS= read -r -d '' pkg_file; do
-    local rel="${pkg_file#$stow_dir/}"   # ej: .config/hypr/hyprland.conf
+    local rel="${pkg_file#"$stow_dir/"}"
     local target="$HOME/$rel"
-    # Archivo real → eliminar (pero NO si resuelve dentro del propio dotfiles,
-    # lo que ocurre cuando el directorio padre ya es un symlink de stow)
     if [ -f "$target" ] && [ ! -L "$target" ]; then
       local real_path
-      real_path="$(realpath "$target" 2>/dev/null)"
+      real_path="$(realpath "$target" 2>/dev/null || true)"
       if [[ "$real_path" == "$DOTFILES"* ]]; then
-        log "  [SKIP] $target (resuelve a dotfile fuente vía symlink de dir)"
+        log "  [SKIP] $target (resuelve a dotfile vía symlink de dir)"
         continue
       fi
       log "  [RM-FILE] $target"
       $DRY_RUN || rm -f "$target"
-    # Symlink no gestionado por stow (apunta a ruta relativa o ajena) → eliminar
     elif [ -L "$target" ]; then
-      local link_dest
-      link_dest="$(readlink "$target")"
-      if [[ "$link_dest" != *dotfiles* ]]; then
-        log "  [RM-LINK] $target (apuntaba a: $link_dest)"
+      local real_link
+      real_link="$(realpath "$target" 2>/dev/null || true)"
+      if [[ "$real_link" != "$DOTFILES"* ]]; then
+        log "  [RM-LINK] $target (apuntaba a: $(readlink "$target"))"
         $DRY_RUN || rm -f "$target"
       fi
     fi
   done < <(find "$stow_dir" -type f -print0)
 
-  local stow_flags="--dir=$DOTFILES --target=$HOME --verbose=2"
-  $DRY_RUN && stow_flags="$stow_flags --simulate"
+  local -a stow_flags=(--dir="$DOTFILES" --target="$HOME" --verbose=2)
+  $DRY_RUN && stow_flags+=(--simulate)
 
-  log "  Ejecutando: stow $stow_flags --restow $module"
-  if stow $stow_flags --restow "$module" 2>&1 | tee -a "$LOG_FILE"; then
+  if run stow "${stow_flags[@]}" --restow "$module"; then
     ok "$module"
   else
     fail "$module"
@@ -336,24 +341,30 @@ copy_wallpapers() {
   local dest="$2"
   local label="$3"
 
-  if [ -d "$src" ]; then
-    run mkdir -p "$dest"
-    run cp -rv "$src/"* "$dest/" 2>&1 | tee -a "$LOG_FILE"
+  if [ ! -d "$src" ]; then
+    fail "$label (no encontrado: $src)"
+    return 1
+  fi
+  run mkdir -p "$dest"
+  if run cp -r "$src/." "$dest/"; then
     ok "$label"
   else
-    fail "$label (no encontrado: $src)"
+    fail "$label (error al copiar)"
   fi
 }
 
-copy_wallpapers "$WALL_SRC/LOTR"              "$HOME/wallpapers/LOTR"              "wallpapers/LOTR"
-copy_wallpapers "$WALL_SRC/Pictures/wallpapers" "$HOME/Pictures/wallpapers"        "Pictures/wallpapers"
+copy_wallpapers "$WALL_SRC/LOTR"                 "$HOME/wallpapers/LOTR"      "wallpapers/LOTR"
+copy_wallpapers "$WALL_SRC/Pictures/wallpapers"  "$HOME/Pictures/wallpapers"  "Pictures/wallpapers"
 
 for img in profle.jpg default-no-music.jpg; do
   if [ -f "$WALL_SRC/Pictures/$img" ]; then
-    run cp -v "$WALL_SRC/Pictures/$img" "$HOME/Pictures/$img" 2>&1 | tee -a "$LOG_FILE"
-    ok "Pictures/$img"
+    if run cp "$WALL_SRC/Pictures/$img" "$HOME/Pictures/$img"; then
+      ok "Pictures/$img"
+    else
+      fail "Pictures/$img (error al copiar)"
+    fi
   else
-    fail "Pictures/$img no encontrado"
+    fail "Pictures/$img (no encontrado en repo)"
   fi
 done
 
@@ -386,8 +397,11 @@ $DRY_RUN && log "" && log " [DRY RUN] Nada fue modificado."
 
 log ""
 log " Pasos manuales pendientes:"
-log "   1. Editar ~/.config/hypr/hyprland.conf → sección MONITORS"
-log "   2. sudo sensors-detect           (temperaturas CPU en waybar)"
-log "   3. sudo systemctl enable --now NetworkManager"
-log "   4. Reiniciar sesión o ejecutar: Hyprland"
+log "   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf"
+log "      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion"
+log "   2. Hacer lo mismo en ~/.config/waybar/config"
+log "      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include"
+log "   3. sudo sensors-detect           (temperaturas CPU en waybar)"
+log "   4. sudo systemctl enable --now NetworkManager"
+log "   5. Reiniciar sesión o ejecutar: Hyprland"
 log ""

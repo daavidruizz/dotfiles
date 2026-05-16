@@ -1,0 +1,56 @@
+{
+  "custom/system": {
+    "format": " ",
+    "tooltip": false
+  },
+
+  "disk": {
+    "interval": 30,
+    "format": " / 󰗮 {percentage_used}% ",
+    "path": "/",
+    "on-click": "~/.config/waybar/system-monitor.sh"
+  },
+
+  "cpu": {
+    "format": "/   {usage}% ",
+    "on-click": "~/.config/waybar/system-monitor.sh"
+  },
+
+  "memory": {
+    "format": "/   {}% ",
+    "on-click": "~/.config/waybar/system-monitor.sh"
+  },
+
+  "custom/cpu_temp": {
+    "exec": "~/.config/waybar/cpu_temp.sh",
+    "format": "🌡️ {}°C",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "~/.config/waybar/system-monitor.sh"
+  },
+
+  "custom/nvidia_gpu": {
+    "exec": "~/.config/waybar/gpu_temp.sh",
+    "format": "🎮 {}°C",
+    "interval": 5,
+    "tooltip": false,
+    "on-click": "~/.config/waybar/system-monitor.sh"
+  },
+
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/system",
+      "disk",
+      "cpu",
+      "memory",
+      "custom/cpu_temp",
+      "custom/nvidia_gpu"
+    ]
+  }
+}

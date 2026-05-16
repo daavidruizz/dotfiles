@@ -7,38 +7,43 @@
   "passthrough": false,
   "gtk-layer-shell": true,
 
-  //LOAD MODULES
-  "include" :
-  [
-    "~/.config/waybar/modules.json" 
+  // MODULES — functional split + machine-specific override last
+  // Para MSI:    usar workspaces_msi.json
+  // Para Legion: usar workspaces_legion.json
+  "include": [
+    "~/.config/waybar/modules/workspaces.json",
+    "~/.config/waybar/modules/updates.json",
+    "~/.config/waybar/modules/system.json",
+    "~/.config/waybar/modules/network.json",
+    "~/.config/waybar/modules/audio.json",
+    "~/.config/waybar/modules/clock.json",
+    "~/.config/waybar/modules/power.json",
+    "~/.config/waybar/modules/workspaces_msi.json"
   ],
 
-  /*====MODULES ORDER====*/
-  
+  /*==== MODULES ORDER ====*/
+
   /*MODULES LEFT*/
-  "modules-left" : 
-  [
+  "modules-left": [
     "custom/archicon",
     "hyprland/workspaces",
     "custom/mail",
-   "tray"
+    "tray"
   ],
 
   /*MODULES CENTER*/
-  "modules-center" :
-  [
+  "modules-center": [
     "hyprland/window"
   ],
 
   /*MODULES RIGHT*/
-  "modules-right" :
-  [
-   "custom/updates",
-   "group/hardware",
-   "network",
-   "pulseaudio",
-   "bluetooth",
-   "clock",
-   "group/power"
+  "modules-right": [
+    "custom/updates",
+    "group/hardware",
+    "network",
+    "pulseaudio",
+    "bluetooth",
+    "clock",
+    "group/power"
   ]
 }

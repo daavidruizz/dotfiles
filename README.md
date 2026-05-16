@@ -55,63 +55,72 @@ sudo systemctl enable --now NetworkManager
 ## Estructura
 
 ```
-dotfiles/
-├── hypr/           → ~/.config/hypr/
-├── waybar/         → ~/.config/waybar/
-├── kitty/          → ~/.config/kitty/
-├── dunst/          → ~/.config/dunst/
-├── rofi/           → ~/.config/rofi/ + ~/.local/share/rofi/themes/
-├── wlogout/        → ~/.config/wlogout/
-├── nwg-dock/       → ~/.config/nwg-dock-hyprland/
-├── swayosd/        → ~/.config/swayosd/
-├── thunar/         → ~/.config/Thunar/
-├── easyeffects/    → ~/.config/easyeffects/
-├── fastfetch/      → ~/.config/fastfetch/
-├── btop/           → ~/.config/btop/
-├── gtk/            → ~/.config/{gtk-2.0,gtk-3.0,gtk-4.0,nwg-look}/
-├── nvim/           → ~/.config/nvim/
-├── vim/            → ~/.vimrc
-├── bash/           → ~/.bashrc
-├── wallpapers/     → ~/wallpapers/ + ~/Pictures/ (copia directa)
-├── install.sh
-└── PACKAGES.md
+dotfiles_modules/
+├── hypr/.config/hypr/
+│   ├── hyprland.conf              ← entry point (solo source-directives)
+│   ├── conf.d/
+│   │   ├── appearance.conf        ← general, decoration, animations, misc
+│   │   ├── autostart.conf         ← exec-once comunes
+│   │   ├── env.conf               ← variables de entorno + $terminal/$menu
+│   │   ├── input.conf             ← teclado, ratón, touchpad
+│   │   ├── keybinds.conf          ← todos los keybindings
+│   │   ├── rules.conf             ← todas las window rules
+│   │   ├── monitors_msi.conf      ← monitores MSI (2x DP 1440p@180Hz)
+│   │   ├── monitors_legion.conf   ← monitores Legion (eDP-1)
+│   │   ├── workspaces_msi.conf    ← workspaces + autostart MSI
+│   │   └── workspaces_legion.conf ← workspaces Legion
+│   ├── hypridle_msi.conf          ← idle daemon — desktop (sin brightnessctl)
+│   ├── hypridle_legion.conf       ← idle daemon — portátil (brightnessctl)
+│   ├── hyprlock.conf
+│   ├── hyprpaper.conf
+│   └── scripts/
+│
+├── waybar/.config/waybar/
+│   ├── config                     ← layout (modules-left/center/right) + includes
+│   ├── style.css
+│   └── modules/
+│       ├── audio.json             ← pulseaudio + bluetooth
+│       ├── clock.json
+│       ├── network.json
+│       ├── power.json             ← grupo power
+│       ├── system.json            ← hardware group (cpu/mem/disk/temps)
+│       ├── updates.json
+│       ├── workspaces.json        ← archicon, mail, tray, window title (genérico)
+│       ├── workspaces_msi.json    ← persistent-workspaces DP-1/DP-2
+│       └── workspaces_legion.json ← persistent-workspaces eDP-1
+│
+├── bash/.bashrc                   ← sección "MSI ONLY" marcada al final
+├── kitty/  dunst/  rofi/  nvim/   ← configs independientes, sin cambios
+└── install.sh
 ```
 
 ---
 
-## Multi-máquina
+## Multi-máquina (MSI ↔ Legion)
 
-El repo está pensado para funcionar en distintos PCs sin cambios. Lo único que varía por máquina es la configuración de monitores y workspace-monitor bindings, que va en un archivo **no commiteado**:
+Las configs machine-specific están en el repo con sufijo `_msi` / `_legion`. Para cambiar de máquina, editar dos archivos:
 
-```
-~/.config/hypr/monitors.conf
-```
+**1. `~/.config/hypr/hyprland.conf`** — comentar/descomentar:
 
-Este archivo es ignorado por git (`.gitignore`). En cada máquina creas el tuyo.
+```conf
+# MSI
+source = ~/.config/hypr/conf.d/monitors_msi.conf
+source = ~/.config/hypr/conf.d/workspaces_msi.conf
 
-**Ejemplo para setup de dos monitores:**
-
-```ini
-workspace = 1, monitor:DP-2, default:true, persistent:true
-workspace = 2, monitor:DP-2, persistent:true
-workspace = 3, monitor:DP-2, persistent:true
-workspace = 4, monitor:DP-2, persistent:true
-workspace = 5, monitor:DP-2, persistent:true
-
-workspace = 6, monitor:DP-3, default:true, persistent:true
-workspace = 7, monitor:DP-3, persistent:true
-workspace = 8, monitor:DP-3, persistent:true
-workspace = 9, monitor:DP-3, persistent:true
-workspace = 10, monitor:DP-3, persistent:true
+# Legion (descomentar estas, comentar las de arriba)
+#source = ~/.config/hypr/conf.d/monitors_legion.conf
+#source = ~/.config/hypr/conf.d/workspaces_legion.conf
 ```
 
-**Máquina con un solo monitor:** crear el archivo vacío es suficiente, los workspaces 1-5 del `hyprland.conf` base se aplican solos.
+**2. `~/.config/waybar/config`** — cambiar la última línea del `include`:
 
-```bash
-touch ~/.config/hypr/monitors.conf
+```json
+"~/.config/waybar/modules/workspaces_msi.json"
+// ó
+"~/.config/waybar/modules/workspaces_legion.json"
 ```
 
-La configuración de monitores físicos (`monitor =`) sigue estando en `hyprland.conf` — editarla a mano según el hardware.
+El `hypridle` se lanza desde el `workspaces_*.conf` de la máquina, apuntando a `hypridle_msi.conf` o `hypridle_legion.conf` automáticamente.
 
 ---
 
@@ -142,7 +151,7 @@ cd ~/dotfiles && stow foo
 git add -A && git commit -m "..." && git push
 
 # en la otra
-git pull && bash install.sh --only <modulo>
+git pull && bash install.sh --stow-only
 ```
 
 ---
