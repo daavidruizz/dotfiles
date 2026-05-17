@@ -12,9 +12,6 @@ hl.env("LIBVA_DRIVER_NAME",        "nvidia")
 hl.env("__GLX_VENDOR_LIBRARY_NAME","nvidia")
 hl.env("NVD_BACKEND",              "direct")
 
--- XDG
-hl.env("XDG_DATA_HOME", os.getenv("HOME") .. "/.local/share")
-
 -- Wayland
 hl.env("GTK_BACKEND", "wayland")
 
