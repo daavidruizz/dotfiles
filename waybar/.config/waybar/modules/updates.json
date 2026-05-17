@@ -1,6 +1,6 @@
 {
   "custom/updates": {
-    "format": "  {}",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰏗</span> {}",
     "escape": true,
     "return-type": "json",
     "exec": "~/.config/waybar/updates.sh",

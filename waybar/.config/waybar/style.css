@@ -46,7 +46,7 @@
     margin: 8px 3px;
     border-radius: 8px;
     border: none;
-    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "SF Pro Display", sans-serif;
+    font-family: "SF Pro Display", "Font Awesome 6 Free", "Font Awesome 6 Brands", "JetBrainsMono Nerd Font Mono", sans-serif;
     font-size: 15px;
     transition: all 0.3s ease;
 }

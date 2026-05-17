@@ -6,31 +6,31 @@
   },
 
   "custom/power-lock": {
-    "format": "󰌾",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰌾</span>",
     "tooltip-format": "Lock",
     "on-click": "~/.config/hypr/scripts/power.sh lock"
   },
 
   "custom/power-logout": {
-    "format": "󰍃",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰍃</span>",
     "tooltip-format": "Log Out",
     "on-click": "~/.config/hypr/scripts/power.sh exit"
   },
 
   "custom/power-suspend": {
-    "format": "󰒲",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰒲</span>",
     "tooltip-format": "Suspend",
     "on-click": "~/.config/hypr/scripts/power.sh suspend"
   },
 
   "custom/power-reboot": {
-    "format": "󰑓",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰑓</span>",
     "tooltip-format": "Restart",
     "on-click": "~/.config/hypr/scripts/power.sh reboot"
   },
 
   "custom/power-shutdown": {
-    "format": "",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'></span>",
     "tooltip-format": "Power Off",
     "on-click": "~/.config/hypr/scripts/power.sh shutdown"
   },

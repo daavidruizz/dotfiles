@@ -2,25 +2,25 @@
   "pulseaudio": {
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+    "format-bluetooth-muted": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰖁</span> {icon} {format_source}",
+    "format-muted": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰝟</span> {format_source}",
+    "format-source": "{volume}% <span font='JetBrainsMono Nerd Font Mono' size='large'>󰍬</span>",
+    "format-source-muted": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰍭</span>",
     "format-icons": {
-      "headphone": " ",
-      "headset": " ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
-      "default": ["", "", ""]
+      "headphone": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰋋</span>",
+      "headset": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰋎</span>",
+      "phone": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰏲</span>",
+      "portable": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰗅</span>",
+      "car": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰄋</span>",
+      "default": ["<span font='JetBrainsMono Nerd Font Mono' size='large'>󰕿</span>", "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰖀</span>", "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰕾</span>"]
     },
     "on-click": "pavucontrol"
   },
 
   "bluetooth": {
-    "format": "󰂯 {status}",
-    "format-connected": "󰂯 {device_alias}",
-    "format-connected-battery": "󰂯 {device_alias}",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰂯</span> {status}",
+    "format-connected": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰂯</span> {device_alias}",
+    "format-connected-battery": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰂯</span> {device_alias}",
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",

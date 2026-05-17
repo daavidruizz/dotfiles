@@ -1,23 +1,23 @@
 {
   "custom/system": {
-    "format": " ",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰍛</span>",
     "tooltip": false
   },
 
   "disk": {
     "interval": 30,
-    "format": " / 󰗮 {percentage_used}% ",
+    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰋊</span> / <span font='JetBrainsMono Nerd Font Mono' size='large'>󰗮</span> {percentage_used}%",
     "path": "/",
     "on-click": "~/.config/waybar/system-monitor.sh"
   },
 
   "cpu": {
-    "format": "/   {usage}% ",
+    "format": "/ <span font='JetBrainsMono Nerd Font Mono' size='large'>󰍛</span> {usage}%",
     "on-click": "~/.config/waybar/system-monitor.sh"
   },
 
   "memory": {
-    "format": "/   {}% ",
+    "format": "/ <span font='JetBrainsMono Nerd Font Mono' size='large'>󰑭</span> {}%",
     "on-click": "~/.config/waybar/system-monitor.sh"
   },
 

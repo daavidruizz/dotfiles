@@ -45,9 +45,9 @@ hl.window_rule({ match = { class = "sidepad" }, float = true, pin = true, center
 hl.window_rule({ match = { class = "rofi" }, opacity = "0.9 0.9" })
 
 -- Chrome PWA
-hl.window_rule({ match = { class = "^chrome-calendar\\.google\\.com" }, float = true, center = true, size = {1400, 800} })
-hl.window_rule({ match = { class = "^chrome-outlook\\.live\\.com"    }, float = true, center = true, size = {1400, 800} })
-hl.window_rule({ match = { class = "^chrome-mail\\.google\\.com"     }, float = true, center = true, size = {1400, 800} })
+hl.window_rule({ match = { class = "^chrome-calendar\\.google\\.com.*" }, float = true, center = true, size = {1400, 800} })
+hl.window_rule({ match = { class = "^chrome-outlook\\.live\\.com.*"   }, float = true, center = true, size = {1400, 800} })
+hl.window_rule({ match = { class = "^chrome-mail\\.google\\.com.*"    }, float = true, center = true, size = {1400, 800} })
 
 -- Bluetooth
 hl.window_rule({ match = { class = "bluetuith" }, float = true, center = true, size = {1200, 600}, opacity = "1.0 override" })
