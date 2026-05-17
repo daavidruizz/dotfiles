@@ -17,6 +17,7 @@
     "~/.config/waybar/modules/network.json",
     "~/.config/waybar/modules/audio.json",
     "~/.config/waybar/modules/clock.json",
+    "~/.config/waybar/modules/battery.json",
     "~/.config/waybar/modules/power.json",
     "~/.config/waybar/modules/workspaces_msi.json"
   ],
@@ -44,6 +45,7 @@
     "pulseaudio",
     "bluetooth",
     "clock",
+    "battery",
     "group/power"
   ]
 }
