@@ -1,8 +1,9 @@
 {
   "custom/power": {
     "format": "⏻",
-    "tooltip-format": "Power Off",
-    "on-click": "~/.config/hypr/scripts/power.sh shutdown"
+    "tooltip-format": "Power Off  [Click derecho: cancelar]",
+    "on-click": "~/.config/hypr/scripts/power.sh shutdown",
+    "on-click-right": "touch /tmp/.power_cancel"
   },
 
   "custom/power-lock": {
@@ -25,14 +26,16 @@
 
   "custom/power-reboot": {
     "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰑓</span>",
-    "tooltip-format": "Restart",
-    "on-click": "~/.config/hypr/scripts/power.sh reboot"
+    "tooltip-format": "Restart  [Click derecho: cancelar]",
+    "on-click": "~/.config/hypr/scripts/power.sh reboot",
+    "on-click-right": "touch /tmp/.power_cancel"
   },
 
   "custom/power-shutdown": {
     "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'></span>",
-    "tooltip-format": "Power Off",
-    "on-click": "~/.config/hypr/scripts/power.sh shutdown"
+    "tooltip-format": "Power Off  [Click derecho: cancelar]",
+    "on-click": "~/.config/hypr/scripts/power.sh shutdown",
+    "on-click-right": "touch /tmp/.power_cancel"
   },
 
   "group/power": {
