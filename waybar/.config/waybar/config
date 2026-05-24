@@ -12,6 +12,7 @@
   // Para Legion: usar workspaces_legion.json
   "include": [
     "~/.config/waybar/modules/workspaces.json",
+    "~/.config/waybar/modules/mail.json",
     "~/.config/waybar/modules/updates.json",
     "~/.config/waybar/modules/system.json",
     "~/.config/waybar/modules/network.json",

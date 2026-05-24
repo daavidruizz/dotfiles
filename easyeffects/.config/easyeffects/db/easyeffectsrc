@@ -6,11 +6,11 @@ inputDevice=alsa_input.usb-C-Media_Electronics_Inc._TONOR_TC-777_Audio_Device-00
 
 [StreamOutputs]
 mostUsedPresets=Hiphop
-outputDevice=alsa_output.pci-0000_28_00.4.analog-stereo
+outputDevice=alsa_output.pci-0000_2a_00.4.analog-stereo
 plugins=equalizer#0,autogain#0
 usedPresets=Hiphop:3
 visiblePlugin=equalizer#0
 
 [Window]
-height=682
+height=1373
 width=1265

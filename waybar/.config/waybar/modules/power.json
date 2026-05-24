@@ -7,32 +7,32 @@
   },
 
   "custom/power-lock": {
-    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰌾</span>",
+    "format": "󰌾",
     "tooltip-format": "Lock",
     "on-click": "~/.config/hypr/scripts/power.sh lock"
   },
 
   "custom/power-logout": {
-    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰍃</span>",
+    "format": "󰍃",
     "tooltip-format": "Log Out",
     "on-click": "~/.config/hypr/scripts/power.sh exit"
   },
 
   "custom/power-suspend": {
-    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰒲</span>",
+    "format": "󰤄",
     "tooltip-format": "Suspend",
     "on-click": "~/.config/hypr/scripts/power.sh suspend"
   },
 
   "custom/power-reboot": {
-    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰑓</span>",
+    "format": "",
     "tooltip-format": "Restart  [Click derecho: cancelar]",
     "on-click": "~/.config/hypr/scripts/power.sh reboot",
     "on-click-right": "touch /tmp/.power_cancel"
   },
 
   "custom/power-shutdown": {
-    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'></span>",
+    "format": "⏻",
     "tooltip-format": "Power Off  [Click derecho: cancelar]",
     "on-click": "~/.config/hypr/scripts/power.sh shutdown",
     "on-click-right": "touch /tmp/.power_cancel"

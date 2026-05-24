@@ -1,29 +1,29 @@
 {
   "custom/system": {
-    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰍛</span>",
+    "format": "",
     "tooltip": false
   },
 
   "disk": {
     "interval": 30,
-    "format": "<span font='JetBrainsMono Nerd Font Mono' size='large'>󰋊</span> / <span font='JetBrainsMono Nerd Font Mono' size='large'>󰗮</span> {percentage_used}%",
+    "format": "󰋊 {percentage_used}%",
     "path": "/",
     "on-click": "~/.config/waybar/system-monitor.sh"
   },
 
   "cpu": {
-    "format": "/ <span font='JetBrainsMono Nerd Font Mono' size='large'>󰍛</span> {usage}%",
+    "format": " {usage}%",
     "on-click": "~/.config/waybar/system-monitor.sh"
   },
 
   "memory": {
-    "format": "/ <span font='JetBrainsMono Nerd Font Mono' size='large'>󰑭</span> {}%",
+    "format": " {}%",
     "on-click": "~/.config/waybar/system-monitor.sh"
   },
 
   "custom/cpu_temp": {
     "exec": "~/.config/waybar/cpu_temp.sh",
-    "format": "🌡️ {}°C",
+    "format": " {}°C",
     "interval": 5,
     "tooltip": false,
     "on-click": "~/.config/waybar/system-monitor.sh"
@@ -31,7 +31,7 @@
 
   "custom/nvidia_gpu": {
     "exec": "~/.config/waybar/gpu_temp.sh",
-    "format": "🎮 {}°C",
+    "format": "󰢮 {}°C",
     "interval": 5,
     "tooltip": false,
     "on-click": "~/.config/waybar/system-monitor.sh"

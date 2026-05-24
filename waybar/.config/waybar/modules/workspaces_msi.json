@@ -2,8 +2,8 @@
   "hyprland/workspaces": {
     "format": "{name}",
     "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace m+1",
-    "on-scroll-down": "hyprctl dispatch workspace m-1",
+    "on-scroll-up": "'hl.dispatch(hl.dsp.focus({ workspace = \"m + 1\" }))'",
+    "on-scroll-down": "hyprctl eval 'hl.dispatch({ workspace = \"m - 1\" })'",
     "format-icons": {
       "urgent": "",
       "default": ""

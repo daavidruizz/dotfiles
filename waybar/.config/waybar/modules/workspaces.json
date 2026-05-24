@@ -1,6 +1,6 @@
 {
   "custom/archicon": {
-    "format": "  ",
+    "format": "",
     "on-click": "wofi --show drun",
     "tooltip": false
   },
@@ -16,13 +16,6 @@
     },
     "sort-by-number": true,
     "all-outputs": false
-  },
-
-  "custom/mail": {
-    "format": "  ",
-    "on-click": "google-chrome-stable --app=https://outlook.live.com/mail/0/",
-    "on-click-right": "google-chrome-stable --app=https://mail.google.com/mail/u/0/#inbox",
-    "tooltip": false
   },
 
   "tray": {

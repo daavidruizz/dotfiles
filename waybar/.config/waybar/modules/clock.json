@@ -1,6 +1,6 @@
 {
   "clock": {
-    "format": "{:%H:%M %a}",
+    "format": "{:%H:%M %a %d %b}",
     "on-click": "google-chrome-stable --app=https://calendar.google.com/calendar/u/0/r/month",
     "timezone": "",
     "tooltip": false
