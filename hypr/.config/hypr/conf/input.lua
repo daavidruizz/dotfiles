@@ -16,12 +16,18 @@ hl.config({
             natural_scroll = true,
         },
     },
-})
+})  
 
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
+--TODO TOUCHPAD SENSITIVITY
+hl.device({
+    name = "syna2b46:00-06cb:cd5f-mouse",
+    sensitivity = 1, 
+    scroll_factor = 0,
+})
 
 hl.device({
-    name          = "epic-mouse-v1",
-    accel_profile = "flat",
-    sensitivity   = -0.5,
+    name = "syna2b46:00-06cb:cd5f-touchpad",
+    sensitivity = 1, 
+    scroll_factor = 0.5,
 })

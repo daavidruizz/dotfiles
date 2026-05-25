@@ -12,7 +12,7 @@
     background: transparent;
     background-color: transparent;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
 }
 
@@ -48,7 +48,7 @@
     border-radius: 8px;
     border: none;
     font-family: "SF Pro Display", "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font Mono", sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     transition: all 0.3s ease;
 }
 

@@ -23,7 +23,7 @@ hl.config({
 		fullscreen_opacity = 1.0,
 
 		blur = {
-			enabled = true,
+			enabled = (MACHINE == MSI), --TRUE SI MSI
 			size = 4,
 			passes = 4,
 			new_optimizations = true,

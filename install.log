@@ -2269,3 +2269,157 @@ Processing tasks...
    4. sudo systemctl enable --now NetworkManager
    5. Reiniciar sesión o ejecutar: Hyprland
 
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-05-25 20:15:23
+ MODO: STOW ONLY (sin git pull ni paquetes)
+════════════════════════════════════════════════════
+
+==> [0/5] git pull... OMITIDO (--stow-only)
+
+==> [1/5] Paquetes pacman... OMITIDO (--stow-only)
+
+==> [2/5] Paquetes AUR... OMITIDO (--stow-only)
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/. /home/rzzz/.local/share/fonts/
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/. /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+Font directories:
+	/home/rzzz/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/share/fonts
+	/home/rzzz/.fonts
+	/usr/local/share/fonts
+	/home/rzzz/.local/share/fonts
+	/usr/share/fonts/Adwaita
+	/usr/share/fonts/BebasNeue-Regular
+	/usr/share/fonts/FiraCode
+	/usr/share/fonts/Fira_Sans
+	/usr/share/fonts/Material-Icons
+	/usr/share/fonts/OTF
+	/usr/share/fonts/TTF
+	/usr/share/fonts/WOFF2
+	/usr/share/fonts/cantarell
+	/usr/share/fonts/encodings
+	/usr/share/fonts/gnu-free
+	/usr/share/fonts/liberation
+	/usr/share/fonts/noto
+	/usr/local/share/fonts/j
+	/usr/local/share/fonts/u
+	/usr/share/fonts/encodings/large
+/home/rzzz/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/share/fonts: caching, new cache contents: 0 fonts, 13 dirs
+/usr/share/fonts/Adwaita: caching, new cache contents: 24 fonts, 0 dirs
+/usr/share/fonts/BebasNeue-Regular: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/FiraCode: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Fira_Sans: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Material-Icons: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/OTF: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 270 fonts, 0 dirs
+/usr/share/fonts/WOFF2: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/gnu-free: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/noto: caching, new cache contents: 622 fonts, 0 dirs
+/home/rzzz/.fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+/usr/local/share/fonts/j: caching, new cache contents: 32 fonts, 0 dirs
+/usr/local/share/fonts/u: caching, new cache contents: 14 fonts, 0 dirs
+/home/rzzz/.local/share/fonts: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/Adwaita: skipping, looped directory detected
+/usr/share/fonts/BebasNeue-Regular: skipping, looped directory detected
+/usr/share/fonts/FiraCode: skipping, looped directory detected
+/usr/share/fonts/Fira_Sans: skipping, looped directory detected
+/usr/share/fonts/Material-Icons: skipping, looped directory detected
+/usr/share/fonts/OTF: skipping, looped directory detected
+/usr/share/fonts/TTF: skipping, looped directory detected
+/usr/share/fonts/WOFF2: skipping, looped directory detected
+/usr/share/fonts/cantarell: skipping, looped directory detected
+/usr/share/fonts/encodings: skipping, looped directory detected
+/usr/share/fonts/gnu-free: skipping, looped directory detected
+/usr/share/fonts/liberation: skipping, looped directory detected
+/usr/share/fonts/noto: skipping, looped directory detected
+/usr/local/share/fonts/j: skipping, looped directory detected
+/usr/local/share/fonts/u: skipping, looped directory detected
+/usr/share/fonts/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/rzzz/.cache/fontconfig: cleaning cache directory
+/home/rzzz/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  [INFO] Modo --only: waybar
+  Resolviendo conflictos para waybar...
+  [SKIP] /home/rzzz/.config/waybar/modules/clock.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces_msi.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/network.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/audio.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/updates.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces_legion.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/power.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/battery.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/system.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/config (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/installupdates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/nm-applet.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/system-monitor.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/gpu_temp.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/cpu_temp.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/updates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/lanzador-installupdates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/networkmanager.sh (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow waybar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: waybar ...
+Planning unstow of package waybar...
+UNLINK: .config/waybar
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package waybar... done
+Planning stow of: waybar ...
+Planning stow of package waybar...
+    level of .config is 0
+    level of .config/waybar is 1
+LINK: .config/waybar => ../dotfiles/waybar/.config/waybar (reverts previous action)
+Planning stow of package waybar... done
+Processing tasks...
+  [OK]   waybar
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/LOTR
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/LOTR/. /home/rzzz/wallpapers/LOTR/
+  [OK]   wallpapers/LOTR
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/. /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-05-25 20:15:31
+════════════════════════════════════════════════════
+ Todo OK. Sin errores.
+
+ Pasos manuales pendientes:
+   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf
+      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion
+   2. Hacer lo mismo en ~/.config/waybar/config
+      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include
+   3. sudo sensors-detect           (temperaturas CPU en waybar)
+   4. sudo systemctl enable --now NetworkManager
+   5. Reiniciar sesión o ejecutar: Hyprland
+
