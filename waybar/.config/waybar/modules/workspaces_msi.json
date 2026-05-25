@@ -1,0 +1,18 @@
+{
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "on-scroll-up": "'hl.dispatch(hl.dsp.focus({ workspace = \"m + 1\" }))'",
+    "on-scroll-down": "hyprctl eval 'hl.dispatch({ workspace = \"m - 1\" })'",
+    "format-icons": {
+      "urgent": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "DP-2": [6, 7, 8, 9, 10],
+      "DP-1": [1, 2, 3, 4, 5]
+    },
+    "sort-by-number": true,
+    "all-outputs": false
+  }
+}

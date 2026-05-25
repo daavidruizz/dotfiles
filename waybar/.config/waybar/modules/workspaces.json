@@ -1,0 +1,31 @@
+{
+  "custom/archicon": {
+    "format": "",
+    "on-click": "wofi --show drun",
+    "tooltip": false
+  },
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace m+1",
+    "on-scroll-down": "hyprctl dispatch workspace m-1",
+    "format-icons": {
+      "urgent": "",
+      "default": ""
+    },
+    "sort-by-number": true,
+    "all-outputs": false
+  },
+
+  "tray": {
+    "icon-size": 10,
+    "spacing": 10
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 50,
+    "tooltip": false
+  }
+}

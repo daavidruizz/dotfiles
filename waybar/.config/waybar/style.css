@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     min-height: 0;
-    font-family: "SF Pro Display", Helvetica, Arial, sans-serif;
+    font-family: "SF Pro Display", "Symbols Nerd Font Mono", sans-serif;
     font-size: 15px;
     font-weight: 500;
     -gtk-dpi: 144;
@@ -12,7 +12,7 @@
     background: transparent;
     background-color: transparent;
     color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 0px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
 }
 
@@ -37,6 +37,7 @@
 #custom-power-suspend,
 #custom-power-reboot,
 #custom-power-shutdown,
+#battery,
 #group-power,
 #bluetooth,
 #tray {
@@ -46,8 +47,8 @@
     margin: 8px 3px;
     border-radius: 8px;
     border: none;
-    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "SF Pro Display", sans-serif;
-    font-size: 15px;
+    font-family: "SF Pro Display", "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font Mono", sans-serif;
+    font-size: 16px;
     transition: all 0.3s ease;
 }
 

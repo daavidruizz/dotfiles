@@ -34,7 +34,6 @@ terminate_clients() {
 
 		echo ":: PID $pid has terminated."
 	done
-	bash $home/.config/ml4w/listeners.sh --stopall
 }
 
 if [[ "$1" == "exit" ]]; then
@@ -51,18 +50,41 @@ if [[ "$1" == "lock" ]]; then
 	hyprlock
 fi
 
+power_countdown() {
+	local title="$1"
+	local cmd="$2"
+	local delay=5
+	local cancel_file="/tmp/.power_cancel"
+	rm -f "$cancel_file"
+
+	local notif_id
+	notif_id=$(dunstify -p -u critical -t $((delay * 1000 + 1000)) \
+		"⏻  $title" "Ejecutando en ${delay}s…  [Click derecho en el botón para cancelar]")
+
+	for i in $(seq $((delay - 1)) -1 1); do
+		sleep 1
+		if [[ -f "$cancel_file" ]]; then
+			rm -f "$cancel_file"
+			dunstify -r "$notif_id" -u low "Cancelado" "$title fue cancelado"
+			exit 0
+		fi
+		dunstify -r "$notif_id" -u critical -t $((i * 1000 + 500)) \
+			"⏻  $title" "Ejecutando en ${i}s…"
+	done
+
+	sleep 1
+	dunstify -r "$notif_id" -u critical -t 2000 "⏻  $title" "Ejecutando…"
+	eval "$cmd"
+}
+
 if [[ "$1" == "reboot" ]]; then
 	echo ":: Reboot"
-	terminate_clients
-	sleep 0.5
-	systemctl reboot
+	power_countdown "Reiniciando" "terminate_clients && sleep 0.5 && systemctl reboot"
 fi
 
 if [[ "$1" == "shutdown" ]]; then
 	echo ":: Shutdown"
-	terminate_clients
-	sleep 0.5
-	systemctl poweroff
+	power_countdown "Apagando" "terminate_clients && sleep 0.5 && systemctl poweroff"
 fi
 
 if [[ "$1" == "suspend" ]]; then
