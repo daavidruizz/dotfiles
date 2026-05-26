@@ -18,7 +18,7 @@ DRY_RUN=false
 STOW_ONLY=false
 declare -a ONLY_MODULES=()
 declare -a FAILED=()
-declare -a ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt)
+declare -a ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout hyprshutdown thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt)
 
 # -------------------------------------------------------
 # Menú interactivo (solo si no se pasan argumentos)
@@ -36,25 +36,25 @@ if [[ $# -eq 0 ]]; then
   read -rp "Opción [1-3]: " menu_opt
 
   case "$menu_opt" in
-    1) ;;
-    2) STOW_ONLY=true ;;
-    3)
-      echo ""
-      echo "Módulos disponibles:"
-      echo "  ${ALL_MODULES[*]}"
-      echo ""
-      read -rp "Módulo: " menu_module
-      if [[ -z "$menu_module" ]]; then
-        echo "No se especificó módulo. Saliendo."
-        exit 1
-      fi
-      STOW_ONLY=true
-      ONLY_MODULES=("$menu_module")
-      ;;
-    *)
-      echo "Opción no válida. Saliendo."
+  1) ;;
+  2) STOW_ONLY=true ;;
+  3)
+    echo ""
+    echo "Módulos disponibles:"
+    echo "  ${ALL_MODULES[*]}"
+    echo ""
+    read -rp "Módulo: " menu_module
+    if [[ -z "$menu_module" ]]; then
+      echo "No se especificó módulo. Saliendo."
       exit 1
-      ;;
+    fi
+    STOW_ONLY=true
+    ONLY_MODULES=("$menu_module")
+    ;;
+  *)
+    echo "Opción no válida. Saliendo."
+    exit 1
+    ;;
   esac
 fi
 
@@ -63,19 +63,37 @@ fi
 # -------------------------------------------------------
 while [[ $# -gt 0 ]]; do
   case "$1" in
-    --dry-run)   DRY_RUN=true;  shift ;;
-    --stow-only) STOW_ONLY=true; shift ;;
-    --only) shift; while [[ $# -gt 0 && "$1" != --* ]]; do ONLY_MODULES+=("$1"); shift; done ;;
-    *) echo "Argumento desconocido: $1"; exit 1 ;;
+  --dry-run)
+    DRY_RUN=true
+    shift
+    ;;
+  --stow-only)
+    STOW_ONLY=true
+    shift
+    ;;
+  --only)
+    shift
+    while [[ $# -gt 0 && "$1" != --* ]]; do
+      ONLY_MODULES+=("$1")
+      shift
+    done
+    ;;
+  *)
+    echo "Argumento desconocido: $1"
+    exit 1
+    ;;
   esac
 done
 
 # -------------------------------------------------------
 # Helpers
 # -------------------------------------------------------
-log()  { echo "$1" | tee -a "$LOG_FILE"; }
-ok()   { log "  [OK]   $1"; }
-fail() { log "  [FAIL] $1"; FAILED+=("$1"); }
+log() { echo "$1" | tee -a "$LOG_FILE"; }
+ok() { log "  [OK]   $1"; }
+fail() {
+  log "  [FAIL] $1"
+  FAILED+=("$1")
+}
 skip() { log "  [SKIP] $1"; }
 info() { log "  [INFO] $1"; }
 
@@ -95,7 +113,7 @@ log ""
 log "════════════════════════════════════════════════════"
 log " Hyprland Dotfiles - Instalador (stow)"
 log " $(date '+%Y-%m-%d %H:%M:%S')"
-$DRY_RUN   && log " MODO: DRY RUN"
+$DRY_RUN && log " MODO: DRY RUN"
 $STOW_ONLY && log " MODO: STOW ONLY (sin git pull ni paquetes)"
 log "════════════════════════════════════════════════════"
 
@@ -262,8 +280,8 @@ stow_module() {
     return
   fi
 
-  if [ ! -d "$stow_dir/.config" ] && [ ! -d "$stow_dir/.local" ] && \
-     [ -z "$(find "$stow_dir" -maxdepth 1 -name '.*' -not -name '.' | head -1)" ]; then
+  if [ ! -d "$stow_dir/.config" ] && [ ! -d "$stow_dir/.local" ] &&
+    [ -z "$(find "$stow_dir" -maxdepth 1 -name '.*' -not -name '.' | head -1)" ]; then
     fail "$module (no tiene estructura stow válida)"
     return
   fi
@@ -353,8 +371,8 @@ copy_wallpapers() {
   fi
 }
 
-copy_wallpapers "$WALL_SRC/LOTR"                 "$HOME/wallpapers/LOTR"      "wallpapers/LOTR"
-copy_wallpapers "$WALL_SRC/Pictures/wallpapers"  "$HOME/Pictures/wallpapers"  "Pictures/wallpapers"
+copy_wallpapers "$WALL_SRC/LOTR" "$HOME/wallpapers/LOTR" "wallpapers/LOTR"
+copy_wallpapers "$WALL_SRC/Pictures/wallpapers" "$HOME/Pictures/wallpapers" "Pictures/wallpapers"
 
 for img in profle.jpg default-no-music.jpg; do
   if [ -f "$WALL_SRC/Pictures/$img" ]; then

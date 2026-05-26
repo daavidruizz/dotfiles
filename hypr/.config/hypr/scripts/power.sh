@@ -37,11 +37,7 @@ terminate_clients() {
 }
 
 if [[ "$1" == "exit" ]]; then
-	echo ":: Exit"
-	terminate_clients
-	sleep 0.5
-	hyprctl dispatch exit
-	sleep 2
+	hyprshutdown -t 'Logging out...' --post-cmd 'hyprctl dispatch exit'
 fi
 
 if [[ "$1" == "lock" ]]; then
@@ -59,38 +55,40 @@ power_countdown() {
 
 	local notif_id
 	notif_id=$(dunstify -p -u critical -t $((delay * 1000 + 1000)) \
-		"⏻  $title" "Ejecutando en ${delay}s…  [Click derecho en el botón para cancelar]")
+		"⏻  $title" "Executing in ${delay}s…  [Right click on the button to cancel]")
 
 	for i in $(seq $((delay - 1)) -1 1); do
 		sleep 1
 		if [[ -f "$cancel_file" ]]; then
 			rm -f "$cancel_file"
-			dunstify -r "$notif_id" -u low "Cancelado" "$title fue cancelado"
+			dunstify -r "$notif_id" -u low "Cancelled" "$title was cancelled"
 			exit 0
 		fi
 		dunstify -r "$notif_id" -u critical -t $((i * 1000 + 500)) \
-			"⏻  $title" "Ejecutando en ${i}s…"
+			"⏻  $title" "Executing in ${i}s…"
 	done
 
 	sleep 1
-	dunstify -r "$notif_id" -u critical -t 2000 "⏻  $title" "Ejecutando…"
+	dunstify -r "$notif_id" -u critical -t 2000 "⏻  $title" "Executing…"
 	eval "$cmd"
 }
 
 if [[ "$1" == "reboot" ]]; then
 	echo ":: Reboot"
-	power_countdown "Reiniciando" "terminate_clients && sleep 0.5 && systemctl reboot"
+	power_countdown "Rebooting" "hyprshutdown -t 'Rebooting...' --post-cmd 'systemctl reboot'
+"
 fi
 
 if [[ "$1" == "shutdown" ]]; then
 	echo ":: Shutdown"
-	power_countdown "Apagando" "terminate_clients && sleep 0.5 && systemctl poweroff"
+	power_countdown "Shutting down" "hyprshutdown -t 'Shutting down...' --post-cmd 'systemctl poweroff'
+"
 fi
 
 if [[ "$1" == "suspend" ]]; then
 	echo ":: Suspend"
 	sleep 0.5
-	systemctl suspend
+	hyprlock & systemctl suspend
 fi
 
 if [[ "$1" == "hibernate" ]]; then
