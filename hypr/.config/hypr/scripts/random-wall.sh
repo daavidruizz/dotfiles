@@ -1,5 +1,5 @@
 #!/bin/bash
-WALLPAPER_DIR="$HOME/wallpapers/LOTR"
+WALLPAPER_DIR="$HOME/wallpapers/random"
 RANDOM_WALL="$WALLPAPER_DIR/$(ls "$WALLPAPER_DIR" | grep -iE '\.(jpg|jpeg|png|webp)$' | shuf -n 1)"
 
 pkill hyprpaper 2>/dev/null

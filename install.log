@@ -2423,3 +2423,2100 @@ Processing tasks...
    4. sudo systemctl enable --now NetworkManager
    5. Reiniciar sesión o ejecutar: Hyprland
 
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-05-26 21:15:30
+ MODO: STOW ONLY (sin git pull ni paquetes)
+════════════════════════════════════════════════════
+
+==> [0/5] git pull... OMITIDO (--stow-only)
+
+==> [1/5] Paquetes pacman... OMITIDO (--stow-only)
+
+==> [2/5] Paquetes AUR... OMITIDO (--stow-only)
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/. /home/rzzz/.local/share/fonts/
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/. /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+Font directories:
+	/home/rzzz/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/share/fonts
+	/home/rzzz/.fonts
+	/usr/local/share/fonts
+	/home/rzzz/.local/share/fonts
+	/usr/share/fonts/Adwaita
+	/usr/share/fonts/BebasNeue-Regular
+	/usr/share/fonts/FiraCode
+	/usr/share/fonts/Fira_Sans
+	/usr/share/fonts/Material-Icons
+	/usr/share/fonts/OTF
+	/usr/share/fonts/TTF
+	/usr/share/fonts/WOFF2
+	/usr/share/fonts/cantarell
+	/usr/share/fonts/encodings
+	/usr/share/fonts/gnu-free
+	/usr/share/fonts/liberation
+	/usr/share/fonts/noto
+	/usr/local/share/fonts/j
+	/usr/local/share/fonts/u
+	/usr/share/fonts/encodings/large
+/home/rzzz/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/share/fonts: caching, new cache contents: 0 fonts, 13 dirs
+/usr/share/fonts/Adwaita: caching, new cache contents: 24 fonts, 0 dirs
+/usr/share/fonts/BebasNeue-Regular: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/FiraCode: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Fira_Sans: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Material-Icons: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/OTF: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 270 fonts, 0 dirs
+/usr/share/fonts/WOFF2: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/gnu-free: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/noto: caching, new cache contents: 622 fonts, 0 dirs
+/home/rzzz/.fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+/usr/local/share/fonts/j: caching, new cache contents: 32 fonts, 0 dirs
+/usr/local/share/fonts/u: caching, new cache contents: 14 fonts, 0 dirs
+/home/rzzz/.local/share/fonts: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/Adwaita: skipping, looped directory detected
+/usr/share/fonts/BebasNeue-Regular: skipping, looped directory detected
+/usr/share/fonts/FiraCode: skipping, looped directory detected
+/usr/share/fonts/Fira_Sans: skipping, looped directory detected
+/usr/share/fonts/Material-Icons: skipping, looped directory detected
+/usr/share/fonts/OTF: skipping, looped directory detected
+/usr/share/fonts/TTF: skipping, looped directory detected
+/usr/share/fonts/WOFF2: skipping, looped directory detected
+/usr/share/fonts/cantarell: skipping, looped directory detected
+/usr/share/fonts/encodings: skipping, looped directory detected
+/usr/share/fonts/gnu-free: skipping, looped directory detected
+/usr/share/fonts/liberation: skipping, looped directory detected
+/usr/share/fonts/noto: skipping, looped directory detected
+/usr/local/share/fonts/j: skipping, looped directory detected
+/usr/local/share/fonts/u: skipping, looped directory detected
+/usr/share/fonts/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/rzzz/.cache/fontconfig: cleaning cache directory
+/home/rzzz/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  Resolviendo conflictos para hypr...
+  [SKIP] /home/rzzz/.config/hypr/hyprland.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hypridle.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprpaper.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/workspaces_msi.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/monitors_default.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/rules.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/input.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/monitors_msi.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/monitors_legion.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/appearance.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/keybinds.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/workspaces_legion.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/autostart.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/workspaces_default.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/env.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/.luarc.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/settings/installupdates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/songdetail.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/screenshot-simple.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/random-wall.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/system-monitor.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/sidepad.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/updates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/songcover.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/toggle_tv.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/random-wall-video.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/screenshot.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/power.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprland.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/Scripts/songdetail.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/hyprlock.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/hyprlock.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/vivek.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hypridle_legion.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/env.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprland_b.conf (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow hypr
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: hypr ...
+Planning unstow of package hypr...
+UNLINK: .config/hypr
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package hypr... done
+Planning stow of: hypr ...
+Planning stow of package hypr...
+    level of .config is 0
+    level of .config/hypr is 1
+LINK: .config/hypr => ../dotfiles/hypr/.config/hypr (reverts previous action)
+Planning stow of package hypr... done
+Processing tasks...
+  [OK]   hypr
+  Resolviendo conflictos para waybar...
+  [SKIP] /home/rzzz/.config/waybar/modules/clock.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces_msi.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/mail.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/network.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/audio.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/updates.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces_legion.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/power.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/battery.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/system.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/config (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/installupdates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/nm-applet.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/system-monitor.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/gpu_temp.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/cpu_temp.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/updates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/lanzador-installupdates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/networkmanager.sh (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow waybar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: waybar ...
+Planning unstow of package waybar...
+UNLINK: .config/waybar
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package waybar... done
+Planning stow of: waybar ...
+Planning stow of package waybar...
+    level of .config is 0
+    level of .config/waybar is 1
+LINK: .config/waybar => ../dotfiles/waybar/.config/waybar (reverts previous action)
+Planning stow of package waybar... done
+Processing tasks...
+  [OK]   waybar
+  Resolviendo conflictos para dunst...
+  [SKIP] /home/rzzz/.config/dunst/dunstrc (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow dunst
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: dunst ...
+Planning unstow of package dunst...
+UNLINK: .config/dunst
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package dunst... done
+Planning stow of: dunst ...
+Planning stow of package dunst...
+    level of .config is 0
+    level of .config/dunst is 1
+LINK: .config/dunst => ../dotfiles/dunst/.config/dunst (reverts previous action)
+Planning stow of package dunst... done
+Processing tasks...
+  [OK]   dunst
+  Resolviendo conflictos para rofi...
+  [SKIP] /home/rzzz/.config/rofi/template/rounded-template.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/rofi/template/rounded-nord-dark.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/rofi/launchpad.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/rofi/config.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.local/share/rofi/themes/launchpad.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.local/share/rofi/themes/rounded-nord-dark.rasi (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow rofi
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: rofi ...
+Planning unstow of package rofi...
+UNLINK: .config/rofi
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+UNLINK: .local/share/rofi
+Cleaning up any invalid links in .local/share (pwd=/home/rzzz)
+Cleaning up any invalid links in .local (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package rofi... done
+Planning stow of: rofi ...
+Planning stow of package rofi...
+    level of .config is 0
+    level of .config/rofi is 1
+LINK: .config/rofi => ../dotfiles/rofi/.config/rofi (reverts previous action)
+    level of .local is 0
+    level of .local/share is 1
+    level of .local/share/rofi is 2
+LINK: .local/share/rofi => ../../dotfiles/rofi/.local/share/rofi (reverts previous action)
+Planning stow of package rofi... done
+Processing tasks...
+  [OK]   rofi
+  Resolviendo conflictos para nwg-dock...
+  [SKIP] /home/rzzz/.config/nwg-dock-hyprland/themes/glass/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nwg-dock-hyprland/config (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nwg-dock-hyprland/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nwg-dock-hyprland/colors.css (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow nwg-dock
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: nwg-dock ...
+Planning unstow of package nwg-dock...
+UNLINK: .config/nwg-dock-hyprland
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package nwg-dock... done
+Planning stow of: nwg-dock ...
+Planning stow of package nwg-dock...
+    level of .config is 0
+    level of .config/nwg-dock-hyprland is 1
+LINK: .config/nwg-dock-hyprland => ../dotfiles/nwg-dock/.config/nwg-dock-hyprland (reverts previous action)
+Planning stow of package nwg-dock... done
+Processing tasks...
+  [OK]   nwg-dock
+  Resolviendo conflictos para kitty...
+  [SKIP] /home/rzzz/.config/kitty/themes/Japanesque.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SoftServer.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Github.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Relaxed_Afterglow.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Lavandula.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Dumbledore.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Dark_Higher_Contrast.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow_Night_Bright.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Dark_-_Patched.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Novel.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/AtelierSulphurpool.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Renault_Style.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Chalk.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Parasio_Dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow_Night.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ayu.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/JetBrains_Darcula.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tango_Light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Wombat.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/CLRS.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Urple.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Arthur.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/LiquidCarbonTransparentInverse.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ayu_light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Cobalt_Neon.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Neutron.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Broadcast.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Chalkboard.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/FrontEndDelight.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/3024_Night.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Glacier.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Molokai.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Fideloper.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Bright_Lights.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Ubuntu.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Material.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro_(Filter_Ristretto).conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Renault_Style_Light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro_(Filter_Octagon).conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Classic.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/LiquidCarbon.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Duotone_Dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow_Night_Blue.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Rippedcasts.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Blazer.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Dark_Pastel.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ENCOM.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/WildCherry.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/DotGov.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/MonaLisa.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Borland.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Shaman.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Elemental.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Spacedust.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/PencilDark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Spiderman.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Darcula.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/OneDark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Earthsong.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Smyck.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ToyChest.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/gruvbox_light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Red_Alert.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Misterioso.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/VibrantInk.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Ocean.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/AdventureTime.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ayu_mirage.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/WarmNeon.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/IC_Green_PPL.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Twilight.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Afterglow.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/FishTank.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/DimmedMonokai.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Sundried.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Seafoam_Pastel.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/idleToes.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Symfonic.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Desert.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SpaceGray_Eighties.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tango_Dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Kibble.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro_(Filter_Machine).conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Spring.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Jackie_Brown.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Apprentice.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Brogrammer.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Wez.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/OceanicMaterial.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Batman.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Argonaut.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Royal.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Belafonte_Night.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SeaShells.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Thayer_Bright.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Galaxy.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Square.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Atom.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Jellybeans.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Later_This_Evening.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Alucard.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Belafonte_Day.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Man_Page.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/NightLion_v2.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Ollie.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/C64.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/PencilLight.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Source_Code_X.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro_(Filter_Spectrum).conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Hurtado.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Seti.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Hipster_Green.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/AlienBlood.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/CrayonPonyFish.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Vaughn.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/PaulMillr.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Cobalt2.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow_Night_Eighties.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Hardcore.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Zenburn.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/NightLion_v1.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/BirdsOfParadise.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Harper.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Highway.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Wryan.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Teerb.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/GoaBase.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Grass.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Treehouse.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Pro.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Espresso.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/gruvbox_dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/IC_Orange_PPL.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Hybrid.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SpaceGray.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Darkside.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Dracula.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Medallion.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/LiquidCarbonTransparent.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/MaterialDark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/N0tch2k.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/snazzy.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Slate.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Obsidian.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Pnevma.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Nova.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Neopolitan.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/3024_Day.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Ciapre.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/The_Hulk.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Red_Sands.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Grape.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Mathias.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Flatland.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Piatto_Light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Espresso_Libre.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/IR_Black.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/FunForrest.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Flat.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Homebrew.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SpaceGray_Eighties_Dull.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Soda.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Floraverse.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/AtomOneLight.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/default.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/theme.conf.default (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/kitty.conf (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow kitty
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: kitty ...
+Planning unstow of package kitty...
+UNLINK: .config/kitty
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package kitty... done
+Planning stow of: kitty ...
+Planning stow of package kitty...
+    level of .config is 0
+    level of .config/kitty is 1
+LINK: .config/kitty => ../dotfiles/kitty/.config/kitty (reverts previous action)
+Planning stow of package kitty... done
+Processing tasks...
+  [OK]   kitty
+  Resolviendo conflictos para wlogout...
+  [SKIP] /home/rzzz/.config/wlogout/layout (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/colors.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/suspend.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/logout.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/hibernate.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/shutdown.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/lock.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/reboot.png (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow wlogout
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: wlogout ...
+Planning unstow of package wlogout...
+UNLINK: .config/wlogout
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package wlogout... done
+Planning stow of: wlogout ...
+Planning stow of package wlogout...
+    level of .config is 0
+    level of .config/wlogout is 1
+LINK: .config/wlogout => ../dotfiles/wlogout/.config/wlogout (reverts previous action)
+Planning stow of package wlogout... done
+Processing tasks...
+  [OK]   wlogout
+  [SKIP] hyprshutdown (directorio no encontrado: /home/rzzz/dotfiles/hyprshutdown)
+  Resolviendo conflictos para thunar...
+  [SKIP] /home/rzzz/.config/Thunar/accels.scm (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/Thunar/uca.xml (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow thunar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: thunar ...
+Planning unstow of package thunar...
+UNLINK: .config/Thunar
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package thunar... done
+Planning stow of: thunar ...
+Planning stow of package thunar...
+    level of .config is 0
+    level of .config/Thunar is 1
+LINK: .config/Thunar => ../dotfiles/thunar/.config/Thunar (reverts previous action)
+Planning stow of package thunar... done
+Processing tasks...
+  [OK]   thunar
+  Resolviendo conflictos para easyeffects...
+  [SKIP] /home/rzzz/.config/easyeffects/db/bassEnhancerrc (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/easyeffects/db/equalizerrc (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/easyeffects/db/autogainrc (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/easyeffects/db/easyeffectsrc (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow easyeffects
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: easyeffects ...
+Planning unstow of package easyeffects...
+UNLINK: .config/easyeffects
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package easyeffects... done
+Planning stow of: easyeffects ...
+Planning stow of package easyeffects...
+    level of .config is 0
+    level of .config/easyeffects is 1
+LINK: .config/easyeffects => ../dotfiles/easyeffects/.config/easyeffects (reverts previous action)
+Planning stow of package easyeffects... done
+Processing tasks...
+  [OK]   easyeffects
+  Resolviendo conflictos para fastfetch...
+  [SKIP] /home/rzzz/.config/fastfetch/config.jsonc (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow fastfetch
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: fastfetch ...
+Planning unstow of package fastfetch...
+UNLINK: .config/fastfetch
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package fastfetch... done
+Planning stow of: fastfetch ...
+Planning stow of package fastfetch...
+    level of .config is 0
+    level of .config/fastfetch is 1
+LINK: .config/fastfetch => ../dotfiles/fastfetch/.config/fastfetch (reverts previous action)
+Planning stow of package fastfetch... done
+Processing tasks...
+  [OK]   fastfetch
+  Resolviendo conflictos para btop...
+  [SKIP] /home/rzzz/.config/btop/btop.conf (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow btop
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: btop ...
+Planning unstow of package btop...
+UNLINK: .config/btop
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package btop... done
+Planning stow of: btop ...
+Planning stow of package btop...
+    level of .config is 0
+    level of .config/btop is 1
+LINK: .config/btop => ../dotfiles/btop/.config/btop (reverts previous action)
+Planning stow of package btop... done
+Processing tasks...
+  [OK]   btop
+  Resolviendo conflictos para gtk...
+  [SKIP] /home/rzzz/.config/nwg-look/config (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-4.0/settings.ini (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-4.0/colors.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/settings.ini (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/gtk.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/colors.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/bookmarks (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-2.0/gtkfilechooser.ini (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow gtk
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: gtk ...
+Planning unstow of package gtk...
+UNLINK: .config/gtk-2.0
+UNLINK: .config/gtk-3.0
+UNLINK: .config/gtk-4.0
+UNLINK: .config/nwg-look
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package gtk... done
+Planning stow of: gtk ...
+Planning stow of package gtk...
+    level of .config is 0
+    level of .config/gtk-2.0 is 1
+LINK: .config/gtk-2.0 => ../dotfiles/gtk/.config/gtk-2.0 (reverts previous action)
+    level of .config/gtk-3.0 is 1
+LINK: .config/gtk-3.0 => ../dotfiles/gtk/.config/gtk-3.0 (reverts previous action)
+    level of .config/gtk-4.0 is 1
+LINK: .config/gtk-4.0 => ../dotfiles/gtk/.config/gtk-4.0 (reverts previous action)
+    level of .config/nwg-look is 1
+LINK: .config/nwg-look => ../dotfiles/gtk/.config/nwg-look (reverts previous action)
+Planning stow of package gtk... done
+Processing tasks...
+  [OK]   gtk
+  Resolviendo conflictos para nvim...
+  [SKIP] /home/rzzz/.config/nvim/lazy-lock.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/README.md (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lazyvim.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/init.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/LICENSE (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/stylua.toml (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/plugins/example.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/plugins/neotree.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/config/options.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/config/keymaps.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/config/autocmds.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/config/lazy.lua (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow nvim
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: nvim ...
+Planning unstow of package nvim...
+UNLINK: .config/nvim
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package nvim... done
+Planning stow of: nvim ...
+Planning stow of package nvim...
+    level of .config is 0
+    level of .config/nvim is 1
+LINK: .config/nvim => ../dotfiles/nvim/.config/nvim (reverts previous action)
+Planning stow of package nvim... done
+Processing tasks...
+  [OK]   nvim
+  Resolviendo conflictos para swayosd...
+  [SKIP] /home/rzzz/.config/swayosd/style.css (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow swayosd
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: swayosd ...
+Planning unstow of package swayosd...
+UNLINK: .config/swayosd
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package swayosd... done
+Planning stow of: swayosd ...
+Planning stow of package swayosd...
+    level of .config is 0
+    level of .config/swayosd is 1
+LINK: .config/swayosd => ../dotfiles/swayosd/.config/swayosd (reverts previous action)
+Planning stow of package swayosd... done
+Processing tasks...
+  [OK]   swayosd
+  Resolviendo conflictos para vim...
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow vim
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: vim ...
+Planning unstow of package vim...
+UNLINK: .vimrc
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package vim... done
+Planning stow of: vim ...
+Planning stow of package vim...
+    level of .vimrc is 0
+LINK: .vimrc => dotfiles/vim/.vimrc (reverts previous action)
+Planning stow of package vim... done
+Processing tasks...
+  [OK]   vim
+  Resolviendo conflictos para bash...
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow bash
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: bash ...
+Planning unstow of package bash...
+UNLINK: .bashrc
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package bash... done
+Planning stow of: bash ...
+Planning stow of package bash...
+    level of .bashrc is 0
+LINK: .bashrc => dotfiles/bash/.bashrc (reverts previous action)
+Planning stow of package bash... done
+Processing tasks...
+  [OK]   bash
+  Resolviendo conflictos para qt...
+  [SKIP] /home/rzzz/.config/kvantum/kvantum.kvconfig (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/qt5ct/qt5ct.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/qt6ct/qt6ct.conf (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow qt
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: qt ...
+Planning unstow of package qt...
+UNLINK: .config/kvantum
+UNLINK: .config/qt5ct
+UNLINK: .config/qt6ct
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package qt... done
+Planning stow of: qt ...
+Planning stow of package qt...
+    level of .config is 0
+    level of .config/kvantum is 1
+LINK: .config/kvantum => ../dotfiles/qt/.config/kvantum (reverts previous action)
+    level of .config/qt5ct is 1
+LINK: .config/qt5ct => ../dotfiles/qt/.config/qt5ct (reverts previous action)
+    level of .config/qt6ct is 1
+LINK: .config/qt6ct => ../dotfiles/qt/.config/qt6ct (reverts previous action)
+Planning stow of package qt... done
+Processing tasks...
+  [OK]   qt
+
+==> [5/5] Wallpapers...
+  [FAIL] wallpapers/random (no encontrado: /home/rzzz/dotfiles/wallpapers/deftault)
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/. /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-05-26 21:15:39
+════════════════════════════════════════════════════
+ Fallos detectados (1):
+   ✗ wallpapers/random (no encontrado: /home/rzzz/dotfiles/wallpapers/deftault)
+
+ Para re-ejecutar un módulo:
+   cd /home/rzzz/dotfiles && stow --restow --verbose=2 <modulo>
+
+ Log completo: /home/rzzz/dotfiles/install.log
+
+ Pasos manuales pendientes:
+   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf
+      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion
+   2. Hacer lo mismo en ~/.config/waybar/config
+      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include
+   3. sudo sensors-detect           (temperaturas CPU en waybar)
+   4. sudo systemctl enable --now NetworkManager
+   5. Reiniciar sesión o ejecutar: Hyprland
+
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-05-26 21:18:06
+ MODO: STOW ONLY (sin git pull ni paquetes)
+════════════════════════════════════════════════════
+
+==> [0/5] git pull... OMITIDO (--stow-only)
+
+==> [1/5] Paquetes pacman... OMITIDO (--stow-only)
+
+==> [2/5] Paquetes AUR... OMITIDO (--stow-only)
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/. /home/rzzz/.local/share/fonts/
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/. /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+Font directories:
+	/home/rzzz/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/share/fonts
+	/home/rzzz/.fonts
+	/usr/local/share/fonts
+	/home/rzzz/.local/share/fonts
+	/usr/share/fonts/Adwaita
+	/usr/share/fonts/BebasNeue-Regular
+	/usr/share/fonts/FiraCode
+	/usr/share/fonts/Fira_Sans
+	/usr/share/fonts/Material-Icons
+	/usr/share/fonts/OTF
+	/usr/share/fonts/TTF
+	/usr/share/fonts/WOFF2
+	/usr/share/fonts/cantarell
+	/usr/share/fonts/encodings
+	/usr/share/fonts/gnu-free
+	/usr/share/fonts/liberation
+	/usr/share/fonts/noto
+	/usr/local/share/fonts/j
+	/usr/local/share/fonts/u
+	/usr/share/fonts/encodings/large
+/home/rzzz/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/share/fonts: caching, new cache contents: 0 fonts, 13 dirs
+/usr/share/fonts/Adwaita: caching, new cache contents: 24 fonts, 0 dirs
+/usr/share/fonts/BebasNeue-Regular: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/FiraCode: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Fira_Sans: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Material-Icons: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/OTF: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 270 fonts, 0 dirs
+/usr/share/fonts/WOFF2: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/gnu-free: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/noto: caching, new cache contents: 622 fonts, 0 dirs
+/home/rzzz/.fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+/usr/local/share/fonts/j: caching, new cache contents: 32 fonts, 0 dirs
+/usr/local/share/fonts/u: caching, new cache contents: 14 fonts, 0 dirs
+/home/rzzz/.local/share/fonts: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/Adwaita: skipping, looped directory detected
+/usr/share/fonts/BebasNeue-Regular: skipping, looped directory detected
+/usr/share/fonts/FiraCode: skipping, looped directory detected
+/usr/share/fonts/Fira_Sans: skipping, looped directory detected
+/usr/share/fonts/Material-Icons: skipping, looped directory detected
+/usr/share/fonts/OTF: skipping, looped directory detected
+/usr/share/fonts/TTF: skipping, looped directory detected
+/usr/share/fonts/WOFF2: skipping, looped directory detected
+/usr/share/fonts/cantarell: skipping, looped directory detected
+/usr/share/fonts/encodings: skipping, looped directory detected
+/usr/share/fonts/gnu-free: skipping, looped directory detected
+/usr/share/fonts/liberation: skipping, looped directory detected
+/usr/share/fonts/noto: skipping, looped directory detected
+/usr/local/share/fonts/j: skipping, looped directory detected
+/usr/local/share/fonts/u: skipping, looped directory detected
+/usr/share/fonts/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/rzzz/.cache/fontconfig: cleaning cache directory
+/home/rzzz/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  Resolviendo conflictos para hypr...
+  [SKIP] /home/rzzz/.config/hypr/hyprland.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hypridle.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprpaper.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/workspaces_msi.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/monitors_default.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/rules.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/input.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/monitors_msi.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/monitors_legion.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/appearance.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/keybinds.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/workspaces_legion.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/autostart.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/workspaces_default.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/conf/env.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/.luarc.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/settings/installupdates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/songdetail.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/screenshot-simple.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/random-wall.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/system-monitor.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/sidepad.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/updates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/songcover.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/toggle_tv.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/random-wall-video.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/screenshot.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/scripts/power.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprland.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/Scripts/songdetail.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/hyprlock.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Bold.otf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/Fonts/SF Pro Display/SF Pro Display Regular.otf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/Fonts/JetBrains/JetBrains Mono Nerd.ttf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/hyprlock.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprlock/vivek.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hypridle_legion.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/env.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/hypr/hyprland_b.conf (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow hypr
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: hypr ...
+Planning unstow of package hypr...
+UNLINK: .config/hypr
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package hypr... done
+Planning stow of: hypr ...
+Planning stow of package hypr...
+    level of .config is 0
+    level of .config/hypr is 1
+LINK: .config/hypr => ../dotfiles/hypr/.config/hypr (reverts previous action)
+Planning stow of package hypr... done
+Processing tasks...
+  [OK]   hypr
+  Resolviendo conflictos para waybar...
+  [SKIP] /home/rzzz/.config/waybar/modules/clock.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces_msi.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/mail.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/network.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/audio.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/updates.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/workspaces_legion.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/power.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/battery.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/modules/system.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/config (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/installupdates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/nm-applet.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/system-monitor.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/gpu_temp.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/cpu_temp.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/updates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/lanzador-installupdates.sh (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/waybar/networkmanager.sh (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow waybar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: waybar ...
+Planning unstow of package waybar...
+UNLINK: .config/waybar
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package waybar... done
+Planning stow of: waybar ...
+Planning stow of package waybar...
+    level of .config is 0
+    level of .config/waybar is 1
+LINK: .config/waybar => ../dotfiles/waybar/.config/waybar (reverts previous action)
+Planning stow of package waybar... done
+Processing tasks...
+  [OK]   waybar
+  Resolviendo conflictos para dunst...
+  [SKIP] /home/rzzz/.config/dunst/dunstrc (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow dunst
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: dunst ...
+Planning unstow of package dunst...
+UNLINK: .config/dunst
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package dunst... done
+Planning stow of: dunst ...
+Planning stow of package dunst...
+    level of .config is 0
+    level of .config/dunst is 1
+LINK: .config/dunst => ../dotfiles/dunst/.config/dunst (reverts previous action)
+Planning stow of package dunst... done
+Processing tasks...
+  [OK]   dunst
+  Resolviendo conflictos para rofi...
+  [SKIP] /home/rzzz/.config/rofi/template/rounded-template.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/rofi/template/rounded-nord-dark.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/rofi/launchpad.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/rofi/config.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.local/share/rofi/themes/launchpad.rasi (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.local/share/rofi/themes/rounded-nord-dark.rasi (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow rofi
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: rofi ...
+Planning unstow of package rofi...
+UNLINK: .config/rofi
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+UNLINK: .local/share/rofi
+Cleaning up any invalid links in .local/share (pwd=/home/rzzz)
+Cleaning up any invalid links in .local (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package rofi... done
+Planning stow of: rofi ...
+Planning stow of package rofi...
+    level of .config is 0
+    level of .config/rofi is 1
+LINK: .config/rofi => ../dotfiles/rofi/.config/rofi (reverts previous action)
+    level of .local is 0
+    level of .local/share is 1
+    level of .local/share/rofi is 2
+LINK: .local/share/rofi => ../../dotfiles/rofi/.local/share/rofi (reverts previous action)
+Planning stow of package rofi... done
+Processing tasks...
+  [OK]   rofi
+  Resolviendo conflictos para nwg-dock...
+  [SKIP] /home/rzzz/.config/nwg-dock-hyprland/themes/glass/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nwg-dock-hyprland/config (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nwg-dock-hyprland/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nwg-dock-hyprland/colors.css (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow nwg-dock
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: nwg-dock ...
+Planning unstow of package nwg-dock...
+UNLINK: .config/nwg-dock-hyprland
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package nwg-dock... done
+Planning stow of: nwg-dock ...
+Planning stow of package nwg-dock...
+    level of .config is 0
+    level of .config/nwg-dock-hyprland is 1
+LINK: .config/nwg-dock-hyprland => ../dotfiles/nwg-dock/.config/nwg-dock-hyprland (reverts previous action)
+Planning stow of package nwg-dock... done
+Processing tasks...
+  [OK]   nwg-dock
+  Resolviendo conflictos para kitty...
+  [SKIP] /home/rzzz/.config/kitty/themes/Japanesque.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SoftServer.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Github.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Relaxed_Afterglow.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Lavandula.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Dumbledore.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Dark_Higher_Contrast.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow_Night_Bright.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Dark_-_Patched.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Novel.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/AtelierSulphurpool.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Renault_Style.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Chalk.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Parasio_Dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow_Night.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ayu.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/JetBrains_Darcula.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tango_Light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Wombat.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/CLRS.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Urple.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Arthur.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/LiquidCarbonTransparentInverse.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ayu_light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Cobalt_Neon.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Neutron.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Broadcast.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Chalkboard.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/FrontEndDelight.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/3024_Night.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Glacier.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Molokai.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Fideloper.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Bright_Lights.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Ubuntu.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Material.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro_(Filter_Ristretto).conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Renault_Style_Light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro_(Filter_Octagon).conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Classic.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/LiquidCarbon.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Duotone_Dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow_Night_Blue.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Rippedcasts.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Blazer.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Dark_Pastel.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ENCOM.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/WildCherry.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/DotGov.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/MonaLisa.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Borland.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Shaman.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Elemental.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Spacedust.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/PencilDark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Spiderman.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Darcula.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/OneDark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Earthsong.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Smyck.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ToyChest.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/gruvbox_light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Red_Alert.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Misterioso.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/VibrantInk.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Ocean.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/AdventureTime.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/ayu_mirage.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/WarmNeon.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/IC_Green_PPL.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Twilight.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Afterglow.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/FishTank.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/DimmedMonokai.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Sundried.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Seafoam_Pastel.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/idleToes.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Symfonic.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Desert.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SpaceGray_Eighties.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tango_Dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Kibble.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro_(Filter_Machine).conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Spring.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Jackie_Brown.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Apprentice.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Brogrammer.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Wez.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/OceanicMaterial.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Batman.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Argonaut.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Royal.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Belafonte_Night.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Solarized_Light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SeaShells.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Thayer_Bright.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Galaxy.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Square.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Atom.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Jellybeans.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Later_This_Evening.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Alucard.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Belafonte_Day.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Man_Page.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/NightLion_v2.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Ollie.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/C64.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/PencilLight.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Source_Code_X.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Pro_(Filter_Spectrum).conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Hurtado.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Seti.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Hipster_Green.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/AlienBlood.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/CrayonPonyFish.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Vaughn.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/PaulMillr.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Cobalt2.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Tomorrow_Night_Eighties.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Hardcore.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Zenburn.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/NightLion_v1.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/BirdsOfParadise.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Harper.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Highway.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Wryan.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Teerb.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/GoaBase.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Grass.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Treehouse.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Pro.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Espresso.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/gruvbox_dark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/IC_Orange_PPL.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Hybrid.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SpaceGray.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Darkside.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Dracula.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Medallion.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/LiquidCarbonTransparent.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/MaterialDark.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/N0tch2k.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/snazzy.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Slate.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Obsidian.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Pnevma.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Nova.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Neopolitan.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/3024_Day.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Ciapre.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/The_Hulk.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Red_Sands.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Grape.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Mathias.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Flatland.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Piatto_Light.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Espresso_Libre.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/IR_Black.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/FunForrest.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Flat.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Homebrew.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/SpaceGray_Eighties_Dull.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Monokai_Soda.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/Floraverse.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/AtomOneLight.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/themes/default.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/theme.conf.default (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/kitty/kitty.conf (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow kitty
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: kitty ...
+Planning unstow of package kitty...
+UNLINK: .config/kitty
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package kitty... done
+Planning stow of: kitty ...
+Planning stow of package kitty...
+    level of .config is 0
+    level of .config/kitty is 1
+LINK: .config/kitty => ../dotfiles/kitty/.config/kitty (reverts previous action)
+Planning stow of package kitty... done
+Processing tasks...
+  [OK]   kitty
+  Resolviendo conflictos para wlogout...
+  [SKIP] /home/rzzz/.config/wlogout/layout (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/style.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/colors.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/suspend.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/logout.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/hibernate.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/shutdown.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/lock.png (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/wlogout/icons/reboot.png (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow wlogout
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: wlogout ...
+Planning unstow of package wlogout...
+UNLINK: .config/wlogout
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package wlogout... done
+Planning stow of: wlogout ...
+Planning stow of package wlogout...
+    level of .config is 0
+    level of .config/wlogout is 1
+LINK: .config/wlogout => ../dotfiles/wlogout/.config/wlogout (reverts previous action)
+Planning stow of package wlogout... done
+Processing tasks...
+  [OK]   wlogout
+  [SKIP] hyprshutdown (directorio no encontrado: /home/rzzz/dotfiles/hyprshutdown)
+  Resolviendo conflictos para thunar...
+  [SKIP] /home/rzzz/.config/Thunar/accels.scm (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/Thunar/uca.xml (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow thunar
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: thunar ...
+Planning unstow of package thunar...
+UNLINK: .config/Thunar
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package thunar... done
+Planning stow of: thunar ...
+Planning stow of package thunar...
+    level of .config is 0
+    level of .config/Thunar is 1
+LINK: .config/Thunar => ../dotfiles/thunar/.config/Thunar (reverts previous action)
+Planning stow of package thunar... done
+Processing tasks...
+  [OK]   thunar
+  Resolviendo conflictos para easyeffects...
+  [SKIP] /home/rzzz/.config/easyeffects/db/bassEnhancerrc (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/easyeffects/db/equalizerrc (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/easyeffects/db/autogainrc (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/easyeffects/db/easyeffectsrc (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow easyeffects
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: easyeffects ...
+Planning unstow of package easyeffects...
+UNLINK: .config/easyeffects
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package easyeffects... done
+Planning stow of: easyeffects ...
+Planning stow of package easyeffects...
+    level of .config is 0
+    level of .config/easyeffects is 1
+LINK: .config/easyeffects => ../dotfiles/easyeffects/.config/easyeffects (reverts previous action)
+Planning stow of package easyeffects... done
+Processing tasks...
+  [OK]   easyeffects
+  Resolviendo conflictos para fastfetch...
+  [SKIP] /home/rzzz/.config/fastfetch/config.jsonc (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow fastfetch
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: fastfetch ...
+Planning unstow of package fastfetch...
+UNLINK: .config/fastfetch
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package fastfetch... done
+Planning stow of: fastfetch ...
+Planning stow of package fastfetch...
+    level of .config is 0
+    level of .config/fastfetch is 1
+LINK: .config/fastfetch => ../dotfiles/fastfetch/.config/fastfetch (reverts previous action)
+Planning stow of package fastfetch... done
+Processing tasks...
+  [OK]   fastfetch
+  Resolviendo conflictos para btop...
+  [SKIP] /home/rzzz/.config/btop/btop.conf (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow btop
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: btop ...
+Planning unstow of package btop...
+UNLINK: .config/btop
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package btop... done
+Planning stow of: btop ...
+Planning stow of package btop...
+    level of .config is 0
+    level of .config/btop is 1
+LINK: .config/btop => ../dotfiles/btop/.config/btop (reverts previous action)
+Planning stow of package btop... done
+Processing tasks...
+  [OK]   btop
+  Resolviendo conflictos para gtk...
+  [SKIP] /home/rzzz/.config/nwg-look/config (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-4.0/settings.ini (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-4.0/colors.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/settings.ini (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/gtk.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/colors.css (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/bookmarks (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-backdrop-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-backdrop-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/minimize-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-active.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximized-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-hover.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/close-backdrop-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-3.0/assets/maximize-backdrop-normal.svg (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/gtk-2.0/gtkfilechooser.ini (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow gtk
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: gtk ...
+Planning unstow of package gtk...
+UNLINK: .config/gtk-2.0
+UNLINK: .config/gtk-3.0
+UNLINK: .config/gtk-4.0
+UNLINK: .config/nwg-look
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package gtk... done
+Planning stow of: gtk ...
+Planning stow of package gtk...
+    level of .config is 0
+    level of .config/gtk-2.0 is 1
+LINK: .config/gtk-2.0 => ../dotfiles/gtk/.config/gtk-2.0 (reverts previous action)
+    level of .config/gtk-3.0 is 1
+LINK: .config/gtk-3.0 => ../dotfiles/gtk/.config/gtk-3.0 (reverts previous action)
+    level of .config/gtk-4.0 is 1
+LINK: .config/gtk-4.0 => ../dotfiles/gtk/.config/gtk-4.0 (reverts previous action)
+    level of .config/nwg-look is 1
+LINK: .config/nwg-look => ../dotfiles/gtk/.config/nwg-look (reverts previous action)
+Planning stow of package gtk... done
+Processing tasks...
+  [OK]   gtk
+  Resolviendo conflictos para nvim...
+  [SKIP] /home/rzzz/.config/nvim/lazy-lock.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/README.md (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lazyvim.json (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/init.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/LICENSE (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/stylua.toml (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/plugins/example.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/plugins/neotree.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/config/options.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/config/keymaps.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/config/autocmds.lua (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/nvim/lua/config/lazy.lua (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow nvim
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: nvim ...
+Planning unstow of package nvim...
+UNLINK: .config/nvim
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package nvim... done
+Planning stow of: nvim ...
+Planning stow of package nvim...
+    level of .config is 0
+    level of .config/nvim is 1
+LINK: .config/nvim => ../dotfiles/nvim/.config/nvim (reverts previous action)
+Planning stow of package nvim... done
+Processing tasks...
+  [OK]   nvim
+  Resolviendo conflictos para swayosd...
+  [SKIP] /home/rzzz/.config/swayosd/style.css (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow swayosd
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: swayosd ...
+Planning unstow of package swayosd...
+UNLINK: .config/swayosd
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package swayosd... done
+Planning stow of: swayosd ...
+Planning stow of package swayosd...
+    level of .config is 0
+    level of .config/swayosd is 1
+LINK: .config/swayosd => ../dotfiles/swayosd/.config/swayosd (reverts previous action)
+Planning stow of package swayosd... done
+Processing tasks...
+  [OK]   swayosd
+  Resolviendo conflictos para vim...
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow vim
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: vim ...
+Planning unstow of package vim...
+UNLINK: .vimrc
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package vim... done
+Planning stow of: vim ...
+Planning stow of package vim...
+    level of .vimrc is 0
+LINK: .vimrc => dotfiles/vim/.vimrc (reverts previous action)
+Planning stow of package vim... done
+Processing tasks...
+  [OK]   vim
+  Resolviendo conflictos para bash...
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow bash
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: bash ...
+Planning unstow of package bash...
+UNLINK: .bashrc
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package bash... done
+Planning stow of: bash ...
+Planning stow of package bash...
+    level of .bashrc is 0
+LINK: .bashrc => dotfiles/bash/.bashrc (reverts previous action)
+Planning stow of package bash... done
+Processing tasks...
+  [OK]   bash
+  Resolviendo conflictos para qt...
+  [SKIP] /home/rzzz/.config/kvantum/kvantum.kvconfig (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/qt5ct/qt5ct.conf (resuelve a dotfile vía symlink de dir)
+  [SKIP] /home/rzzz/.config/qt6ct/qt6ct.conf (resuelve a dotfile vía symlink de dir)
+  CMD: stow --dir=/home/rzzz/dotfiles --target=/home/rzzz --verbose=2 --restow qt
+stow dir is /home/rzzz/dotfiles
+stow dir path relative to target /home/rzzz is dotfiles
+Planning unstow of: qt ...
+Planning unstow of package qt...
+UNLINK: .config/kvantum
+UNLINK: .config/qt5ct
+UNLINK: .config/qt6ct
+Cleaning up any invalid links in .config (pwd=/home/rzzz)
+Cleaning up any invalid links in . (pwd=/home/rzzz)
+Planning unstow of package qt... done
+Planning stow of: qt ...
+Planning stow of package qt...
+    level of .config is 0
+    level of .config/kvantum is 1
+LINK: .config/kvantum => ../dotfiles/qt/.config/kvantum (reverts previous action)
+    level of .config/qt5ct is 1
+LINK: .config/qt5ct => ../dotfiles/qt/.config/qt5ct (reverts previous action)
+    level of .config/qt6ct is 1
+LINK: .config/qt6ct => ../dotfiles/qt/.config/qt6ct (reverts previous action)
+Planning stow of package qt... done
+Processing tasks...
+  [OK]   qt
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/random
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/default/. /home/rzzz/wallpapers/random/
+  [OK]   wallpapers/random
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/. /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-05-26 21:18:13
+════════════════════════════════════════════════════
+ Todo OK. Sin errores.
+
+ Pasos manuales pendientes:
+   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf
+      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion
+   2. Hacer lo mismo en ~/.config/waybar/config
+      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include
+   3. sudo sensors-detect           (temperaturas CPU en waybar)
+   4. sudo systemctl enable --now NetworkManager
+   5. Reiniciar sesión o ejecutar: Hyprland
+
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-05-26 21:45:31
+ MODO: STOW ONLY (sin git pull ni paquetes)
+════════════════════════════════════════════════════
+
+==> [0/5] git pull... OMITIDO (--stow-only)
+
+==> [1/5] Paquetes pacman... OMITIDO (--stow-only)
+
+==> [2/5] Paquetes AUR... OMITIDO (--stow-only)
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/. /home/rzzz/.local/share/fonts/
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/. /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+Font directories:
+	/home/rzzz/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/share/fonts
+	/home/rzzz/.fonts
+	/usr/local/share/fonts
+	/home/rzzz/.local/share/fonts
+	/usr/share/fonts/Adwaita
+	/usr/share/fonts/BebasNeue-Regular
+	/usr/share/fonts/FiraCode
+	/usr/share/fonts/Fira_Sans
+	/usr/share/fonts/Material-Icons
+	/usr/share/fonts/OTF
+	/usr/share/fonts/TTF
+	/usr/share/fonts/WOFF2
+	/usr/share/fonts/cantarell
+	/usr/share/fonts/encodings
+	/usr/share/fonts/gnu-free
+	/usr/share/fonts/liberation
+	/usr/share/fonts/noto
+	/usr/local/share/fonts/j
+	/usr/local/share/fonts/u
+	/usr/share/fonts/encodings/large
+/home/rzzz/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/share/fonts: caching, new cache contents: 0 fonts, 13 dirs
+/usr/share/fonts/Adwaita: caching, new cache contents: 24 fonts, 0 dirs
+/usr/share/fonts/BebasNeue-Regular: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/FiraCode: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Fira_Sans: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Material-Icons: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/OTF: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 270 fonts, 0 dirs
+/usr/share/fonts/WOFF2: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/gnu-free: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/noto: caching, new cache contents: 622 fonts, 0 dirs
+/home/rzzz/.fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+/usr/local/share/fonts/j: caching, new cache contents: 32 fonts, 0 dirs
+/usr/local/share/fonts/u: caching, new cache contents: 14 fonts, 0 dirs
+/home/rzzz/.local/share/fonts: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/Adwaita: skipping, looped directory detected
+/usr/share/fonts/BebasNeue-Regular: skipping, looped directory detected
+/usr/share/fonts/FiraCode: skipping, looped directory detected
+/usr/share/fonts/Fira_Sans: skipping, looped directory detected
+/usr/share/fonts/Material-Icons: skipping, looped directory detected
+/usr/share/fonts/OTF: skipping, looped directory detected
+/usr/share/fonts/TTF: skipping, looped directory detected
+/usr/share/fonts/WOFF2: skipping, looped directory detected
+/usr/share/fonts/cantarell: skipping, looped directory detected
+/usr/share/fonts/encodings: skipping, looped directory detected
+/usr/share/fonts/gnu-free: skipping, looped directory detected
+/usr/share/fonts/liberation: skipping, looped directory detected
+/usr/share/fonts/noto: skipping, looped directory detected
+/usr/local/share/fonts/j: skipping, looped directory detected
+/usr/local/share/fonts/u: skipping, looped directory detected
+/usr/share/fonts/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/rzzz/.cache/fontconfig: cleaning cache directory
+/home/rzzz/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  [INFO] Modo --only: hyprshutdown
+  [SKIP] hyprshutdown (directorio no encontrado: /home/rzzz/dotfiles/hyprshutdown)
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/random
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/default/. /home/rzzz/wallpapers/random/
+  [OK]   wallpapers/random
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/. /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+==> FONTS...
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-05-26 21:45:34
+════════════════════════════════════════════════════
+ Todo OK. Sin errores.
+
+ Pasos manuales pendientes:
+   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf
+      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion
+   2. Hacer lo mismo en ~/.config/waybar/config
+      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include
+   3. sudo sensors-detect           (temperaturas CPU en waybar)
+   4. sudo systemctl enable --now NetworkManager
+   5. Reiniciar sesión o ejecutar: Hyprland
+
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-05-26 21:46:13
+ MODO: STOW ONLY (sin git pull ni paquetes)
+════════════════════════════════════════════════════
+
+==> [0/5] git pull... OMITIDO (--stow-only)
+
+==> [1/5] Paquetes pacman... OMITIDO (--stow-only)
+
+==> [2/5] Paquetes AUR... OMITIDO (--stow-only)
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/. /home/rzzz/.local/share/fonts/
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/. /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+Font directories:
+	/home/rzzz/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/share/fonts
+	/home/rzzz/.fonts
+	/usr/local/share/fonts
+	/home/rzzz/.local/share/fonts
+	/usr/share/fonts/Adwaita
+	/usr/share/fonts/BebasNeue-Regular
+	/usr/share/fonts/FiraCode
+	/usr/share/fonts/Fira_Sans
+	/usr/share/fonts/Material-Icons
+	/usr/share/fonts/OTF
+	/usr/share/fonts/TTF
+	/usr/share/fonts/WOFF2
+	/usr/share/fonts/cantarell
+	/usr/share/fonts/encodings
+	/usr/share/fonts/gnu-free
+	/usr/share/fonts/liberation
+	/usr/share/fonts/noto
+	/usr/local/share/fonts/j
+	/usr/local/share/fonts/u
+	/usr/share/fonts/encodings/large
+/home/rzzz/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/share/fonts: caching, new cache contents: 0 fonts, 13 dirs
+/usr/share/fonts/Adwaita: caching, new cache contents: 24 fonts, 0 dirs
+/usr/share/fonts/BebasNeue-Regular: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/FiraCode: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Fira_Sans: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Material-Icons: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/OTF: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 270 fonts, 0 dirs
+/usr/share/fonts/WOFF2: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/gnu-free: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/noto: caching, new cache contents: 622 fonts, 0 dirs
+/home/rzzz/.fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+/usr/local/share/fonts/j: caching, new cache contents: 32 fonts, 0 dirs
+/usr/local/share/fonts/u: caching, new cache contents: 14 fonts, 0 dirs
+/home/rzzz/.local/share/fonts: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/Adwaita: skipping, looped directory detected
+/usr/share/fonts/BebasNeue-Regular: skipping, looped directory detected
+/usr/share/fonts/FiraCode: skipping, looped directory detected
+/usr/share/fonts/Fira_Sans: skipping, looped directory detected
+/usr/share/fonts/Material-Icons: skipping, looped directory detected
+/usr/share/fonts/OTF: skipping, looped directory detected
+/usr/share/fonts/TTF: skipping, looped directory detected
+/usr/share/fonts/WOFF2: skipping, looped directory detected
+/usr/share/fonts/cantarell: skipping, looped directory detected
+/usr/share/fonts/encodings: skipping, looped directory detected
+/usr/share/fonts/gnu-free: skipping, looped directory detected
+/usr/share/fonts/liberation: skipping, looped directory detected
+/usr/share/fonts/noto: skipping, looped directory detected
+/usr/local/share/fonts/j: skipping, looped directory detected
+/usr/local/share/fonts/u: skipping, looped directory detected
+/usr/share/fonts/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/rzzz/.cache/fontconfig: cleaning cache directory
+/home/rzzz/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  [INFO] Modo --only: hyprshutdown
+  [SKIP] hyprshutdown (directorio no encontrado: /home/rzzz/dotfiles/hyprshutdown)
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/random
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/default/. /home/rzzz/wallpapers/random/
+  [OK]   wallpapers/random
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/. /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+==> FONTS...
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-05-26 21:46:16
+════════════════════════════════════════════════════
+ Todo OK. Sin errores.
+
+ Pasos manuales pendientes:
+   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf
+      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion
+   2. Hacer lo mismo en ~/.config/waybar/config
+      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include
+   3. sudo sensors-detect           (temperaturas CPU en waybar)
+   4. sudo systemctl enable --now NetworkManager
+   5. Reiniciar sesión o ejecutar: Hyprland
+
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-05-26 21:49:27
+ MODO: STOW ONLY (sin git pull ni paquetes)
+════════════════════════════════════════════════════
+
+==> [0/5] git pull... OMITIDO (--stow-only)
+
+==> [1/5] Paquetes pacman... OMITIDO (--stow-only)
+
+==> [2/5] Paquetes AUR... OMITIDO (--stow-only)
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/. /home/rzzz/.local/share/fonts/
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/. /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+Font directories:
+	/home/rzzz/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/share/fonts
+	/home/rzzz/.fonts
+	/usr/local/share/fonts
+	/home/rzzz/.local/share/fonts
+	/usr/share/fonts/Adwaita
+	/usr/share/fonts/BebasNeue-Regular
+	/usr/share/fonts/FiraCode
+	/usr/share/fonts/Fira_Sans
+	/usr/share/fonts/Material-Icons
+	/usr/share/fonts/OTF
+	/usr/share/fonts/TTF
+	/usr/share/fonts/WOFF2
+	/usr/share/fonts/cantarell
+	/usr/share/fonts/encodings
+	/usr/share/fonts/gnu-free
+	/usr/share/fonts/liberation
+	/usr/share/fonts/noto
+	/usr/local/share/fonts/j
+	/usr/local/share/fonts/u
+	/usr/share/fonts/encodings/large
+/home/rzzz/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/share/fonts: caching, new cache contents: 0 fonts, 13 dirs
+/usr/share/fonts/Adwaita: caching, new cache contents: 24 fonts, 0 dirs
+/usr/share/fonts/BebasNeue-Regular: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/FiraCode: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Fira_Sans: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Material-Icons: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/OTF: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 270 fonts, 0 dirs
+/usr/share/fonts/WOFF2: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/gnu-free: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/noto: caching, new cache contents: 622 fonts, 0 dirs
+/home/rzzz/.fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+/usr/local/share/fonts/j: caching, new cache contents: 32 fonts, 0 dirs
+/usr/local/share/fonts/u: caching, new cache contents: 14 fonts, 0 dirs
+/home/rzzz/.local/share/fonts: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/Adwaita: skipping, looped directory detected
+/usr/share/fonts/BebasNeue-Regular: skipping, looped directory detected
+/usr/share/fonts/FiraCode: skipping, looped directory detected
+/usr/share/fonts/Fira_Sans: skipping, looped directory detected
+/usr/share/fonts/Material-Icons: skipping, looped directory detected
+/usr/share/fonts/OTF: skipping, looped directory detected
+/usr/share/fonts/TTF: skipping, looped directory detected
+/usr/share/fonts/WOFF2: skipping, looped directory detected
+/usr/share/fonts/cantarell: skipping, looped directory detected
+/usr/share/fonts/encodings: skipping, looped directory detected
+/usr/share/fonts/gnu-free: skipping, looped directory detected
+/usr/share/fonts/liberation: skipping, looped directory detected
+/usr/share/fonts/noto: skipping, looped directory detected
+/usr/local/share/fonts/j: skipping, looped directory detected
+/usr/local/share/fonts/u: skipping, looped directory detected
+/usr/share/fonts/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/rzzz/.cache/fontconfig: cleaning cache directory
+/home/rzzz/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  [INFO] Modo --only: hyprshutdown
+  [SKIP] hyprshutdown (directorio no encontrado: /home/rzzz/dotfiles/hyprshutdown)
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/random
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/default/. /home/rzzz/wallpapers/random/
+  [OK]   wallpapers/random
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/. /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+==> FONTS...
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-05-26 21:49:30
+════════════════════════════════════════════════════
+ Todo OK. Sin errores.
+
+ Pasos manuales pendientes:
+   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf
+      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion
+   2. Hacer lo mismo en ~/.config/waybar/config
+      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include
+   3. sudo sensors-detect           (temperaturas CPU en waybar)
+   4. sudo systemctl enable --now NetworkManager
+   5. Reiniciar sesión o ejecutar: Hyprland
+
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-05-26 21:49:53
+ MODO: STOW ONLY (sin git pull ni paquetes)
+════════════════════════════════════════════════════
+
+==> [0/5] git pull... OMITIDO (--stow-only)
+
+==> [1/5] Paquetes pacman... OMITIDO (--stow-only)
+
+==> [2/5] Paquetes AUR... OMITIDO (--stow-only)
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/. /home/rzzz/.local/share/fonts/
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/. /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+Font directories:
+	/home/rzzz/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/share/fonts
+	/home/rzzz/.fonts
+	/usr/local/share/fonts
+	/home/rzzz/.local/share/fonts
+	/usr/share/fonts/Adwaita
+	/usr/share/fonts/BebasNeue-Regular
+	/usr/share/fonts/FiraCode
+	/usr/share/fonts/Fira_Sans
+	/usr/share/fonts/Material-Icons
+	/usr/share/fonts/OTF
+	/usr/share/fonts/TTF
+	/usr/share/fonts/WOFF2
+	/usr/share/fonts/cantarell
+	/usr/share/fonts/encodings
+	/usr/share/fonts/gnu-free
+	/usr/share/fonts/liberation
+	/usr/share/fonts/noto
+	/usr/local/share/fonts/j
+	/usr/local/share/fonts/u
+	/usr/share/fonts/encodings/large
+/home/rzzz/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/share/fonts: caching, new cache contents: 0 fonts, 13 dirs
+/usr/share/fonts/Adwaita: caching, new cache contents: 24 fonts, 0 dirs
+/usr/share/fonts/BebasNeue-Regular: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/FiraCode: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Fira_Sans: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Material-Icons: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/OTF: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 270 fonts, 0 dirs
+/usr/share/fonts/WOFF2: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/gnu-free: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/noto: caching, new cache contents: 622 fonts, 0 dirs
+/home/rzzz/.fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+/usr/local/share/fonts/j: caching, new cache contents: 32 fonts, 0 dirs
+/usr/local/share/fonts/u: caching, new cache contents: 14 fonts, 0 dirs
+/home/rzzz/.local/share/fonts: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/Adwaita: skipping, looped directory detected
+/usr/share/fonts/BebasNeue-Regular: skipping, looped directory detected
+/usr/share/fonts/FiraCode: skipping, looped directory detected
+/usr/share/fonts/Fira_Sans: skipping, looped directory detected
+/usr/share/fonts/Material-Icons: skipping, looped directory detected
+/usr/share/fonts/OTF: skipping, looped directory detected
+/usr/share/fonts/TTF: skipping, looped directory detected
+/usr/share/fonts/WOFF2: skipping, looped directory detected
+/usr/share/fonts/cantarell: skipping, looped directory detected
+/usr/share/fonts/encodings: skipping, looped directory detected
+/usr/share/fonts/gnu-free: skipping, looped directory detected
+/usr/share/fonts/liberation: skipping, looped directory detected
+/usr/share/fonts/noto: skipping, looped directory detected
+/usr/local/share/fonts/j: skipping, looped directory detected
+/usr/local/share/fonts/u: skipping, looped directory detected
+/usr/share/fonts/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/rzzz/.cache/fontconfig: cleaning cache directory
+/home/rzzz/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  [INFO] Modo --only: hyprshutdown
+  [SKIP] hyprshutdown (directorio no encontrado: /home/rzzz/dotfiles/hyprshutdown)
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/random
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/default/. /home/rzzz/wallpapers/random/
+  [OK]   wallpapers/random
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/. /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+==> FONTS...
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-05-26 21:49:56
+════════════════════════════════════════════════════
+ Todo OK. Sin errores.
+
+ Pasos manuales pendientes:
+   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf
+      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion
+   2. Hacer lo mismo en ~/.config/waybar/config
+      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include
+   3. sudo sensors-detect           (temperaturas CPU en waybar)
+   4. sudo systemctl enable --now NetworkManager
+   5. Reiniciar sesión o ejecutar: Hyprland
+
+
+════════════════════════════════════════════════════
+ Hyprland Dotfiles - Instalador (stow)
+ 2026-05-26 22:26:45
+ MODO: STOW ONLY (sin git pull ni paquetes)
+════════════════════════════════════════════════════
+
+==> [0/5] git pull... OMITIDO (--stow-only)
+
+==> [1/5] Paquetes pacman... OMITIDO (--stow-only)
+
+==> [2/5] Paquetes AUR... OMITIDO (--stow-only)
+
+==> [3/5] Fuentes bundled...
+  CMD: mkdir -p /home/rzzz/.local/share/fonts
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/SF Pro Display/. /home/rzzz/.local/share/fonts/
+  CMD: cp -r /home/rzzz/dotfiles/hypr/.config/hypr/hyprlock/Fonts/JetBrains/. /home/rzzz/.local/share/fonts/
+  CMD: fc-cache -fv
+Font directories:
+	/home/rzzz/.local/share/flatpak/exports/share/fonts
+	/var/lib/flatpak/exports/share/fonts
+	/usr/share/fonts
+	/home/rzzz/.fonts
+	/usr/local/share/fonts
+	/home/rzzz/.local/share/fonts
+	/usr/share/fonts/Adwaita
+	/usr/share/fonts/BebasNeue-Regular
+	/usr/share/fonts/FiraCode
+	/usr/share/fonts/Fira_Sans
+	/usr/share/fonts/Material-Icons
+	/usr/share/fonts/OTF
+	/usr/share/fonts/TTF
+	/usr/share/fonts/WOFF2
+	/usr/share/fonts/cantarell
+	/usr/share/fonts/encodings
+	/usr/share/fonts/gnu-free
+	/usr/share/fonts/liberation
+	/usr/share/fonts/noto
+	/usr/local/share/fonts/j
+	/usr/local/share/fonts/u
+	/usr/share/fonts/encodings/large
+/home/rzzz/.local/share/flatpak/exports/share/fonts: skipping, no such directory
+/var/lib/flatpak/exports/share/fonts: skipping, no such directory
+/usr/share/fonts: caching, new cache contents: 0 fonts, 13 dirs
+/usr/share/fonts/Adwaita: caching, new cache contents: 24 fonts, 0 dirs
+/usr/share/fonts/BebasNeue-Regular: caching, new cache contents: 1 fonts, 0 dirs
+/usr/share/fonts/FiraCode: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Fira_Sans: caching, new cache contents: 18 fonts, 0 dirs
+/usr/share/fonts/Material-Icons: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/OTF: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/TTF: caching, new cache contents: 270 fonts, 0 dirs
+/usr/share/fonts/WOFF2: caching, new cache contents: 4 fonts, 0 dirs
+/usr/share/fonts/cantarell: caching, new cache contents: 6 fonts, 0 dirs
+/usr/share/fonts/encodings: caching, new cache contents: 0 fonts, 1 dirs
+/usr/share/fonts/encodings/large: caching, new cache contents: 0 fonts, 0 dirs
+/usr/share/fonts/gnu-free: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/liberation: caching, new cache contents: 12 fonts, 0 dirs
+/usr/share/fonts/noto: caching, new cache contents: 622 fonts, 0 dirs
+/home/rzzz/.fonts: skipping, no such directory
+/usr/local/share/fonts: caching, new cache contents: 0 fonts, 2 dirs
+/usr/local/share/fonts/j: caching, new cache contents: 32 fonts, 0 dirs
+/usr/local/share/fonts/u: caching, new cache contents: 14 fonts, 0 dirs
+/home/rzzz/.local/share/fonts: caching, new cache contents: 3 fonts, 0 dirs
+/usr/share/fonts/Adwaita: skipping, looped directory detected
+/usr/share/fonts/BebasNeue-Regular: skipping, looped directory detected
+/usr/share/fonts/FiraCode: skipping, looped directory detected
+/usr/share/fonts/Fira_Sans: skipping, looped directory detected
+/usr/share/fonts/Material-Icons: skipping, looped directory detected
+/usr/share/fonts/OTF: skipping, looped directory detected
+/usr/share/fonts/TTF: skipping, looped directory detected
+/usr/share/fonts/WOFF2: skipping, looped directory detected
+/usr/share/fonts/cantarell: skipping, looped directory detected
+/usr/share/fonts/encodings: skipping, looped directory detected
+/usr/share/fonts/gnu-free: skipping, looped directory detected
+/usr/share/fonts/liberation: skipping, looped directory detected
+/usr/share/fonts/noto: skipping, looped directory detected
+/usr/local/share/fonts/j: skipping, looped directory detected
+/usr/local/share/fonts/u: skipping, looped directory detected
+/usr/share/fonts/encodings/large: skipping, looped directory detected
+/var/cache/fontconfig: not cleaning unwritable cache directory
+/home/rzzz/.cache/fontconfig: cleaning cache directory
+/home/rzzz/.fontconfig: not cleaning non-existent cache directory
+fc-cache: succeeded
+  [OK]   fuentes bundled
+
+==> [4/5] Creando symlinks con stow...
+  [INFO] Modo --only: hyprshutdown
+  [SKIP] hyprshutdown (directorio no encontrado: /home/rzzz/dotfiles/hyprshutdown)
+
+==> [5/5] Wallpapers...
+  CMD: mkdir -p /home/rzzz/wallpapers/random
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/default/. /home/rzzz/wallpapers/random/
+  [OK]   wallpapers/random
+  CMD: mkdir -p /home/rzzz/Pictures/wallpapers
+  CMD: cp -r /home/rzzz/dotfiles/wallpapers/Pictures/wallpapers/. /home/rzzz/Pictures/wallpapers/
+  [OK]   Pictures/wallpapers
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/profle.jpg /home/rzzz/Pictures/profle.jpg
+  [OK]   Pictures/profle.jpg
+  CMD: cp /home/rzzz/dotfiles/wallpapers/Pictures/default-no-music.jpg /home/rzzz/Pictures/default-no-music.jpg
+  [OK]   Pictures/default-no-music.jpg
+  CMD: mkdir -p /home/rzzz/Pictures/Screenshots
+  [OK]   Pictures/Screenshots/
+
+==> FONTS...
+
+════════════════════════════════════════════════════
+ RESUMEN  2026-05-26 22:26:48
+════════════════════════════════════════════════════
+ Todo OK. Sin errores.
+
+ Pasos manuales pendientes:
+   1. Seleccionar máquina en ~/.config/hypr/hyprland.conf
+      → comentar/descomentar source conf.d/monitors_msi|legion y workspaces_msi|legion
+   2. Hacer lo mismo en ~/.config/waybar/config
+      → cambiar modules/workspaces_msi.json ↔ workspaces_legion.json en el include
+   3. sudo sensors-detect           (temperaturas CPU en waybar)
+   4. sudo systemctl enable --now NetworkManager
+   5. Reiniciar sesión o ejecutar: Hyprland
+

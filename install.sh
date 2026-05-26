@@ -371,7 +371,7 @@ copy_wallpapers() {
   fi
 }
 
-copy_wallpapers "$WALL_SRC/LOTR" "$HOME/wallpapers/LOTR" "wallpapers/LOTR"
+copy_wallpapers "$WALL_SRC/default" "$HOME/wallpapers/random" "wallpapers/random"
 copy_wallpapers "$WALL_SRC/Pictures/wallpapers" "$HOME/Pictures/wallpapers" "Pictures/wallpapers"
 
 for img in profle.jpg default-no-music.jpg; do
@@ -388,6 +388,15 @@ done
 
 run mkdir -p "$HOME/Pictures/Screenshots"
 ok "Pictures/Screenshots/"
+
+# -------------------------------------------------------
+# FUENTES
+# -------------------------------------------------------
+log ""
+log "==> FONTS..."
+FONTS_SRC="$DOTFILES/fonts"
+FONTS_DST="$HOME/.local/share/fonts"
+cp -p "$FONTS_SRC"/* "$FONTS_DST"
 
 # -------------------------------------------------------
 # RESUMEN FINAL
