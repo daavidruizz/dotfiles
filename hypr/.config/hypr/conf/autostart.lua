@@ -15,12 +15,15 @@ hl.on("hyprland.start", function()
 
 	-- Dock & audio
 	hl.exec_cmd("nwg-dock-hyprland -d -i 40 -mb 8 -nolauncher -hd 0 -l overlay")
-	hl.exec_cmd("easyeffects --window=hide")
+	hl.exec_cmd("easyeffects")
 
 	-- Clipboard history daemon
 	hl.exec_cmd("wl-paste --watch cliphist store")
 
 	-- Cursor
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 23")
+
+	-- Bitwarden
+	hl.exec_cmd("bitwarden-desktop")
 end)
 

@@ -70,6 +70,9 @@ hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grimblast copysave area ~/Pictures
 -- Misc
 hl.bind("SUPER + T", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle_tv.sh"))
 
+-- Bitwarden
+hl.bind(MAIN_MOD .. " + A", hl.dsp.workspace.toggle_special("sp_bitwarden"))
+
 -- Sidepad
 --hl.bind(
 --	"SUPER + S",

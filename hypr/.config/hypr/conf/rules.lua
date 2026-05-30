@@ -69,3 +69,6 @@ hl.window_rule({ match = { class = "imv" }, float = true, center = true, size = 
 
 -- Calculator
 hl.window_rule({ match = { class = "qalculate-gtk" }, float = true, center = true, size = {400, 500} })
+
+-- Bitwarden
+hl.window_rule({match = {class = "Bitwarden"}, float = true, move = "70% 50%", size = "30% 30%", workspace = "special:sp_bitwarden silent", no_close_for = 9999999}) --todo arreglar %
