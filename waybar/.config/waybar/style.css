@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     min-height: 0;
-    font-family:  "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font Mono Bold", "SF Pro Display", sans-serif;
+    font-family:  "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "SF Pro Display", sans-serif;
     font-size: 15px;
     font-weight: 500;
     -gtk-dpi: 144;
@@ -40,6 +40,7 @@
 #battery,
 #group-power,
 #bluetooth,
+#custom-clipboard,
 #tray {
     background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
@@ -66,6 +67,7 @@
 #bluetooth:hover,
 #pulseaudio:hover,
 #custom-power:hover,
+#custom-clipboard:hover,
 #clock:hover {
     background: rgba(255, 255, 255, 0.1);
 }

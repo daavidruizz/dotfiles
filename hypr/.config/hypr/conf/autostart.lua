@@ -17,6 +17,9 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("nwg-dock-hyprland -d -i 40 -mb 8 -nolauncher -hd 0 -l overlay")
 	hl.exec_cmd("easyeffects --window=hide")
 
+	-- Clipboard history daemon
+	hl.exec_cmd("wl-paste --watch cliphist store")
+
 	-- Cursor
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 23")
 end)

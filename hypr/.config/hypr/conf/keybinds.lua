@@ -13,6 +13,7 @@ hl.bind(MAIN_MOD .. " + P", hl.dsp.window.pseudo())
 hl.bind(MAIN_MOD .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(MAIN_MOD .. " + K", hl.dsp.layout("swapsplit"))
 hl.bind(MAIN_MOD .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("hyprshutdown -t 'Logging out...' --post-cmd 'hyprctl dispatch exit'"))
 hl.bind(
 	MAIN_MOD .. " + B",
 	hl.dsp.exec_cmd("google-chrome-stable --enable-notifications --enable-system-notifications")
@@ -64,18 +65,18 @@ hl.bind(
 	"SUPER + Print",
 	hl.dsp.exec_cmd("grimblast copysave screen ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png")
 )
-hl.bind("SUPER + ALT + S", hl.dsp.exec_cmd("grimblast copy area"))
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grimblast copysave area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"))
 
 -- Misc
 hl.bind("SUPER + T", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle_tv.sh"))
 
 -- Sidepad
-hl.bind(
-	"SUPER + S",
-	hl.dsp.exec_cmd(
-		'~/.config/hypr/scripts/sidepad.sh --init "firefox --no-remote -P default --name sidepad https://gemini.google.com/app/9ccf40715d812aac?hl=es"'
-	)
-)
-hl.bind("SUPER + CTRL + right", hl.dsp.exec_cmd("~/.config/hypr/scripts/sidepad.sh"))
-hl.bind("SUPER + CTRL + left", hl.dsp.exec_cmd("~/.config/hypr/scripts/sidepad.sh --hide"))
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/sidepad.sh --kill"))
+--hl.bind(
+--	"SUPER + S",
+--	hl.dsp.exec_cmd(
+--		'~/.config/hypr/scripts/sidepad.sh --init "firefox --no-remote -P default --name sidepad https://gemini.google.com/app/9ccf40715d812aac?hl=es"'
+--	)
+--)
+--hl.bind("SUPER + CTRL + right", hl.dsp.exec_cmd("~/.config/hypr/scripts/sidepad.sh"))
+--hl.bind("SUPER + CTRL + left", hl.dsp.exec_cmd("~/.config/hypr/scripts/sidepad.sh --hide"))
+--hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("~/.config/hypr/scripts/sidepad.sh --kill"))

@@ -18,7 +18,7 @@ DRY_RUN=false
 STOW_ONLY=false
 declare -a ONLY_MODULES=()
 declare -a FAILED=()
-declare -a ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout hyprshutdown thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt)
+declare -a ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout hyprshutdown thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt environment.d)
 
 # -------------------------------------------------------
 # Menú interactivo (solo si no se pasan argumentos)
@@ -149,7 +149,7 @@ if ! $STOW_ONLY; then
     easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl
     fastfetch btop htop brightnessctl networkmanager network-manager-applet
     bluez bluez-utils
-    wl-clipboard
+    wl-clipboard cliphist
     polkit-gnome
     grim slurp
     firefox qalculate-gtk
@@ -204,6 +204,8 @@ if ! $STOW_ONLY; then
     grimblast-git
     google-chrome
     adw-gtk3
+    adwaita-qt5
+    adwaita-qt6
     bibata-cursor-theme
     ttf-sf-pro
     bluetuith
@@ -386,6 +388,28 @@ done
 
 run mkdir -p "$HOME/Pictures/Screenshots"
 ok "Pictures/Screenshots/"
+
+# -------------------------------------------------------
+# SYMLINKS DE ICONOS (Qt necesita Adwaita en ~/.local)
+# -------------------------------------------------------
+log ""
+log "==> Symlink iconos Adwaita para Qt..."
+
+ADWAITA_SRC="/usr/share/icons/Adwaita"
+ADWAITA_DST="$HOME/.local/share/icons/Adwaita"
+
+if [ ! -d "$ADWAITA_SRC" ]; then
+  fail "Adwaita icons (no encontrado en $ADWAITA_SRC — instalar adwaita-icon-theme)"
+elif [ -L "$ADWAITA_DST" ]; then
+  ok "symlink Adwaita ya existe ($ADWAITA_DST)"
+else
+  run mkdir -p "$HOME/.local/share/icons"
+  if run ln -sf "$ADWAITA_SRC" "$ADWAITA_DST"; then
+    ok "symlink Adwaita → $ADWAITA_DST"
+  else
+    fail "symlink Adwaita"
+  fi
+fi
 
 # -------------------------------------------------------
 # FUENTES

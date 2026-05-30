@@ -1,0 +1,9 @@
+{
+  "custom/clipboard": {
+    "format": "󰅎",
+    "tooltip-format": "Clipboard History\nClick: abrir historial\nClick derecho: limpiar historial",
+    "on-click": "python3 ~/.config/waybar/clipboard-picker.py",
+    "on-click-right": "cliphist wipe && notify-send -t 2000 '󰅎 Clipboard' 'Historial borrado'",
+    "escape": true
+  }
+}
