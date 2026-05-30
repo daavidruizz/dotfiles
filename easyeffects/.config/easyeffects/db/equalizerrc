@@ -1,11 +1,11 @@
 [soe][Equalizer#0]
 mode=2
 numBands=10
-outputGain=2
+outputGain=1
 
 [soe][Equalizer#0#left]
 band0Frequency=31
-band0Gain=8.98
+band0Gain=6.359999999999999
 band10Type=0
 band11Type=0
 band12Type=0
@@ -17,7 +17,7 @@ band17Type=0
 band18Type=0
 band19Type=0
 band1Frequency=62
-band1Gain=7
+band1Gain=4.740000000000002
 band20Type=0
 band21Type=0
 band22Type=0
@@ -29,7 +29,7 @@ band27Type=0
 band28Type=0
 band29Type=0
 band2Frequency=125
-band2Gain=-2
+band2Gain=-0.6499999999999986
 band30Type=0
 band31Type=0
 band3Frequency=250
@@ -47,7 +47,7 @@ band9Gain=8
 
 [soe][Equalizer#0#right]
 band0Frequency=31
-band0Gain=8.98
+band0Gain=6.359999999999999
 band10Type=0
 band11Type=0
 band12Type=0
@@ -59,7 +59,7 @@ band17Type=0
 band18Type=0
 band19Type=0
 band1Frequency=62
-band1Gain=7
+band1Gain=4.740000000000002
 band20Type=0
 band21Type=0
 band22Type=0
@@ -71,7 +71,7 @@ band27Type=0
 band28Type=0
 band29Type=0
 band2Frequency=125
-band2Gain=-2
+band2Gain=-0.6499999999999986
 band30Type=0
 band31Type=0
 band3Frequency=250

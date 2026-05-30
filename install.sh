@@ -204,9 +204,7 @@ if ! $STOW_ONLY; then
     grimblast-git
     google-chrome
     adw-gtk3
-    whitesur-icon-theme
     bibata-cursor-theme
-    whitesur-cursor-theme
     ttf-sf-pro
     bluetuith
     mpvpaper

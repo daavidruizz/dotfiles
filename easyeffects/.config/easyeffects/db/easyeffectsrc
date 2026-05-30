@@ -9,8 +9,9 @@ mostUsedPresets=Hiphop
 outputDevice=alsa_output.pci-0000_2a_00.4.analog-stereo
 plugins=equalizer#0,autogain#0
 usedPresets=Hiphop:3
+visiblePage=pluginsPage
 visiblePlugin=equalizer#0
 
 [Window]
 height=1373
-width=1265
+width=1038
