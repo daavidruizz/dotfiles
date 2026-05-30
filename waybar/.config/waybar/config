@@ -31,7 +31,8 @@
     "custom/archicon",
     "hyprland/workspaces",
     "custom/mail",
-    "tray"
+    "tray",
+    "custom/clipboard"
   ],
 
   /*MODULES CENTER*/
@@ -46,7 +47,6 @@
     "network",
     "pulseaudio",
     "bluetooth",
-    "custom/clipboard",
     "clock",
     "battery",
     "group/power"
