@@ -15,7 +15,7 @@ hl.on("hyprland.start", function()
 
 	-- Dock & audio
 	hl.exec_cmd("nwg-dock-hyprland -d -i 40 -mb 8 -nolauncher -hd 0 -l overlay")
-	hl.exec_cmd("easyeffects")
+	hl.exec_cmd("easyeffects --gapplication-service")
 
 	-- Clipboard history daemon
 	hl.exec_cmd("wl-paste --watch cliphist store")
@@ -26,4 +26,3 @@ hl.on("hyprland.start", function()
 	-- Bitwarden
 	hl.exec_cmd("bitwarden-desktop")
 end)
-

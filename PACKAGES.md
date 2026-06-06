@@ -28,6 +28,7 @@
 | `nwg-dock-hyprland` | dock autostart | `nwg-dock-hyprland` (AUR) |
 | `dunst` | notificaciones autostart | `dunst` |
 | `waybar` | barra autostart | `waybar` |
+| hyprpicker | color picker | hyprlpicker |
 
 **Archivos referenciados:**
 - `~/wallpapers/LOTR/` → `random-wall.sh` (incluido en dotfiles/wallpapers/)

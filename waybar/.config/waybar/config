@@ -21,7 +21,8 @@
     "~/.config/waybar/modules/battery.json",
     "~/.config/waybar/modules/power.json",
     "~/.config/waybar/modules/clipboard.json",
-    "~/.config/waybar/modules/workspaces_msi.json"
+    "~/.config/waybar/modules/workspaces_msi.json",
+    "~/.config/waybar/modules/vpn.json",
   ],
 
   /*==== MODULES ORDER ====*/
@@ -49,6 +50,7 @@
     "bluetooth",
     "clock",
     "battery",
-    "group/power"
+    "group/power",
+    "custom/vpn"
   ]
 }

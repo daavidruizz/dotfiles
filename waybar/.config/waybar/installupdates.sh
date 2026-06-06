@@ -1,283 +1,269 @@
 #!/usr/bin/env bash
 #
-# Script para instalar actualizaciones con ventana flotante
+# installupdates.sh — System update manager
+# Launched via: kitty --class type1-floating -e installupdates.sh
 #
 
-_checkCommandExists() {
-  cmd="$1"
-  if ! command -v "$cmd" >/dev/null 2>&1; then
-    echo 1
-    return
-  fi
-  echo 0
-  return
-}
+set -euo pipefail
 
-# Función para abrir en ventana flotante
-open_floating_terminal() {
-  local script_path="$0"
+# ─── Helpers ──────────────────────────────────────────────────────────────────
 
-  # Detectar compositor y abrir ventana flotante
-  if [[ -n "$HYPRLAND_INSTANCE_SIGNATURE" ]]; then
-    # Hyprland - aplicar reglas dinámicamente
-    hyprctl keyword windowrulev2 "float,class:(floating-updates)" 2>/dev/null
-    hyprctl keyword windowrulev2 "center,class:(floating-updates)" 2>/dev/null
-    hyprctl keyword windowrulev2 "size 900 650,class:(floating-updates)" 2>/dev/null
+_has() { command -v "$1" &>/dev/null; }
 
-    if command -v kitty >/dev/null 2>&1; then
-      kitty --class="floating-updates" --title="Actualizaciones del Sistema" \
-        -o initial_window_width=900 -o initial_window_height=650 \
-        -e bash "$script_path" &
-    elif command -v alacritty >/dev/null 2>&1; then
-      alacritty --class="floating-updates" --title="Actualizaciones del Sistema" \
-        --option window.dimensions.columns=110 \
-        --option window.dimensions.lines=35 \
-        -e bash "$script_path" &
-    else
-      xterm -class "floating-updates" -title "Actualizaciones del Sistema" \
-        -geometry 110x35+200+200 -e bash "$script_path" &
-    fi
-
-  elif [[ "$XDG_CURRENT_DESKTOP" == "sway" ]] || command -v sway >/dev/null 2>&1; then
-    # Sway
-    swaymsg for_window '[app_id="floating-updates"]' floating enable 2>/dev/null || true
-    swaymsg for_window '[app_id="floating-updates"]' resize set 900 650 2>/dev/null || true
-
-    if command -v kitty >/dev/null 2>&1; then
-      kitty --class="floating-updates" --title="Actualizaciones del Sistema" \
-        -e bash "$script_path" &
-    elif command -v alacritty >/dev/null 2>&1; then
-      alacritty --class="floating-updates" --title="Actualizaciones del Sistema" \
-        -e bash "$script_path" &
-    else
-      xterm -class "floating-updates" -title "Actualizaciones del Sistema" \
-        -geometry 110x35+200+200 -e bash "$script_path" &
-    fi
-
-  else
-    # Fallback para otros WM
-    if command -v kitty >/dev/null 2>&1; then
-      kitty --class="floating-updates" --title="Actualizaciones del Sistema" \
-        -o initial_window_width=900 -o initial_window_height=650 \
-        -e bash "$script_path" &
-    elif command -v alacritty >/dev/null 2>&1; then
-      alacritty --class="floating-updates" --title="Actualizaciones del Sistema" \
-        --option window.dimensions.columns=110 \
-        --option window.dimensions.lines=35 \
-        -e bash "$script_path" &
-    elif command -v gnome-terminal >/dev/null 2>&1; then
-      gnome-terminal --class="floating-updates" --title="Actualizaciones del Sistema" \
-        --geometry=110x35+200+200 \
-        -- bash "$script_path" &
-    else
-      xterm -class "floating-updates" -title "Actualizaciones del Sistema" \
-        -geometry 110x35+200+200 -e bash "$script_path" &
-    fi
-  fi
-}
-
-# Función de título con estilo
-show_title() {
+_header() {
   clear
-  echo -e "\033[1;36m╔══════════════════════════════════════╗\033[0m"
-  echo -e "\033[1;36m║        \033[1;33mACTUALIZACIONES DEL SISTEMA\033[1;36m     ║\033[0m"
-  echo -e "\033[1;36m╚══════════════════════════════════════╝\033[0m"
+  echo -e "\033[1;36m╔══════════════════════════════════════════╗\033[0m"
+  echo -e "\033[1;36m║          SYSTEM UPDATE MANAGER           ║\033[0m"
+  echo -e "\033[1;36m╚══════════════════════════════════════════╝\033[0m"
   echo
 }
 
-# Función de confirmación
-confirm_update() {
-  echo -e "\033[1;33m┌─────────────────────────────────────┐\033[0m"
-  echo -e "\033[1;33m│              CONFIRMACIÓN           │\033[0m"
-  echo -e "\033[1;33m└─────────────────────────────────────┘\033[0m"
-  echo
-  echo -e "\033[1;32m¿Deseas proceder con la actualización?\033[0m"
-  echo -e "\033[0;37m[s/S] Sí  [n/N] No (por defecto)\033[0m"
-  echo -n "> "
+_section() {
+  echo -e "\033[1;35m┌─ $1 $(printf '─%.0s' $(seq 1 $((40 - ${#1}))))┐\033[0m"
+}
 
+_section_end() {
+  echo -e "\033[1;35m└$(printf '─%.0s' $(seq 1 44))┘\033[0m"
+}
+
+_info()    { echo -e "\033[1;34m  $*\033[0m"; }
+_success() { echo -e "\033[1;32m  $*\033[0m"; }
+_warn()    { echo -e "\033[1;33m  $*\033[0m"; }
+_error()   { echo -e "\033[1;31m  $*\033[0m"; }
+_dim()     { echo -e "\033[0;37m  $*\033[0m"; }
+
+_divider() {
+  echo -e "\033[1;36m──────────────────────────────────────────────\033[0m"
+}
+
+# ─── Menu ─────────────────────────────────────────────────────────────────────
+
+MENU_CHOICE=""
+
+show_menu() {
+  echo -e "\033[1;33m  Select update mode:\033[0m"
+  echo
+  echo -e "\033[1;37m  [1]\033[0m  AUR only"
+  echo -e "\033[1;37m  [2]\033[0m  pacman + AUR"
+  echo -e "\033[1;37m  [3]\033[0m  Exit"
+  echo
+  echo -e "\033[0;37m  Choice: \033[0m\c"
+  read -r MENU_CHOICE
+  echo
+}
+
+# ─── Check available updates ──────────────────────────────────────────────────
+
+check_updates() {
+  local mode="$1"  # "aur" | "full"
+
+  _info "Checking for available updates..."
+  echo
+
+  local total=0
+
+  if [[ "$mode" == "full" ]]; then
+    _section "OFFICIAL REPOSITORIES"
+    echo
+
+    local official=""
+    if _has checkupdates; then
+      official=$(checkupdates 2>/dev/null || true)
+    else
+      official=$(pacman -Qu 2>/dev/null || true)
+    fi
+
+    if [[ -n "$official" ]]; then
+      local count; count=$(echo "$official" | wc -l)
+      echo "$official" | head -15
+      [[ $count -gt 15 ]] && _dim "... and $((count - 15)) more"
+      total=$((total + count))
+    else
+      _success "No official updates available"
+    fi
+
+    echo
+    _section_end
+    echo
+  fi
+
+  _section "AUR"
+  echo
+
+  local aur=""
+  if _has yay; then
+    aur=$(yay -Qum 2>/dev/null || true)
+  elif _has paru; then
+    aur=$(paru -Qum 2>/dev/null || true)
+  else
+    _warn "No AUR helper found (yay/paru)"
+  fi
+
+  if [[ -n "$aur" ]]; then
+    local aur_count; aur_count=$(echo "$aur" | wc -l)
+    echo "$aur" | head -15
+    [[ $aur_count -gt 15 ]] && _dim "... and $((aur_count - 15)) more"
+    total=$((total + aur_count))
+  else
+    _success "No AUR updates available"
+  fi
+
+  echo
+  _section_end
+
+  # Flatpak (only on full update)
+  if [[ "$mode" == "full" ]] && _has flatpak; then
+    echo
+    _section "FLATPAK"
+    echo
+    local fp_updates; fp_updates=$(flatpak remote-ls --updates 2>/dev/null || true)
+    if [[ -n "$fp_updates" ]]; then
+      echo "$fp_updates" | head -10
+      local fp_count; fp_count=$(echo "$fp_updates" | wc -l)
+      total=$((total + fp_count))
+    else
+      _success "No Flatpak updates available"
+    fi
+    echo
+    _section_end
+  fi
+
+  echo
+  _divider
+  if [[ $total -gt 0 ]]; then
+    _warn "Total: $total update(s) available"
+  else
+    _success "System is up to date"
+  fi
+  _divider
+  echo
+}
+
+# ─── Confirm prompt ───────────────────────────────────────────────────────────
+
+confirm_update() {
+  echo -e "\033[1;33m  Proceed? [y/N] \033[0m\c"
   read -r response
   case "$response" in
-  [sS] | [sS][iI] | [yY] | [yY][eE][sS])
-    return 0
-    ;;
-  *)
-    return 1
-    ;;
+    [yY] | [yY][eE][sS]) return 0 ;;
+    *) return 1 ;;
   esac
 }
 
-# Mostrar actualizaciones disponibles
-show_available_updates() {
-  echo -e "\033[1;34m🔍 Buscando actualizaciones disponibles...\033[0m"
+# ─── Run update ───────────────────────────────────────────────────────────────
+
+run_update_aur() {
+  _info "Upgrading AUR packages..."
   echo
-
-  local total_updates=0
-
-  if [[ $(_checkCommandExists "pacman") == 0 ]]; then
-    # Sistema Arch Linux
-    echo -e "\033[1;35m╭─ ACTUALIZACIONES OFICIALES ─────────────╮\033[0m"
-    local official_updates=""
-    if command -v checkupdates >/dev/null 2>&1; then
-      official_updates=$(checkupdates 2>/dev/null)
-    else
-      official_updates=$(pacman -Qu 2>/dev/null)
-    fi
-
-    if [[ -n "$official_updates" ]]; then
-      echo "$official_updates" | head -10
-      local count=$(echo "$official_updates" | wc -l)
-      total_updates=$((total_updates + count))
-      if [[ $count -gt 10 ]]; then
-        echo -e "\033[0;37m... y $((count - 10)) más\033[0m"
-      fi
-    else
-      echo -e "\033[0;32m✓ No hay actualizaciones oficiales\033[0m"
-    fi
-    echo -e "\033[1;35m╰─────────────────────────────────────────╯\033[0m"
-
-    echo
-    echo -e "\033[1;35m╭─ ACTUALIZACIONES AUR ───────────────────╮\033[0m"
-    local aur_updates=""
-    if [[ $(_checkCommandExists "yay") == 0 ]]; then
-      aur_updates=$(yay -Qum 2>/dev/null)
-    elif [[ $(_checkCommandExists "paru") == 0 ]]; then
-      aur_updates=$(paru -Qum 2>/dev/null)
-    fi
-
-    if [[ -n "$aur_updates" ]]; then
-      echo "$aur_updates" | head -10
-      local aur_count=$(echo "$aur_updates" | wc -l)
-      total_updates=$((total_updates + aur_count))
-      if [[ $aur_count -gt 10 ]]; then
-        echo -e "\033[0;37m... y $((aur_count - 10)) más\033[0m"
-      fi
-    else
-      echo -e "\033[0;32m✓ No hay actualizaciones de AUR\033[0m"
-    fi
-    echo -e "\033[1;35m╰─────────────────────────────────────────╯\033[0m"
-
-  elif [[ $(_checkCommandExists "dnf") == 0 ]]; then
-    # Sistema Fedora
-    echo -e "\033[1;35m╭─ ACTUALIZACIONES DISPONIBLES ───────────╮\033[0m"
-    local updates=$(dnf check-update -q 2>/dev/null | head -15)
-    if [[ -n "$updates" ]]; then
-      echo "$updates"
-      total_updates=$(echo "$updates" | wc -l)
-    else
-      echo -e "\033[0;32m✓ No hay actualizaciones disponibles\033[0m"
-    fi
-    echo -e "\033[1;35m╰─────────────────────────────────────────╯\033[0m"
-
-  elif [[ $(_checkCommandExists "apt") == 0 ]]; then
-    # Sistema Debian/Ubuntu
-    echo -e "\033[1;35m╭─ ACTUALIZACIONES DISPONIBLES ───────────╮\033[0m"
-    sudo apt update -qq 2>/dev/null
-    local updates=$(apt list --upgradable 2>/dev/null | grep -v "^Listing" | head -15)
-    if [[ -n "$updates" ]]; then
-      echo "$updates"
-      total_updates=$(echo "$updates" | wc -l)
-    else
-      echo -e "\033[0;32m✓ No hay actualizaciones disponibles\033[0m"
-    fi
-    echo -e "\033[1;35m╰─────────────────────────────────────────╯\033[0m"
-
+  if _has yay; then
+    yay -Syu --noconfirm
+  elif _has paru; then
+    paru -Syu --noconfirm
   else
-    echo -e "\033[0;31m❌ Sistema no soportado\033[0m"
-    return 1
-  fi
-
-  echo
-  if [[ $total_updates -gt 0 ]]; then
-    echo -e "\033[1;33m📊 Total: $total_updates actualizaciones disponibles\033[0m"
-  else
-    echo -e "\033[1;32m🎉 Sistema completamente actualizado\033[0m"
-  fi
-  echo
-}
-
-# Realizar actualización
-perform_update() {
-  echo -e "\033[1;32m🚀 Iniciando actualización...\033[0m"
-  echo -e "\033[1;36m══════════════════════════════════════════════════\033[0m"
-
-  if [[ $(_checkCommandExists "pacman") == 0 ]]; then
-    # Sistema Arch Linux
-    echo -e "\033[1;34m📦 Actualizando repositorios oficiales...\033[0m"
-    sudo pacman -Syu
-
-    echo
-    echo -e "\033[1;34m🔧 Actualizando paquetes AUR...\033[0m"
-    if [[ $(_checkCommandExists "yay") == 0 ]]; then
-      yay -Syu --noconfirm
-    elif [[ $(_checkCommandExists "paru") == 0 ]]; then
-      paru -Syu --noconfirm
-    else
-      echo -e "\033[0;33m⚠ No se encontró helper de AUR\033[0m"
-    fi
-
-  elif [[ $(_checkCommandExists "dnf") == 0 ]]; then
-    # Sistema Fedora
-    echo -e "\033[1;34m📦 Actualizando sistema Fedora...\033[0m"
-    sudo dnf upgrade
-
-  elif [[ $(_checkCommandExists "apt") == 0 ]]; then
-    # Sistema Debian/Ubuntu
-    echo -e "\033[1;34m📦 Actualizando lista de paquetes...\033[0m"
-    sudo apt update
-    echo -e "\033[1;34m📦 Instalando actualizaciones...\033[0m"
-    sudo apt upgrade
-
-  else
-    echo -e "\033[0;31m❌ Error: Sistema no soportado\033[0m"
+    _error "No AUR helper found. Aborting."
     exit 1
   fi
+}
 
-  # Actualizar Flatpak
-  if [[ $(_checkCommandExists "flatpak") == 0 ]]; then
+run_update_full() {
+  _info "Upgrading official packages..."
+  echo
+  sudo pacman -Syu
+
+  echo
+  _info "Upgrading AUR packages..."
+  echo
+  if _has yay; then
+    yay -Syu --noconfirm
+  elif _has paru; then
+    paru -Syu --noconfirm
+  else
+    _warn "No AUR helper found — skipping AUR step"
+  fi
+
+  if _has flatpak; then
     echo
-    echo -e "\033[1;34m📱 Actualizando aplicaciones Flatpak...\033[0m"
+    _info "Upgrading Flatpak applications..."
+    echo
     flatpak update -y
   fi
 }
 
-# Función principal
-main() {
-  # Si no se ejecuta desde terminal, abrir ventana flotante
-  if [ ! -t 0 ]; then
-    open_floating_terminal
-    exit 0
-  fi
+# ─── Cleanup ──────────────────────────────────────────────────────────────────
 
-  show_title
-  show_available_updates
-
-  if confirm_update; then
-    echo
-    echo -e "\033[1;32m✅ Iniciando actualización...\033[0m"
-    sleep 1
-    perform_update
-
-    echo
-    echo -e "\033[1;36m══════════════════════════════════════════════════\033[0m"
-    echo -e "\033[1;32m🎉 ACTUALIZACIÓN COMPLETADA 🎉\033[0m"
-    echo -e "\033[1;36m══════════════════════════════════════════════════\033[0m"
-
-    # Recargar Waybar
-    pkill -RTMIN+1 waybar 2>/dev/null || pkill -USR1 waybar 2>/dev/null
-
-    echo
-    echo -e "\033[1;33m📋 Presiona ENTER para cerrar...\033[0m"
-    read -r
+run_cleanup() {
+  echo
+  _info "Removing orphaned packages..."
+  local orphans; orphans=$(pacman -Qdtq 2>/dev/null || true)
+  if [[ -n "$orphans" ]]; then
+    echo "$orphans" | sudo pacman -Rns - 2>/dev/null || true
   else
-    echo
-    echo -e "\033[1;31m❌ Actualización cancelada.\033[0m"
-    echo -e "\033[1;33m📋 Presiona ENTER para cerrar...\033[0m"
-    read -r
+    _success "No orphans to remove"
   fi
 }
 
-# Manejar interrupción
-trap 'echo -e "\n\033[1;31m🛑 Interrumpido\033[0m"; exit 1' INT TERM
+# ─── Main ─────────────────────────────────────────────────────────────────────
 
-# Ejecutar
+main() {
+  _header
+
+  show_menu
+
+  case "$MENU_CHOICE" in
+    1)
+      check_updates "aur"
+      if confirm_update; then
+        echo
+        _divider
+        _info "Starting AUR update..."
+        _divider
+        echo
+        run_update_aur
+        run_cleanup
+        echo
+        _divider
+        _success "Update complete."
+        _divider
+        pkill -RTMIN+1 waybar 2>/dev/null || true
+      else
+        echo
+        _warn "Update cancelled."
+      fi
+      ;;
+    2)
+      check_updates "full"
+      if confirm_update; then
+        echo
+        _divider
+        _info "Starting full system update..."
+        _divider
+        echo
+        run_update_full
+        run_cleanup
+        echo
+        _divider
+        _success "Update complete."
+        _divider
+        pkill -RTMIN+1 waybar 2>/dev/null || true
+      else
+        echo
+        _warn "Update cancelled."
+      fi
+      ;;
+    3 | "")
+      _dim "Exiting."
+      exit 0
+      ;;
+    *)
+      _error "Invalid option."
+      ;;
+  esac
+
+  echo
+  echo -e "\033[0;37m  Press ENTER to close...\033[0m"
+  read -r
+}
+
+trap 'echo; _error "Interrupted."; exit 1' INT TERM
+
 main "$@"

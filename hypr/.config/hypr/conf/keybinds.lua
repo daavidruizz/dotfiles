@@ -65,13 +65,19 @@ hl.bind(
 	"SUPER + Print",
 	hl.dsp.exec_cmd("grimblast copysave screen ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png")
 )
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("grimblast copysave area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"))
+hl.bind(
+	"SUPER + SHIFT + S",
+	hl.dsp.exec_cmd("grimblast copysave area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png")
+)
 
 -- Misc
 hl.bind("SUPER + T", hl.dsp.exec_cmd("~/.config/hypr/scripts/toggle_tv.sh"))
 
 -- Bitwarden
 hl.bind(MAIN_MOD .. " + A", hl.dsp.workspace.toggle_special("sp_bitwarden"))
+
+-- Hyprpicker
+hl.bind(MAIN_MOD .. " + C", hl.dsp.exec_cmd("hyprpicker -a -n"))
 
 -- Sidepad
 --hl.bind(

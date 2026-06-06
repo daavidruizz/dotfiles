@@ -1,1 +1,1 @@
-kitty --class type1-floating -e installupdates.sh
+kitty --class type1-floating -e ~/.config/waybar/installupdates.sh

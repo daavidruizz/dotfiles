@@ -163,6 +163,7 @@ if ! $STOW_ONLY; then
     swayosd
     stow
     qt5ct qt6ct kvantum
+    hyprpicker
   )
 
   if run sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"; then

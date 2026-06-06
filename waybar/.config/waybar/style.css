@@ -9,7 +9,6 @@
 }
 
 #waybar {
-    background: transparent;
     background-color: transparent;
     color: #ffffff;
     border: 0px solid rgba(255, 255, 255, 0.1);
@@ -53,6 +52,17 @@
     transition: all 0.3s ease;
 }
 
+#custom-vpn {
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  padding: 0px 10px;
+  margin: 8px 3px;
+  border-radius: 8px;
+  border: 2px solid rgba(255, 255, 255, 1);
+  font-family: "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "SF Pro Display", sans-serif;
+  font-size: 16px;
+}
+
 /* Bluetooth estados */
 #bluetooth.connected    { color: #a6e3a1; }
 #bluetooth.disconnected { color: #ffffff; }
@@ -70,6 +80,7 @@
 #pulseaudio:hover,
 #custom-power:hover,
 #custom-clipboard:hover,
+#custom-vpn:hover,
 #clock:hover {
     background: rgba(255, 255, 255, 0.1);
 }
@@ -97,4 +108,18 @@
 #workspaces button.active {
     background: rgba(255, 255, 255, 0.3);
     color: #000000;
+}
+
+tooltip {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+tooltip label {
+    color: #ffffff;
+    font-family: "Symbols Nerd Font Mono", "JetBrainsMono Nerd Font Mono";
+    font-size: 13px;
+    padding: 6px 10px;
 }
