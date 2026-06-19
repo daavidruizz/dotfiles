@@ -1,7 +1,7 @@
 {
   "custom/power": {
     "format": "⏻",
-    "tooltip-format": "Power Off  [Click derecho: cancelar]",
+    "tooltip-format": "Power Off  [Right click to cancel]",
     "on-click": "~/.config/hypr/scripts/power.sh shutdown",
     "on-click-right": "touch /tmp/.power_cancel"
   },
@@ -26,14 +26,14 @@
 
   "custom/power-reboot": {
     "format": "",
-    "tooltip-format": "Restart  [Click derecho: cancelar]",
+    "tooltip-format": "Restart  [Right click to cancel]",
     "on-click": "~/.config/hypr/scripts/power.sh reboot",
     "on-click-right": "touch /tmp/.power_cancel"
   },
 
   "custom/power-shutdown": {
     "format": "⏻",
-    "tooltip-format": "Power Off  [Click derecho: cancelar]",
+    "tooltip-format": "Power Off  [Right click to cancel]",
     "on-click": "~/.config/hypr/scripts/power.sh shutdown",
     "on-click-right": "touch /tmp/.power_cancel"
   },
