@@ -65,8 +65,8 @@ alias paclist='pacman -Qe'
 # ────────────────────────────────────────────────
 
 alias yayin='yay -S'
-alias yayup='yay -Sua'
-alias yayupgr='yay -Syu'
+#alias yayup='yay -Sua'
+#alias yayupgr='yay -Syu'
 alias yaysearch='yay -Ss'
 alias yayinfo='yay -Si'
 alias yaylist='yay -Qm'
@@ -75,6 +75,22 @@ alias yayorphans='yay -Rns $(yay -Qdtq)'
 alias yaypurge='yay -Scc'
 alias yayconf='yay -Pg'
 alias yaystats='yay -Ps'
+
+# Puerta común: corre el auditor y decide según su código de salida.
+_yay_audit_gate() {
+  aur-audit
+  local rc=$?
+  if ((rc == 2)); then
+    echo "IOC crítico detectado — abortando."
+    return 1
+  elif ((rc == 1)); then
+    read -rp "Cambios sospechosos. ¿Continuar igualmente? [y/N] " ans
+    [[ $ans == [yY] ]] || return 1
+  fi
+}
+
+yayup() { _yay_audit_gate && yay -Sua "$@"; }   # solo AUR
+yayupgr() { _yay_audit_gate && yay -Syu "$@"; } # sistema completo
 
 # ────────────────────────────────────────────────
 # PROMPT

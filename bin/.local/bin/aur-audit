@@ -1,0 +1,288 @@
+#!/usr/bin/env bash
+#
+# aur-audit — Revisa cambios en paquetes del AUR antes de actualizar con yay.
+#
+# Aprovecha que yay clona cada paquete AUR como repo git en su caché.
+# Para cada paquete con actualización pendiente:
+#   1. Hace `git fetch` (solo lectura: NO toca el working tree ni el estado de yay).
+#   2. Muestra el diff de PKGBUILD / *.install / *.sh entre lo instalado y lo que entra.
+#   3. Escanea el contenido NUEVO buscando IOCs conocidos y patrones sospechosos.
+#
+# Modos:
+#   aur-audit            → audita solo los paquetes AUR con update pendiente (diff + scan)
+#   aur-audit --all      → escanea TODOS los paquetes AUR instalados (sin diff; "¿ya estoy infectado?")
+#   aur-audit --help
+#
+# Códigos de salida (útiles para encadenar con un wrapper):
+#   0 → limpio        1 → hallazgos sospechosos        2 → IOC crítico conocido
+#
+set -uo pipefail
+
+# ---------------------------------------------------------------------------
+# Configuración
+# ---------------------------------------------------------------------------
+
+# Directorio de build de yay (donde clona los repos). Se lee de la config de
+# yay si es posible; si no, se usa el valor por defecto.
+YAY_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/yay/config.json"
+DEFAULT_CACHE="${XDG_CACHE_HOME:-$HOME/.cache}/yay"
+if command -v jq >/dev/null 2>&1 && [[ -f "$YAY_CONFIG" ]]; then
+  CACHE_DIR="$(jq -r '.builddir // empty' "$YAY_CONFIG" 2>/dev/null)"
+fi
+CACHE_DIR="${CACHE_DIR:-$DEFAULT_CACHE}"
+
+# Ficheros que se consideran "ejecutables en el proceso de build/install"
+# y que, por tanto, hay que revisar.
+RELEVANT_GLOB='PKGBUILD *.install *.sh'
+
+# IOCs de las campañas reales contra el AUR (julio 2025 / junio 2026).
+# Coincidencia aquí = CRÍTICO.
+CRITICAL_PATTERNS='atomic-lockfile|js-digest|lockfile-js|chaos[-_]?rat'
+
+# Nombres de paquetes que fueron maliciosos en incidentes conocidos.
+# (Los legítimos son librewolf-bin / zen-browser-bin, sin -fix/-patch.)
+KNOWN_BAD_PKGS='librewolf-fix-bin firefox-patch-bin zen-browser-patched-bin'
+
+# Patrones genéricos de riesgo. Coincidencia = SOSPECHOSO (revisar a mano).
+# Nota: source=(...url...) NO dispara esto; buscamos ejecución + red/ofuscación.
+SUSPICIOUS_PATTERNS=(
+  'curl[^|]*\|[[:space:]]*(ba)?sh'          # curl ... | sh
+  'wget[^|]*\|[[:space:]]*(ba)?sh'          # wget ... | sh
+  '(ba)?sh[[:space:]]+-c[[:space:]]*.?\$\(' # sh -c "$(...)"
+  '\$\((curl|wget)'                         # $(curl ...) en substitución
+  '\bnpm[[:space:]]+(install|i|ci|exec)\b'  # npm install (vector de las campañas)
+  '\b(bun|bunx)[[:space:]]*(install|x)?\b'  # bun install / bunx
+  '\bnpx\b'                                 # npx
+  'base64[[:space:]]+(-d|--decode)'         # decodificar payloads
+  '\beval\b'                                # eval de contenido dinámico
+  '/dev/tcp/'                               # reverse shell
+  'python[0-9]?[[:space:]]+-c'              # python -c (one-liners remotos)
+  'crontab|systemctl[[:space:]]+.*enable'   # persistencia
+  '(\.bashrc|autostart|\.config/systemd)'   # persistencia en el perfil de usuario
+)
+
+# ---------------------------------------------------------------------------
+# Colores (solo si es una terminal)
+# ---------------------------------------------------------------------------
+if [[ -t 1 ]]; then
+  C_RED=$'\e[1;31m'
+  C_YEL=$'\e[1;33m'
+  C_GRN=$'\e[1;32m'
+  C_CYA=$'\e[1;36m'
+  C_DIM=$'\e[2m'
+  C_RST=$'\e[0m'
+else
+  C_RED=''
+  C_YEL=''
+  C_GRN=''
+  C_CYA=''
+  C_DIM=''
+  C_RST=''
+fi
+
+# Contadores globales de hallazgos.
+CRIT_HITS=0
+SUSP_HITS=0
+
+# ---------------------------------------------------------------------------
+# Funciones
+# ---------------------------------------------------------------------------
+
+# Rama por defecto del remoto (el AUR usa 'master').
+default_branch() {
+  local repo="$1"
+  git -C "$repo" rev-parse --abbrev-ref origin/HEAD 2>/dev/null || echo origin/master
+}
+
+# Escanea un directorio con ficheros extraídos. Imprime hallazgos y actualiza
+# los contadores globales.
+scan_dir() {
+  local dir="$1" pkg="$2" hits
+
+  # --- Crítico: IOCs conocidos ---
+  hits="$(grep -rEniH -- "$CRITICAL_PATTERNS" "$dir" 2>/dev/null)"
+  if [[ -n "$hits" ]]; then
+    echo "  ${C_RED}✗ CRÍTICO — IOC de malware conocido:${C_RST}"
+    while IFS= read -r line; do
+      echo "    ${C_RED}${line#"$dir"/}${C_RST}"
+    done <<<"$hits"
+    ((CRIT_HITS++))
+  fi
+
+  # --- Sospechoso: patrones genéricos de riesgo ---
+  local pat found=0
+  for pat in "${SUSPICIOUS_PATTERNS[@]}"; do
+    hits="$(grep -rEniH -- "$pat" "$dir" 2>/dev/null)"
+    if [[ -n "$hits" ]]; then
+      if ((found == 0)); then
+        echo "  ${C_YEL}⚠ SOSPECHOSO — revisa estas líneas a mano:${C_RST}"
+        found=1
+      fi
+      while IFS= read -r line; do
+        echo "    ${C_YEL}${line#"$dir"/}${C_RST}"
+      done <<<"$hits"
+    fi
+  done
+  ((found)) && ((SUSP_HITS++))
+
+  if ((CRIT_HITS == 0 && found == 0)); then
+    echo "  ${C_GRN}✓ sin patrones sospechosos${C_RST}"
+  fi
+}
+
+# Extrae, en un ref git dado, los ficheros relevantes de nivel superior a un
+# directorio temporal para poder escanearlos.
+extract_relevant() {
+  local repo="$1" ref="$2" dest="$3" f
+  while IFS= read -r f; do
+    # Solo nivel superior (los install scripts del AUR van en la raíz).
+    [[ "$f" == */* ]] && continue
+    case "$f" in
+    PKGBUILD | *.install | *.sh)
+      git -C "$repo" show "$ref:$f" >"$dest/$f" 2>/dev/null
+      ;;
+    esac
+  done < <(git -C "$repo" ls-tree -r --name-only "$ref" 2>/dev/null)
+}
+
+# Audita un paquete con actualización pendiente: fetch + diff + scan.
+audit_update() {
+  local pkg="$1" repo="$CACHE_DIR/$pkg"
+
+  echo
+  echo "${C_CYA}━━ $pkg ━━${C_RST}"
+
+  if [[ ! -d "$repo/.git" ]]; then
+    echo "  ${C_DIM}sin repo en caché (¿yay -Sc?). Clonando para revisar...${C_RST}"
+    repo="$(mktemp -d)"
+    if ! git clone --quiet "https://aur.archlinux.org/$pkg.git" "$repo" 2>/dev/null; then
+      echo "  ${C_YEL}no se pudo clonar; revísalo manualmente${C_RST}"
+      return
+    fi
+  fi
+
+  # Fetch solo actualiza refs remotos (no toca el working tree ni yay).
+  git -C "$repo" fetch --quiet origin 2>/dev/null
+  local branch
+  branch="$(default_branch "$repo")"
+
+  # Diff de los ficheros relevantes entre lo instalado (HEAD) y lo entrante.
+  local changed
+  changed="$(git -C "$repo" diff --name-only HEAD "$branch" -- $RELEVANT_GLOB 2>/dev/null)"
+  if [[ -n "$changed" ]]; then
+    echo "  ${C_DIM}cambios en: $(echo "$changed" | tr '\n' ' ')${C_RST}"
+    git -C "$repo" --no-pager diff --color=always HEAD "$branch" -- $RELEVANT_GLOB |
+      sed 's/^/    /'
+  else
+    echo "  ${C_DIM}sin cambios en PKGBUILD/scripts (solo bump de versión)${C_RST}"
+  fi
+
+  # Escanea el contenido ENTRANTE.
+  local scandir
+  scandir="$(mktemp -d)"
+  extract_relevant "$repo" "$branch" "$scandir"
+  scan_dir "$scandir" "$pkg"
+  rm -rf "$scandir"
+}
+
+# Escanea un paquete ya instalado usando su working tree en caché (modo --all).
+audit_installed() {
+  local pkg="$1" repo="$CACHE_DIR/$pkg"
+  echo
+  echo "${C_CYA}━━ $pkg ${C_DIM}(instalado)${C_RST}"
+
+  if [[ ! -d "$repo" ]]; then
+    echo "  ${C_DIM}sin repo en caché; no se puede escanear${C_RST}"
+    return
+  fi
+  local scandir
+  scandir="$(mktemp -d)"
+  local f
+  for f in PKGBUILD "$repo"/*.install "$repo"/*.sh; do
+    [[ -f "$repo/$f" ]] && cp "$repo/$f" "$scandir/" 2>/dev/null
+    [[ -f "$f" ]] && cp "$f" "$scandir/" 2>/dev/null
+  done
+  scan_dir "$scandir" "$pkg"
+  rm -rf "$scandir"
+}
+
+# Comprueba si hay algún paquete de la lista negra instalado.
+check_known_bad() {
+  local pkg found=0
+  for pkg in $KNOWN_BAD_PKGS; do
+    if pacman -Qq "$pkg" &>/dev/null; then
+      echo "${C_RED}✗ Tienes instalado '$pkg', un paquete de un incidente conocido.${C_RST}"
+      found=1
+      ((CRIT_HITS++))
+    fi
+  done
+  ((found)) && echo
+}
+
+print_summary() {
+  echo
+  echo "${C_CYA}════════ Resumen ════════${C_RST}"
+  if ((CRIT_HITS > 0)); then
+    echo "${C_RED}✗ $CRIT_HITS paquete(s) con IOC CRÍTICO. NO actualices sin investigar.${C_RST}"
+    exit 2
+  elif ((SUSP_HITS > 0)); then
+    echo "${C_YEL}⚠ $SUSP_HITS paquete(s) con patrones sospechosos. Revísalos antes de seguir.${C_RST}"
+    exit 1
+  else
+    echo "${C_GRN}✓ Todo limpio.${C_RST}"
+    exit 0
+  fi
+}
+
+usage() {
+  sed -n '3,20p' "$0" | sed 's/^# \{0,1\}//'
+  exit 0
+}
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+main() {
+  local mode="updates"
+  case "${1:-}" in
+  --all | --installed) mode="all" ;;
+  -h | --help) usage ;;
+  "") ;;
+  *)
+    echo "Opción desconocida: $1"
+    usage
+    ;;
+  esac
+
+  command -v yay >/dev/null 2>&1 || {
+    echo "yay no está instalado."
+    exit 3
+  }
+
+  check_known_bad
+
+  if [[ "$mode" == "all" ]]; then
+    echo "${C_CYA}Escaneando todos los paquetes AUR instalados...${C_RST}"
+    local pkg
+    while IFS= read -r pkg; do
+      audit_installed "$pkg"
+    done < <(pacman -Qmq)
+  else
+    # Paquetes AUR con actualización pendiente (primera columna de `yay -Qua`).
+    local updates
+    updates="$(yay -Qua 2>/dev/null | awk 'NF{print $1}')"
+    if [[ -z "$updates" ]]; then
+      echo "${C_GRN}✓ No hay actualizaciones de paquetes AUR pendientes.${C_RST}"
+      exit 0
+    fi
+    echo "${C_CYA}Auditando actualizaciones AUR pendientes:${C_RST} $(echo "$updates" | tr '\n' ' ')"
+    local pkg
+    while IFS= read -r pkg; do
+      audit_update "$pkg"
+    done <<<"$updates"
+  fi
+
+  print_summary
+}
+
+main "$@"

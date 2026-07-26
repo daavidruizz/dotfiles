@@ -18,7 +18,7 @@ DRY_RUN=false
 STOW_ONLY=false
 declare -a ONLY_MODULES=()
 declare -a FAILED=()
-declare -a ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout hyprshutdown thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt environment.d)
+declare -a ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout hyprshutdown thunar easyeffects fastfetch btop gtk nvim swayosd vim bash qt environment.d bin)
 
 # -------------------------------------------------------
 # Menú interactivo (solo si no se pasan argumentos)
