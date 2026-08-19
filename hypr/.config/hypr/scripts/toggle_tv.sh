@@ -1,15 +1,12 @@
 #!/bin/bash
-# ~/scripts/toggle_tv.sh
-
-# Verificar si HDMI-A-2 está activo en la lista de monitores actuales
-if hyprctl monitors | grep -q "HDMI-A-2"; then
-  # TV activa -> Deshabilitarla usando la nueva sintaxis Lua
-  hyprctl dispatch config "monitor = { 'HDMI-A-2', 'disable' }"
+# ~/.config/hypr/scripts/toggle_tv.sh
+if hyprctl monitors -j | jq -e '.[] | select(.name=="HDMI-A-2")' >/dev/null; then
+  # TV activa -> deshabilitar
+  hyprctl eval 'hl.monitor({ output = "HDMI-A-2", disabled = true })'
   notify-send "TV" "Monitor deshabilitado" -i display
-  echo "TV deshabilitada"
 else
-  # TV inactiva -> Habilitarla con su respectiva tabla de configuración en Lua
-  hyprctl dispatch config "monitor = { 'HDMI-A-2', '1920x1080@60', '960x-1080', '1' }"
+  # TV inactiva -> habilitar (restaura su config normal)
+  hyprctl eval 'hl.monitor({ output = "HDMI-A-2", mode = "1920x1080@60", position = "960x-1080", scale = 1 })'
   notify-send "TV" "Monitor habilitado" -i display
-  echo "TV habilitada"
 fi
+#hyprctl reload -> no funciona del todo bien, TODO

@@ -25,4 +25,5 @@ hl.on("hyprland.start", function()
 
 	-- Bitwarden
 	hl.exec_cmd("bitwarden-desktop")
+	hl.exec_cmd("thunderbird")
 end)

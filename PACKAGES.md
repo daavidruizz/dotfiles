@@ -132,6 +132,7 @@
 
 **Tema configurado:** KvGnomeDark (kvantum) + iconos WhiteSur-dark + fuente Noto Sans
 
+### thunderbird
 ---
 
 ## Pacman (instalación de golpe)
@@ -156,7 +157,8 @@ sudo pacman -S --needed \
   jq curl libnotify \
   pacman-contrib \
   qt5ct qt6ct kvantum \
-  stow
+  stow \
+  thunderbird
 ```
 
 ## AUR (via yay)
