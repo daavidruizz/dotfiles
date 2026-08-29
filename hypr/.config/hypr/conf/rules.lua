@@ -77,15 +77,24 @@ hl.window_rule({
 hl.window_rule({ match = { class = "Dunst" }, float = true })
 
 -- Document viewers
-hl.window_rule({ match = { class = "org\\.pwmt\\.zathura" }, float = true, center = true, size = { "70%", "90%" } })
-hl.window_rule({ match = { class = "zathura" }, float = true, center = true, size = { "70%", "90%" } })
+hl.window_rule({
+	match = { class = "org.gnome.Papers" },
+	float = true,
+	center = false,
+	size = { "(monitor_w * 0.45)", "(monitor_h * 0.95)" },
+})
 
 -- Text editor
 hl.window_rule({ match = { class = "org\\.kde\\.kwrite" }, float = true, center = true, size = { "60%", "70%" } })
 hl.window_rule({ match = { class = "kwrite" }, float = true, center = true, size = { "60%", "70%" } })
 
 -- Image viewers
-hl.window_rule({ match = { class = "feh" }, float = true, center = true, size = { "60%", "70%" } })
+hl.window_rule({
+	match = { class = "org.kde.okular" },
+	float = true,
+	center = true,
+	size = { "(monitor_w * 0.7)", "(monitor_h * 0.6)" },
+})
 hl.window_rule({ match = { class = "imv" }, float = true, center = true, size = { "60%", "70%" } })
 
 -- Calculator
