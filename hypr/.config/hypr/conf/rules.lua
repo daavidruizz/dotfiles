@@ -85,21 +85,26 @@ hl.window_rule({
 })
 
 -- Text editor
-hl.window_rule({ match = { class = "org\\.kde\\.kwrite" }, float = true, center = true, size = { "60%", "70%" } })
-hl.window_rule({ match = { class = "kwrite" }, float = true, center = true, size = { "60%", "70%" } })
+hl.window_rule({
+	match = { class = "org.xfce.mousepad" },
+	float = true,
+	center = true,
+	size = { "(monitor_w * 0.45)", "(monitor_h * 0.45)" },
+})
 
 -- Image viewers
 hl.window_rule({
 	match = { class = "org.kde.okular" },
 	float = true,
 	center = true,
-	size = { "(monitor_w * 0.7)", "(monitor_h * 0.6)" },
+	size = { "(monitor_w * 0.5)", "(monitor_h * 0.6)" },
 })
 hl.window_rule({ match = { class = "imv" }, float = true, center = true, size = { "60%", "70%" } })
 
 -- Calculator
 hl.window_rule({ match = { class = "qalculate-gtk" }, float = true, center = true, size = { 400, 500 } })
 
+--- SIDEPAD
 -- Bitwarden
 hl.window_rule({
 	match = { class = "Bitwarden" },

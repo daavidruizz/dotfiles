@@ -54,7 +54,6 @@
 | `nm-applet` | nm-applet.sh | `network-manager-applet` |
 | `pavucontrol` | click en módulo pulseaudio | `pavucontrol` |
 | `bluetuith` | click en módulo bluetooth | `bluetuith` (AUR) |
-| `wlogout` | custom/power | `wlogout` |
 | `google-chrome` | custom/mail, clock (calendar) | `google-chrome` (AUR) |
 | `checkupdates` | updates.sh | `pacman-contrib` |
 | `yay` | updates.sh (AUR updates) | `yay` (AUR) |
@@ -64,19 +63,6 @@
 **Fuentes requeridas:**
 - `SF Pro Display` → bundled en dotfiles
 - `Font Awesome 6 Free` + `Font Awesome 6 Brands` → `ttf-font-awesome`
-
----
-
-### wlogout
-| Binario/Tool | Usado en | Paquete |
-|---|---|---|
-| `~/.config/hypr/scripts/power.sh` | todas las acciones | módulo `hypr` (dependencia) |
-| `hyprlock` | power.sh lock | `hyprlock` |
-| `systemctl` | power.sh reboot/shutdown/suspend | `systemd` |
-| `hyprctl` | power.sh exit | `hyprland` |
-| `jq` | power.sh terminate_clients | `jq` |
-
-**Fuente requerida:** `Fira Sans Semibold` → `ttf-fira-sans`
 
 ---
 
@@ -95,11 +81,6 @@
 
 ### kitty
 **Fuente:** ninguna especificada en config (usa la del sistema por defecto)
-
----
-
-### nwg-dock
-**Fuente requerida:** `JetbrainsMono Nerd Font` → bundled + `ttf-jetbrains-mono-nerd`
 
 ---
 
@@ -133,6 +114,9 @@
 **Tema configurado:** KvGnomeDark (kvantum) + iconos WhiteSur-dark + fuente Noto Sans
 
 ### thunderbird
+### papers
+### okular
+### yazi
 ---
 
 ## Pacman (instalación de golpe)
@@ -144,36 +128,33 @@ sudo pacman -S --needed \
   waybar dunst \
   rofi wofi \
   kitty thunar \
-  wlogout \
   easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl \
   fastfetch btop brightnessctl networkmanager network-manager-applet \
   grim slurp \
   firefox qalculate-gtk \
+  chromium \
   nwg-look papirus-icon-theme adwaita-icon-theme \
   noto-fonts noto-fonts-emoji \
   ttf-font-awesome ttf-fira-sans ttf-roboto ttf-jetbrains-mono-nerd \
-  nvidia nvidia-utils \
   lm_sensors \
   jq curl libnotify \
   pacman-contrib \
   qt5ct qt6ct kvantum \
   stow \
-  thunderbird
+  thunderbird \
+  papers \
+  okular \
+  yazi
 ```
 
 ## AUR (via yay)
 
 ```bash
 yay -S --needed \
-  nwg-dock-hyprland \
   grimblast-git \
-  google-chrome \
   adw-gtk3 \
   whitesur-icon-theme \
   bibata-cursor-theme \
-  whitesur-cursor-theme \
-  ttf-montserrat \
-  ttf-sf-pro \
   bluetuith
 ```
 

@@ -1,0 +1,11 @@
+[opener]
+open = [
+  { run = 'xdg-open %s1', desc = "Abrir con el sistema", for = "unix" },
+]
+
+[open]
+prepend_rules = [
+  { mime = "image/*", use = "open" },
+  { mime = "video/*", use = "open" },
+  { mime = "audio/*", use = "open" },
+]
