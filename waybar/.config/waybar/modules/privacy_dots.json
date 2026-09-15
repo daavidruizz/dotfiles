@@ -1,0 +1,11 @@
+{
+  "custom/privacy_dots": {
+    "exec": "~/.config/waybar/privacy_dots.sh",
+    "return-type": "json",
+    "interval": 3,
+    "format": "{text}",
+    "tooltip": true,
+    "escape": false,
+    "markup": "pango"
+  }
+}

@@ -6,7 +6,6 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-
   // MODULES — functional split + machine-specific override last
   // Para MSI:    usar workspaces_msi.json
   // Para Legion: usar workspaces_legion.json
@@ -23,10 +22,9 @@
     "~/.config/waybar/modules/clipboard.json",
     "~/.config/waybar/modules/workspaces_msi.json",
     "~/.config/waybar/modules/vpn.json",
+    "~/.config/waybar/modules/privacy_dots.json"
   ],
-
   /*==== MODULES ORDER ====*/
-
   /*MODULES LEFT*/
   "modules-left": [
     "custom/archicon",
@@ -35,12 +33,10 @@
     "tray",
     "custom/clipboard"
   ],
-
   /*MODULES CENTER*/
   "modules-center": [
     "hyprland/window"
   ],
-
   /*MODULES RIGHT*/
   "modules-right": [
     "custom/updates",
@@ -50,6 +46,7 @@
     "bluetooth",
     "clock",
     "battery",
+    "custom/privacy_dots",
     "group/power",
     "custom/vpn"
   ]

@@ -40,6 +40,7 @@
 #group-power,
 #bluetooth,
 #custom-clipboard,
+#custom-privacy_dots,
 #tray {
     background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
@@ -81,6 +82,7 @@
 #custom-power:hover,
 #custom-clipboard:hover,
 #custom-vpn:hover,
+#custom-privacy-dots,
 #clock:hover {
     background: rgba(255, 255, 255, 0.1);
 }
