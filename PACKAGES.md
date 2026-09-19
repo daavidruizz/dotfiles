@@ -26,7 +26,8 @@
 | `dbus-update-activation-environment` | autostart | `dbus` (ya presente) |
 | `easyeffects` | autostart | `easyeffects` |
 | `nwg-dock-hyprland` | dock autostart | `nwg-dock-hyprland` (AUR) |
-| `dunst` | notificaciones autostart | `dunst` |
+| `swaync` | notificaciones autostart (`SUPER+N` panel) | `swaync` |
+| `hyprpm` | gestor de plugins (solo archMSI, para hyprglass) | `hyprpm` |
 | `waybar` | barra autostart | `waybar` |
 | hyprpicker | color picker | hyprlpicker |
 
@@ -73,9 +74,29 @@
 
 ---
 
-### dunst
-**Iconos requeridos:**
-- Papirus icons en `/usr/share/icons/Papirus/` → `papirus-icon-theme`
+### swaync
+**Fuentes requeridas:**
+- `JetBrainsMono Nerd Font Mono` → `ttf-jetbrains-mono-nerd` (fallback: `SF Pro Display`, bundled)
+
+**Iconos:** los del tema GTK del sistema (Adwaita / Papirus → `papirus-icon-theme`)
+
+**Blur:** lo aplica Hyprland con layer rules en `appearance.lua` (`swaync-control-center`, `swaync-notification-window`, con `ignore_alpha`)
+
+**Sustituye a dunst:** `power.sh` y el resto de scripts usan `notify-send` (`libnotify`), no `dunstify`.
+
+---
+
+### hyprglass (plugin de Hyprland, solo archMSI)
+Instalado por `install.sh` en archMSI. Manual (necesita una sesión de Hyprland abierta):
+```bash
+sudo pacman -S hyprpm
+hyprpm update
+hyprpm add https://github.com/hyprnux/hyprglass
+hyprpm enable hyprglass      # pide sudo
+```
+- Se carga en cada arranque con `hyprpm reload -n` (`conf/autostart.lua`, solo si `MACHINE == MSI`).
+- Config en `hypr/.config/hypr/conf/plugins.lua` (inerte si el plugin no está cargado).
+- Tras actualizar Hyprland: `hyprpm update` (se compila contra la versión exacta).
 
 ---
 
@@ -125,7 +146,7 @@
 sudo pacman -S --needed \
   hyprland hypridle hyprlock hyprpaper \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
-  waybar dunst \
+  waybar swaync \
   rofi wofi \
   kitty thunar \
   easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl \

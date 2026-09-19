@@ -73,9 +73,6 @@ hl.window_rule({
 	opacity = "1.0 override",
 })
 
--- Notifications
-hl.window_rule({ match = { class = "Dunst" }, float = true })
-
 -- Document viewers
 hl.window_rule({
 	match = { class = "org.gnome.Papers" },

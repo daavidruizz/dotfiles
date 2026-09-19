@@ -72,6 +72,7 @@
 ; (gtk_accel_path "<Actions>/ThunarWindow/view-location-selector-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/reload" "<Primary>r")
 ; (gtk_accel_path "<Actions>/ThunarWindow/edit-menu" "")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/fe02ec5a2811f84ef7938ae13481afaf" "")
 ; (gtk_accel_path "<Actions>/ThunarActionManager/copy" "<Primary>c")
 ; (gtk_accel_path "<Actions>/ThunarWindow/bookmarks-menu" "")
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/5dd5f8b8a5d200d2aa3c4e403f4f8b51" "")

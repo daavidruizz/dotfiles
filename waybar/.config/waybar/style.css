@@ -41,6 +41,7 @@
 #bluetooth,
 #custom-clipboard,
 #custom-privacy_dots,
+#custom-notification,
 #tray {
     background: rgba(0, 0, 0, 0.6);
     color: #ffffff;
@@ -81,6 +82,7 @@
 #pulseaudio:hover,
 #custom-power:hover,
 #custom-clipboard:hover,
+#custom-notification:hover,
 #custom-vpn:hover,
 #custom-privacy-dots,
 #clock:hover {

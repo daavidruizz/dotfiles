@@ -1,0 +1,21 @@
+{
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "\udb84\udd6b",
+      "none": "\udb80\udc9a",
+      "dnd-notification": "\udb80\udc9b",
+      "dnd-none": "\udb80\udc9b",
+      "inhibited-notification": "\udb84\udd6b",
+      "inhibited-none": "\udb80\udc9a",
+      "dnd-inhibited-notification": "\udb80\udc9b",
+      "dnd-inhibited-none": "\udb80\udc9b"
+    },
+    "return-type": "json",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}

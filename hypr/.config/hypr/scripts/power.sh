@@ -54,22 +54,22 @@ power_countdown() {
 	rm -f "$cancel_file"
 
 	local notif_id
-	notif_id=$(dunstify -p -u critical -t $((delay * 1000 + 1000)) \
+	notif_id=$(notify-send -p -u critical -t $((delay * 1000 + 1000)) \
 		"⏻  $title" "Executing in ${delay}s…  [Right click on the button to cancel]")
 
 	for i in $(seq $((delay - 1)) -1 1); do
 		sleep 1
 		if [[ -f "$cancel_file" ]]; then
 			rm -f "$cancel_file"
-			dunstify -r "$notif_id" -u low "Cancelled" "$title was cancelled"
+			notify-send -r "$notif_id" -u low "Cancelled" "$title was cancelled"
 			exit 0
 		fi
-		dunstify -r "$notif_id" -u critical -t $((i * 1000 + 500)) \
+		notify-send -r "$notif_id" -u critical -t $((i * 1000 + 500)) \
 			"⏻  $title" "Executing in ${i}s…"
 	done
 
 	sleep 1
-	dunstify -r "$notif_id" -u critical -t 2000 "⏻  $title" "Executing…"
+	notify-send -r "$notif_id" -u critical -t 2000 "⏻  $title" "Executing…"
 	eval "$cmd"
 }
 

@@ -67,6 +67,10 @@ hl.config({
 hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
 hl.layer_rule({ match = { namespace = "rofi" }, blur = true })
 hl.layer_rule({ match = { namespace = "nwg-dock-hyprland" }, blur = true })
+-- swaync cubre toda la pantalla (layer-shell-cover-screen): ignore_alpha hace que
+-- solo se difumine donde hay tarjeta dibujada y no la pantalla entera
+hl.layer_rule({ match = { namespace = "swaync-control-center" }, blur = true, ignore_alpha = 0.3 })
+hl.layer_rule({ match = { namespace = "swaync-notification-window" }, blur = true, ignore_alpha = 0.3 })
 
 -- Curves — credit https://github.com/end-4/dots-hyprland
 hl.curve("myBezier", { type = "bezier", points = { { 0.05, 0.9 }, { 0.1, 1.05 } } })

@@ -13,6 +13,8 @@ hl.bind(MAIN_MOD .. " + P", hl.dsp.window.pseudo())
 hl.bind(MAIN_MOD .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(MAIN_MOD .. " + K", hl.dsp.layout("swapsplit"))
 hl.bind(MAIN_MOD .. " + L", hl.dsp.exec_cmd("hyprlock"))
+hl.bind(MAIN_MOD .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(MAIN_MOD .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -d -sw"))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("hyprshutdown -t 'Logging out...' --post-cmd 'hyprctl dispatch exit'"))
 hl.bind(
 	MAIN_MOD .. " + B",
@@ -26,6 +28,7 @@ hl.bind(
 	)
 )
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("qalculate-gtk"))
+hl.bind(MAIN_MOD .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper.sh"))
 
 -- Focus
 hl.bind(MAIN_MOD .. " + left", hl.dsp.focus({ direction = "l" }))

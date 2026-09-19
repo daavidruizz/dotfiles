@@ -24,7 +24,8 @@ Soporta dos máquinas desde el mismo repo con detección automática por hostnam
 | Barra | [Waybar](https://github.com/Alexays/Waybar) |
 | Terminal | [Kitty](https://sw.kovidgoyal.net/kitty/) |
 | Launcher | [Rofi](https://github.com/davatorium/rofi) |
-| Notificaciones | [Dunst](https://dunst-project.org) |
+| Notificaciones | [SwayNC](https://github.com/ErikReider/SwayNotificationCenter) (con blur, `SUPER+N` abre el panel) |
+| Plugin Hyprland | [hyprglass](https://github.com/hyprnux/hyprglass) vía hyprpm (Liquid Glass, solo archMSI) |
 | Lockscreen | [Hyprlock](https://github.com/hyprwm/hyprlock) |
 | Idle daemon | [Hypridle](https://github.com/hyprwm/hypridle) |
 | Wallpaper | [swww](https://github.com/LGFae/swww) |
@@ -50,6 +51,8 @@ bash ~/dotfiles/install.sh
 ```
 
 El script instala paquetes (pacman + AUR), copia fuentes, crea los symlinks con stow y copia los wallpapers.
+
+En **archMSI** además instala `hyprpm` y compila el plugin [hyprglass](https://github.com/hyprnux/hyprglass) (`hyprpm update` + `add` + `enable`). `hyprpm` necesita una sesión de Hyprland en marcha: si ejecutas `install.sh` desde un TTY lo omite y te indica el comando a lanzar después.
 
 ### Opciones
 
@@ -104,7 +107,7 @@ dotfiles/
 ├── kitty/              → ~/.config/kitty/
 ├── rofi/               → ~/.config/rofi/
 ├── nvim/               → ~/.config/nvim/      (LazyVim)
-├── dunst/              → ~/.config/dunst/
+├── swaync/             → ~/.config/swaync/
 ├── gtk/                → ~/.config/gtk-{2,3,4}.0/
 ├── qt/                 → ~/.config/qt5ct|qt6ct|kvantum/
 ├── environment.d/      → ~/.config/environment.d/
@@ -126,6 +129,7 @@ La detección es automática: `hyprland.lua` lee `/proc/sys/kernel/hostname` y c
 | Idle | `hypridle.conf` | `hypridle_legion.conf` |
 | Brillo | — | `brightnessctl` |
 | Batería | No | `battery.json` en waybar |
+| Plugin hyprglass | Sí (`hyprpm reload -n` en el autostart) | No |
 
 El único ajuste manual al cambiar de máquina es el último `include` en `waybar/config` para seleccionar `workspaces_msi.json` o `workspaces_legion.json`.
 

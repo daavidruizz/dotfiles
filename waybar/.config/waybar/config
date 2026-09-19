@@ -22,7 +22,8 @@
     "~/.config/waybar/modules/clipboard.json",
     "~/.config/waybar/modules/workspaces_msi.json",
     "~/.config/waybar/modules/vpn.json",
-    "~/.config/waybar/modules/privacy_dots.json"
+    "~/.config/waybar/modules/privacy_dots.json",
+    "~/.config/waybar/modules/notification.json"
   ],
   /*==== MODULES ORDER ====*/
   /*MODULES LEFT*/
@@ -47,6 +48,7 @@
     "clock",
     "battery",
     "custom/privacy_dots",
+    "custom/notification",
     "group/power",
     "custom/vpn"
   ]

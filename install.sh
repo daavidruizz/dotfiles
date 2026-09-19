@@ -18,7 +18,7 @@ DRY_RUN=false
 STOW_ONLY=false
 declare -a ONLY_MODULES=()
 declare -a FAILED=()
-declare -a ALL_MODULES=(hypr waybar dunst rofi nwg-dock kitty wlogout hyprshutdown thunar easyeffects fastfetch btop gtk nvim swayosd vim yazi bash qt environment.d bin)
+declare -a ALL_MODULES=(hypr waybar swaync rofi nwg-dock kitty wlogout hyprshutdown thunar easyeffects fastfetch btop gtk nvim swayosd vim yazi bash qt environment.d bin)
 
 # -------------------------------------------------------
 # Menú interactivo (solo si no se pasan argumentos)
@@ -143,7 +143,7 @@ if ! $STOW_ONLY; then
   declare -a PACMAN_PKGS=(
     hyprland hypridle hyprlock hyprpaper
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
-    waybar dunst
+    waybar swaync
     rofi wofi
     kitty thunar
     easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl
@@ -223,6 +223,54 @@ if ! $STOW_ONLY; then
 else
   log ""
   log "==> [2/5] Paquetes AUR... OMITIDO (--stow-only)"
+fi
+
+# -------------------------------------------------------
+# 2b. PLUGINS DE HYPRLAND (solo archMSI): hyprglass vía hyprpm
+# -------------------------------------------------------
+MACHINE="$(cat /proc/sys/kernel/hostname 2>/dev/null)"
+if ! $STOW_ONLY; then
+  log ""
+  log "==> [2b/5] Plugins de Hyprland (solo archMSI)..."
+
+  HYPRGLASS_URL="https://github.com/hyprnux/hyprglass"
+
+  if [[ "$MACHINE" != "archMSI" ]]; then
+    skip "hyprglass (máquina: ${MACHINE:-desconocida}; solo se instala en archMSI)"
+  elif ! run sudo pacman -S --needed --noconfirm hyprpm; then
+    fail "hyprpm (pacman)"
+  elif ! hyprctl version &>/dev/null; then
+    # hyprpm obtiene la versión de Hyprland con hyprctl: necesita una sesión en marcha
+    info "Hyprland no está en ejecución: hyprpm no puede compilar plugins desde un TTY"
+    info "Tras iniciar sesión ejecuta:"
+    info "  hyprpm update && hyprpm add $HYPRGLASS_URL && hyprpm enable hyprglass"
+    skip "hyprglass (pendiente, ver arriba)"
+  else
+    if run hyprpm update; then
+      ok "hyprpm update"
+    else
+      fail "hyprpm update"
+    fi
+
+    if hyprpm list 2>/dev/null | grep -qi "hyprglass"; then
+      ok "hyprglass ya instalado"
+    elif printf 'y\n' | run hyprpm add "$HYPRGLASS_URL"; then
+      ok "hyprglass (hyprpm add)"
+    else
+      fail "hyprglass (hyprpm add)"
+    fi
+
+    # enable marca el plugin como habilitado (pide sudo); en cada arranque lo carga
+    # `hyprpm reload -n` desde conf/autostart.lua (solo archMSI)
+    if run hyprpm enable hyprglass; then
+      ok "hyprglass habilitado"
+    else
+      fail "hyprglass (hyprpm enable)"
+    fi
+  fi
+else
+  log ""
+  log "==> [2b/5] Plugins de Hyprland... OMITIDO (--stow-only)"
 fi
 
 # -------------------------------------------------------
