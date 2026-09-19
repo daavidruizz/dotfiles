@@ -161,6 +161,7 @@ if ! $STOW_ONLY; then
     pacman-contrib
     vim neovim
     swayosd
+    sound-theme-freedesktop
     stow
     qt5ct qt6ct kvantum
     hyprpicker
@@ -393,6 +394,29 @@ stow_module() {
 
 for module in "${MODULES[@]}"; do
   stow_module "$module"
+done
+
+# swaync: ~/.config/swaync/config.json es un enlace a la variante de la máquina
+# (config_msi.json / config_legion.json). No se versiona (.gitignore) porque es
+# distinto en cada máquina, y swaync (también activado por D-Bus/systemd, sin
+# argumentos) siempre lee ese nombre.
+link_swaync_config() {
+  local machine variant dir="$DOTFILES/swaync/.config/swaync"
+  machine="$(cat /proc/sys/kernel/hostname 2>/dev/null)"
+  case "$machine" in
+  archLEGION) variant="legion" ;;
+  *) variant="msi" ;; # archMSI y máquina desconocida (igual que hyprland.lua)
+  esac
+  [ -d "$dir" ] || return 0
+  if run ln -sfn "config_${variant}.json" "$dir/config.json"; then
+    ok "swaync/config.json → config_${variant}.json"
+  else
+    fail "swaync/config.json (enlace a config_${variant}.json)"
+  fi
+}
+
+for module in "${MODULES[@]}"; do
+  [[ "$module" == "swaync" ]] && link_swaync_config
 done
 
 # -------------------------------------------------------

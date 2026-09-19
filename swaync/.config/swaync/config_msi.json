@@ -1,0 +1,96 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "overlay",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "cssPriority": "user",
+  "control-center-margin-top": 20,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 20,
+  "control-center-margin-left": 0,
+  "control-center-width": 460,
+  "control-center-height": 600,
+  "fit-to-screen": false,
+  "notification-window-width": 460,
+  "notification-body-image-height": 100,
+  "notification-body-image-width": 200,
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-grouping": true,
+  "image-visibility": "when-available",
+  "timeout": 6,
+  "timeout-low": 4,
+  "timeout-critical": 0,
+  "transition-time": 200,
+  "relative-timestamps": true,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "keyboard-shortcuts": true,
+  "script-fail-notify": true,
+  "text-empty": "Sin notificaciones",
+  "widgets": [
+    "volume",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "volume": {
+      "label": "󰕾  Volumen",
+      "show-per-app": false
+    },
+    "title": {
+      "text": "Notificaciones",
+      "clear-all-button": true,
+      "button-text": "Borrar todo"
+    },
+    "dnd": {
+      "text": "No molestar"
+    },
+    "notifications": {
+      "vexpand": true
+    }
+  },
+  "scripts": {
+    "snd-bt-conectado": {
+      "category": "^device\\.added$",
+      "exec": "~/.config/swaync/scripts/play-sound.sh device-added"
+    },
+    "snd-bt-desconectado": {
+      "category": "^device\\.removed$",
+      "exec": "~/.config/swaync/scripts/play-sound.sh device-removed"
+    },
+    "snd-cargador-on": {
+      "category": "^power\\.plugged$",
+      "exec": "~/.config/swaync/scripts/play-sound.sh power-plug"
+    },
+    "snd-cargador-off": {
+      "category": "^power\\.unplugged$",
+      "exec": "~/.config/swaync/scripts/play-sound.sh power-unplug"
+    },
+    "snd-bateria-baja": {
+      "category": "^power\\.low$",
+      "exec": "~/.config/swaync/scripts/play-sound.sh dialog-warning"
+    },
+    "snd-bateria-critica": {
+      "category": "^power\\.critical$",
+      "exec": "~/.config/swaync/scripts/play-sound.sh dialog-error"
+    },
+    "snd-bateria-llena": {
+      "category": "^power\\.full$",
+      "exec": "~/.config/swaync/scripts/play-sound.sh complete"
+    },
+    "snd-critica": {
+      "urgency": "Critical",
+      "exec": "~/.config/swaync/scripts/play-sound.sh dialog-warning"
+    },
+    "snd-normal": {
+      "summary": ".*",
+      "exec": "~/.config/swaync/scripts/play-sound.sh message"
+    }
+  }
+}

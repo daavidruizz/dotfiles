@@ -118,6 +118,28 @@ dotfiles/
 
 ---
 
+### Notificaciones (swaync)
+
+Sistema de notificaciones con sonido, todo en el módulo `swaync/`:
+
+| Evento | Notificación | Sonido (tema freedesktop) |
+|---|---|---|
+| Notificación normal | sí | `message` |
+| Crítica | sí (no caduca) | `dialog-warning` |
+| Bluetooth conectado / desconectado | sí | `device-added` / `device-removed` |
+| Cargador conectado / desconectado (portátil) | sí | `power-plug` / `power-unplug` |
+| Batería baja (≤20 %) / crítica (≤10 %) / completa | sí | `dialog-warning` / `dialog-error` / `complete` |
+| Batería baja del ratón/teclado (Logitech) | sí | igual que batería |
+| Subir/bajar volumen o brillo | **no** (solo el OSD de SwayOSD) | `audio-volume-change` |
+
+- `SUPER+N` abre el panel, `SUPER+SHIFT+N` activa "No molestar" (silencia también los sonidos; los de volumen/brillo suenan siempre).
+- Arriba del panel hay una barra de **volumen** y, en archLEGION, otra de **brillo**.
+- Los avisos de Bluetooth y batería los generan `bluetooth-notify.sh` y `battery-notify.sh` (lanzados en `autostart.lua`); swaync elige el sonido por la *categoría* de la notificación (`device.added`, `power.low`…, ver `"scripts"` en la config). Cambiar un sonido = editar esa línea; para uno propio, dejar `~/.local/share/sounds/<nombre>.oga`.
+- **Config por máquina:** `config_msi.json` (solo volumen) y `config_legion.json` (volumen + brillo). `~/.config/swaync/config.json` es un **enlace** a la variante de la máquina que crea `install.sh`; no se versiona (`.gitignore`). Sin `install.sh`: `ln -sfn config_msi.json ~/dotfiles/swaync/.config/swaync/config.json` (o `config_legion.json`).
+- Recargar: `swaync-client -R -rs` (config + CSS). Depurar sonidos: `touch ~/.cache/play-sound.debug` y mirar `~/.cache/play-sound.log`.
+
+---
+
 ## Multi-máquina (archMSI ↔ archLEGION)
 
 La detección es automática: `hyprland.lua` lee `/proc/sys/kernel/hostname` y carga la config correspondiente sin intervención manual.
@@ -130,6 +152,8 @@ La detección es automática: `hyprland.lua` lee `/proc/sys/kernel/hostname` y c
 | Brillo | — | `brightnessctl` |
 | Batería | No | `battery.json` en waybar |
 | Plugin hyprglass | Sí (`hyprpm reload -n` en el autostart) | No |
+| swaync (config) | `config_msi.json`: barra de volumen | `config_legion.json`: volumen + brillo |
+| Avisos de batería | Solo ratón/teclado Logitech | Portátil (cargador, baja, crítica, completa) + periféricos |
 
 El único ajuste manual al cambiar de máquina es el último `include` en `waybar/config` para seleccionar `workspaces_msi.json` o `workspaces_legion.json`.
 

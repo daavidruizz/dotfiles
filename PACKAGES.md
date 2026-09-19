@@ -70,7 +70,10 @@
 ### rofi
 **Fuentes requeridas:**
 - `Montserrat 9` → `ttf-montserrat` (AUR) — launchpad.rasi
-- `Roboto 12` → `ttf-roboto` — rounded-template.rasi
+- `Roboto 12` → `ttf-roboto` — rounded-template.rasi (tema Nord anterior, ya no activo)
+- `JetBrainsMono Nerd Font Mono 12` → `ttf-jetbrains-mono-nerd` — glass.rasi (tema activo)
+
+**Tema activo:** `template/glass.rasi` (seleccionado en `config.rasi`). Rofi 2.0 corre como capa de Wayland (namespace `rofi`): el blur lo aplica Hyprland con la `layer_rule` de `appearance.lua` (`ignore_alpha = 0.3` para que siga el redondeo).
 
 ---
 
@@ -83,6 +86,15 @@
 **Blur:** lo aplica Hyprland con layer rules en `appearance.lua` (`swaync-control-center`, `swaync-notification-window`, con `ignore_alpha`)
 
 **Sustituye a dunst:** `power.sh` y el resto de scripts usan `notify-send` (`libnotify`), no `dunstify`.
+
+**Sonidos y avisos (scripts en `swaync/.config/swaync/scripts/`):**
+- `sound-theme-freedesktop` → los `.oga` (`message`, `device-added`, `power-plug`, `dialog-warning`…). Se instala explícitamente para que pacman no lo trate como huérfano.
+- `pipewire` → `pw-play` (reproduce los sonidos)
+- `bluez` → avisos de Bluetooth (`gdbus monitor` de `glib2` + `busctl` de `systemd`)
+- `brightnessctl` → barra de brillo (solo `config_legion.json`; usa `-c backlight`)
+- `util-linux` → `flock` (evita apilar sonidos con teclas en repetición)
+
+**Config por máquina:** `config_msi.json` / `config_legion.json`; `install.sh` enlaza `config.json` a la de la máquina (no versionado).
 
 ---
 
@@ -146,7 +158,7 @@ hyprpm enable hyprglass      # pide sudo
 sudo pacman -S --needed \
   hyprland hypridle hyprlock hyprpaper \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
-  waybar swaync \
+  waybar swaync sound-theme-freedesktop \
   rofi wofi \
   kitty thunar \
   easyeffects wireplumber pipewire pipewire-pulse pavucontrol playerctl \
@@ -201,4 +213,5 @@ Copiadas automáticamente a `~/.local/share/fonts/` por `install.sh`:
 wlogout  →  depende de  →  hypr  (llama a power.sh)
 waybar   →  depende de  →  kitty (abre terminales flotantes)
 hyprlock →  depende de  →  hypr/scripts/ (songcover.sh, songdetail.sh)
+hypr     →  depende de  →  swaync/scripts/ (play-sound.sh en las teclas de volumen/brillo; bluetooth/battery-notify.sh en el autostart)
 ```

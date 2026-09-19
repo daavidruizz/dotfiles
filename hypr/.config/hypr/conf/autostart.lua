@@ -5,6 +5,10 @@ hl.on("hyprland.start", function()
 	-- Core services
 	hl.exec_cmd("waybar --config ~/.config/waybar/config --style ~/.config/waybar/style.css")
 	hl.exec_cmd("swaync")
+	-- Avisos de sistema vía swaync (notificación + sonido). Se protegen solos: sin batería
+	-- de sistema (archMSI) el de batería solo vigila ratón/teclado.
+	hl.exec_cmd("~/.config/swaync/scripts/bluetooth-notify.sh")
+	hl.exec_cmd("~/.config/swaync/scripts/battery-notify.sh")
 	hl.exec_cmd("swayosd-server --top-margin 0.99")
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("hypridle")

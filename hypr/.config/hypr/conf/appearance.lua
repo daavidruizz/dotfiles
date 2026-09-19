@@ -65,7 +65,8 @@ hl.config({
 
 -- Layer rules
 hl.layer_rule({ match = { namespace = "waybar" }, blur = true })
-hl.layer_rule({ match = { namespace = "rofi" }, blur = true })
+-- ignore_alpha: el blur sigue el redondeo del tema (esquinas transparentes)
+hl.layer_rule({ match = { namespace = "rofi" }, blur = true, ignore_alpha = 0.3 })
 hl.layer_rule({ match = { namespace = "nwg-dock-hyprland" }, blur = true })
 -- swaync cubre toda la pantalla (layer-shell-cover-screen): ignore_alpha hace que
 -- solo se difumine donde hay tarjeta dibujada y no la pantalla entera

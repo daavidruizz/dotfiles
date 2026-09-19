@@ -42,6 +42,11 @@
   padding-right: 10px;
 }
 
+/* Aire entre el borde y el texto (por defecto 4px: el texto se pegaba al borde) */
+.notification-row .notification-background .notification .notification-default-action {
+  padding: 10px 14px;
+}
+
 /* Texto secundario (como rofi/hyprlock) */
 .notification-row .notification-background .notification .notification-default-action .notification-content .text-box .body {
   color: #d8dee9;
@@ -132,4 +137,41 @@
 .widget-dnd > switch slider {
   background: #ffffff;
   border-radius: 8px;
+}
+
+/* Barras de volumen y brillo (arriba del panel): píldora de waybar + acento Nord */
+.widget-volume,
+.widget-slider {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.widget-volume label,
+.widget-slider label {
+  font-size: 1rem;
+  margin-right: 10px;
+}
+
+.widget-volume scale trough,
+.widget-slider scale trough {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  min-height: 8px;
+}
+
+.widget-volume scale highlight,
+.widget-slider scale highlight {
+  background: #88c0d0;
+  border-radius: 8px;
+}
+
+.widget-volume scale slider,
+.widget-slider scale slider {
+  background: #ffffff;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+  min-width: 16px;
+  min-height: 16px;
 }

@@ -1,0 +1,123 @@
+/* ROFI — misma apariencia que el resto del sistema (waybar / swaync / hyprland).
+   Tema autónomo (no importa rounded-template). Valores tomados de:
+     - waybar/style.css : negro translúcido rgba(0,0,0,0.6), radio 8 en píldoras,
+                          hover blanco 0.1, seleccionado blanco 0.15-0.3, rojo #f38ba8,
+                          fuente JetBrainsMono Nerd Font Mono
+     - hypr appearance  : rounding 15 para contenedores
+     - Nord (rofi/hyprlock anterior): texto secundario #D8DEE9, acento #88C0D0
+   El blur lo aplica Hyprland (layer_rule "rofi" en appearance.lua), no rofi. */
+
+* {
+    font:   "JetBrainsMono Nerd Font Mono 12";
+
+    bg0:    #00000099;   /* fondo: rgba(0,0,0,0.6) como las píldoras de waybar */
+    bg1:    #ffffff1a;   /* entry / hover: rgba(255,255,255,0.1) */
+    bg2:    #ffffff26;   /* seleccionado: rgba(255,255,255,0.15) */
+    bd0:    #ffffff26;   /* borde: rgba(255,255,255,0.15), como el de swaync */
+
+    fg0:    #ffffff;
+    fg1:    #d8dee9;     /* secundario (Nord, como hyprlock) */
+    fg2:    #6c7086;     /* placeholder / deshabilitado (waybar) */
+
+    accent: #88c0d0;     /* entradas activas (Nord) */
+    urgent: #f38ba8;     /* alertas (waybar) */
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+window {
+    location:       north;
+    y-offset:       calc(50% - 176px);
+    width:          480;
+
+    border:         1px;
+    border-color:   @bd0;
+    border-radius:  15px;
+
+    background-color:   @bg0;
+}
+
+mainbox {
+    padding:    12px;
+}
+
+inputbar {
+    background-color:   @bg1;
+
+    border-radius:  8px;
+
+    padding:    8px 14px;
+    spacing:    8px;
+    children:   [ prompt, entry ];
+}
+
+prompt {
+    text-color: @fg1;
+}
+
+entry {
+    placeholder:        "Search";
+    placeholder-color:  @fg2;
+}
+
+message {
+    margin:             12px 0 0;
+    border-radius:      8px;
+    background-color:   @bg1;
+}
+
+textbox {
+    padding:    8px 14px;
+}
+
+listview {
+    background-color:   transparent;
+
+    margin:     12px 0 0;
+    lines:      8;
+    columns:    1;
+
+    fixed-height: false;
+}
+
+element {
+    padding:        8px 14px;
+    spacing:        10px;
+    border-radius:  8px;
+}
+
+element normal active, element alternate active {
+    text-color: @accent;
+}
+
+element normal urgent, element alternate urgent {
+    text-color: @urgent;
+}
+
+element selected normal {
+    background-color:   @bg2;
+}
+
+element selected active {
+    background-color:   @bg2;
+    text-color:         @accent;
+}
+
+element selected urgent {
+    background-color:   @bg2;
+    text-color:         @urgent;
+}
+
+element-icon {
+    size:           1.2em;
+    vertical-align: 0.5;
+}
+
+element-text {
+    text-color: inherit;
+}
