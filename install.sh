@@ -142,6 +142,7 @@ if ! $STOW_ONLY; then
 
   declare -a PACMAN_PKGS=(
     hyprland hypridle hyprlock hyprpaper
+    awww
     xdg-desktop-portal-hyprland xdg-desktop-portal-gtk
     waybar swaync
     rofi wofi
@@ -209,10 +210,8 @@ if ! $STOW_ONLY; then
     adwaita-qt5
     adwaita-qt6
     bibata-cursor-theme
-    ttf-sf-pro
     bluetuith
     mpvpaper
-    wlogout
   )
 
   if run yay -S --needed --noconfirm --answerdiff=None --answerclean=None "${AUR_PKGS[@]}"; then

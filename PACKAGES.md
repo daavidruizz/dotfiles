@@ -8,7 +8,9 @@
 | `hyprland` | core WM | `hyprland` |
 | `hypridle` | idle daemon | `hypridle` |
 | `hyprlock` | lockscreen | `hyprlock` |
-| `hyprpaper` | wallpaper daemon | `hyprpaper` |
+| `hyprpaper` | wallpaper daemon (alternativa, desactivado en el autostart) | `hyprpaper` |
+| `awww` / `awww-daemon` | wallpaper de imagen (autostart + `wallpaper.sh`); es el antiguo `swww`, renombrado | `awww` |
+| `mpvpaper` | wallpaper de vídeo (`wallpaper.sh video`) | `mpvpaper` (AUR) |
 | `hyprctl` | control IPC | incluido en `hyprland` |
 | `brightnessctl` | hypridle (brillo en suspend) | `brightnessctl` |
 | `loginctl` | hypridle (lock-session) | `systemd` (ya presente) |
@@ -32,7 +34,7 @@
 | hyprpicker | color picker | hyprlpicker |
 
 **Archivos referenciados:**
-- `~/wallpapers/LOTR/` → `random-wall.sh` (incluido en dotfiles/wallpapers/)
+- `~/wallpapers/random/` → `wallpaper.sh random` (copiado por `install.sh` desde dotfiles/wallpapers/default). `wallpaper.sh video` usa `~/wallpapers/videos/`
 - `~/Pictures/profle.jpg` → `hyprlock.conf` (incluido en dotfiles/wallpapers/)
 - `~/Pictures/wallpapers/puente_nubes.jpg` → `hyprlock.conf` (incluido en dotfiles/wallpapers/)
 - `~/Pictures/default-no-music.jpg` → `songcover.sh` (incluido en dotfiles/wallpapers/)
@@ -156,7 +158,7 @@ hyprpm enable hyprglass      # pide sudo
 
 ```bash
 sudo pacman -S --needed \
-  hyprland hypridle hyprlock hyprpaper \
+  hyprland hypridle hyprlock hyprpaper awww \
   xdg-desktop-portal-hyprland xdg-desktop-portal-gtk \
   waybar swaync sound-theme-freedesktop \
   rofi wofi \
@@ -185,6 +187,7 @@ sudo pacman -S --needed \
 ```bash
 yay -S --needed \
   grimblast-git \
+  mpvpaper \
   adw-gtk3 \
   whitesur-icon-theme \
   bibata-cursor-theme \

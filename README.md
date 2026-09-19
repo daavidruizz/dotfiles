@@ -28,7 +28,7 @@ Soporta dos máquinas desde el mismo repo con detección automática por hostnam
 | Plugin Hyprland | [hyprglass](https://github.com/hyprnux/hyprglass) vía hyprpm (Liquid Glass, solo archMSI) |
 | Lockscreen | [Hyprlock](https://github.com/hyprwm/hyprlock) |
 | Idle daemon | [Hypridle](https://github.com/hyprwm/hypridle) |
-| Wallpaper | [swww](https://github.com/LGFae/swww) |
+| Wallpaper | [awww](https://codeberg.org/LGFae/awww) (el antiguo swww) + [mpvpaper](https://github.com/GhostNaN/mpvpaper) para vídeo |
 | Dock | [nwg-dock-hyprland](https://github.com/nwg-piotr/nwg-dock-hyprland) |
 | Audio | PipeWire + [EasyEffects](https://github.com/wwmm/easyeffects) |
 | OSD volumen/brillo | [SwayOSD](https://github.com/ErikReider/SwayOSD) |
