@@ -30,7 +30,9 @@ hl.window_rule({ match = { title = "^(Calendar)$" }, float = true, center = true
 hl.window_rule({ match = { title = "^(Calculator)$" }, float = true, center = true, size = { 400, 500 } })
 
 -- File manager
-hl.window_rule({ match = { class = "thunar" }, float = true, center = true, size = { 1200, 800 } })
+-- "[Tt]hunar" porque la activación por D-Bus (org.freedesktop.FileManager1 / thunar.service,
+-- usada por Nextcloud y "Abrir carpeta contenedora") lanza /usr/bin/Thunar con T mayúscula
+hl.window_rule({ match = { class = "^[Tt]hunar$" }, float = true, center = true, size = { 1200, 800 } })
 
 -- Generic floating
 hl.window_rule({ match = { class = "type1-floating" }, float = true, center = true, size = { 1200, 600 } })

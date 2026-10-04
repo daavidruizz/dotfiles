@@ -1,0 +1,159 @@
+# Tema basado en Monokai Soda (el mismo que usa kitty: ../kitty/themes/Monokai_Soda.conf)
+# Colores calcados 1:1 de esa paleta para que yazi y kitty luzcan igual.
+#   bg      #191919   fg       #c4c4b5   panel  #292929
+#   muted   #615e4b   cursor   #f6f6ec   select #404040
+#   red     #f3005f   green    #97e023   yellow #dfd561
+#   orange  #fa8419   purple   #9c64fe   cyan   #57d1ea
+
+[mgr]
+cwd = { fg = "#9c64fe", italic = true }
+
+# Hovered
+hovered         = { bg = "#404040" }
+preview_hovered = { bg = "#404040" }
+
+# Find
+find_keyword  = { fg = "#191919", bg = "#fa8419", bold = true }
+find_position = { fg = "#57d1ea", bg = "#292929", bold = true }
+
+# Marker
+marker_copied   = { fg = "#97e023", bg = "#97e023" }
+marker_cut      = { fg = "#f3005f", bg = "#f3005f" }
+marker_marked   = { fg = "#dfd561", bg = "#dfd561" }
+marker_selected = { fg = "#9c64fe", bg = "#9c64fe" }
+
+# Count
+count_copied   = { fg = "#191919", bg = "#97e023" }
+count_cut      = { fg = "#191919", bg = "#f3005f" }
+count_selected = { fg = "#191919", bg = "#9c64fe" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#615e4b" }
+
+[tabs]
+active   = { fg = "#191919", bg = "#9c64fe" }
+inactive = { fg = "#615e4b", bg = "#292929" }
+
+[mode]
+normal_main = { fg = "#191919", bg = "#9c64fe", bold = true }
+normal_alt  = { fg = "#9c64fe", bg = "#292929" }
+
+select_main = { fg = "#191919", bg = "#dfd561", bold = true }
+select_alt  = { fg = "#dfd561", bg = "#292929" }
+
+unset_main  = { fg = "#191919", bg = "#f3005f", bold = true }
+unset_alt   = { fg = "#f3005f", bg = "#292929" }
+
+[status]
+overall   = { fg = "#c4c4b5", bg = "#191919" }
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Progress
+progress_label  = { fg = "#c4c4b5", bold = true }
+progress_normal = { fg = "#9c64fe", bg = "#292929" }
+progress_error  = { fg = "#f3005f", bg = "#292929" }
+
+# Permissions
+perm_type  = { fg = "#9c64fe" }
+perm_read  = { fg = "#dfd561" }
+perm_write = { fg = "#f3005f" }
+perm_exec  = { fg = "#97e023" }
+perm_sep   = { fg = "#615e4b" }
+
+[pick]
+border   = { fg = "#57d1ea" }
+active   = { fg = "#c4c4b5", bg = "#292929" }
+inactive = { fg = "#c4c4b5" }
+
+# Input
+[input]
+border   = { fg = "#57d1ea" }
+title    = { fg = "#57d1ea" }
+value    = { fg = "#9c64fe" }
+selected = { bg = "#292929" }
+
+# Completion
+[cmp]
+border   = { fg = "#57d1ea" }
+active   = { fg = "#c4c4b5", bg = "#333333" }
+inactive = { fg = "#c4c4b5" }
+
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+# Tasks
+[tasks]
+border  = { fg = "#57d1ea" }
+title   = { fg = "#57d1ea" }
+hovered = { fg = "#c4c4b5", bg = "#292929" }
+
+# Which
+[which]
+cols            = 3
+mask            = { bg = "#191919" }
+cand            = { fg = "#57d1ea" }
+rest            = { fg = "#9c64fe" }
+desc            = { fg = "#dfd561" }
+separator       = " ➜ "
+separator_style = { fg = "#615e4b" }
+
+# Confirm
+[confirm]
+border  = { fg = "#57d1ea" }
+title   = { fg = "#57d1ea" }
+content = {}
+list    = {}
+btn_yes = { bg = "#292929" }
+btn_no  = {}
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+# Spot
+[spot]
+border = { fg = "#57d1ea" }
+title  = { fg = "#57d1ea" }
+
+# Notify
+[notify]
+title_info  = { fg = "#57d1ea" }
+title_warn  = { fg = "#dfd561" }
+title_error = { fg = "#f3005f" }
+
+icon_error = ""
+icon_warn  = ""
+icon_info  = ""
+
+# Help
+[help]
+on      = { fg = "#97e023" }
+run     = { fg = "#9c64fe" }
+desc    = { fg = "#57d1ea" }
+hovered = { bg = "#404040" }
+footer  = { fg = "#c4c4b5", bg = "#191919" }
+
+[filetype]
+
+rules = [
+	# Imágenes
+	{ mime = "image/*", fg = "#dfd561" },
+
+	# Media
+	{ mime = "{audio,video}/*", fg = "#9c64fe" },
+
+	# Archivos comprimidos
+	{ mime = "application/*zip", fg = "#f3005f" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#f3005f" },
+
+	# Documentos
+	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#57d1ea" },
+
+	# Especiales
+	{ name = "*", is = "orphan", bg = "#f3005f" },
+	{ name = "*", is = "exec"  , fg = "#97e023" },
+
+	# Fallback
+	{ name = "*/", fg = "#9c64fe" },
+	{ name = "*", fg = "#c4c4b5" }
+]
