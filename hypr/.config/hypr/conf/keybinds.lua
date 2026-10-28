@@ -16,10 +16,7 @@ hl.bind(MAIN_MOD .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(MAIN_MOD .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(MAIN_MOD .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -d -sw"))
 hl.bind("CTRL + ALT + Delete", hl.dsp.exec_cmd("hyprshutdown -t 'Logging out...' --post-cmd 'hyprctl dispatch exit'"))
-hl.bind(
-	MAIN_MOD .. " + B",
-	hl.dsp.exec_cmd("google-chrome-stable --enable-notifications --enable-system-notifications")
-)
+hl.bind(MAIN_MOD .. " + B", hl.dsp.exec_cmd("chromium --enable-notifications --enable-system-notifications"))
 hl.bind(MAIN_MOD .. " + SPACE", hl.dsp.exec_cmd("rofi --class rofi -show drun -show-icons"))
 hl.bind(
 	MAIN_MOD .. " + W",
@@ -53,12 +50,28 @@ hl.bind(MAIN_MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- Volumen/brillo: OSD de SwayOSD (no genera notificación) + sonido de feedback.
 -- -f: suena aunque "No molestar" esté activo. Ver swaync/.config/swaync/scripts/play-sound.sh
 local LEVEL_SOUND = "~/.config/swaync/scripts/play-sound.sh -f audio-volume-change"
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("swayosd-client --output-volume raise; " .. LEVEL_SOUND), { repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("swayosd-client --output-volume lower; " .. LEVEL_SOUND), { repeating = true })
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("swayosd-client --output-volume raise; " .. LEVEL_SOUND),
+	{ repeating = true }
+)
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("swayosd-client --output-volume lower; " .. LEVEL_SOUND),
+	{ repeating = true }
+)
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { repeating = true })
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("swayosd-client --input-volume mute-toggle"), { repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("swayosd-client --brightness raise; " .. LEVEL_SOUND), { repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("swayosd-client --brightness lower; " .. LEVEL_SOUND), { repeating = true })
+hl.bind(
+	"XF86MonBrightnessUp",
+	hl.dsp.exec_cmd("swayosd-client --brightness raise; " .. LEVEL_SOUND),
+	{ repeating = true }
+)
+hl.bind(
+	"XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("swayosd-client --brightness lower; " .. LEVEL_SOUND),
+	{ repeating = true }
+)
 
 -- Media (locked — funciona en lockscreen)
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })

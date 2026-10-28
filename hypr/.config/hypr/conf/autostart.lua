@@ -12,6 +12,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("swayosd-server --top-margin 0.99")
 	hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 	hl.exec_cmd("hypridle")
+	-- Agente polkit: sin él las peticiones de contraseña (rpi-imager, etc.) no aparecen.
+	hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 
 	-- Plugins de Hyprland (solo archMSI): carga los habilitados con hyprpm (hyprglass).
 	-- `reload` en vez de `enable`: enable pide sudo, reload no. Al cargarse el plugin
@@ -38,6 +40,9 @@ hl.on("hyprland.start", function()
 	-- Bitwarden
 	hl.exec_cmd("bitwarden-desktop")
 	hl.exec_cmd("thunderbird")
+
+	-- Nextcloud (minimizado en la bandeja)
+	hl.exec_cmd("nextcloud --background")
 
 	--AWWW/SWWW
 	hl.exec_cmd("awww-daemon")

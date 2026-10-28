@@ -24,5 +24,5 @@ hl.monitor({
 	mode = "1920x1080@60",
 	position = "960x-1080",
 	scale = 1,
-	disabled = true,
+	disabled = false,
 })
