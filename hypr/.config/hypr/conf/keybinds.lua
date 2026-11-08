@@ -20,9 +20,7 @@ hl.bind(MAIN_MOD .. " + B", hl.dsp.exec_cmd("chromium --enable-notifications --e
 hl.bind(MAIN_MOD .. " + SPACE", hl.dsp.exec_cmd("rofi --class rofi -show drun -show-icons"))
 hl.bind(
 	MAIN_MOD .. " + W",
-	hl.dsp.exec_cmd(
-		"/usr/bin/google-chrome-stable --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm"
-	)
+	hl.dsp.exec_cmd("chromium --profile-directory=Default --app-id=hnpfjngllnobngcgfapefoaidbinmjnm")
 )
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("qalculate-gtk"))
 hl.bind(MAIN_MOD .. " + SHIFT + W", hl.dsp.exec_cmd("~/.config/hypr/scripts/wallpaper.sh"))

@@ -12,7 +12,8 @@ return {
       },
     })
 
-    -- Atajo de teclado: Espacio + c abre el selector de color interactivo
-    vim.keymap.set("n", "<leader>c", "<cmd>CccPick<cr>", { desc = "Selector de Color (CCC)" })
+    -- Atajo de teclado: Espacio + c + p abre el selector de color interactivo
+    -- (no usar <leader>c a secas: es el prefijo del grupo "code" de LazyVim)
+    vim.keymap.set("n", "<leader>cp", "<cmd>CccPick<cr>", { desc = "Selector de Color (CCC)" })
   end,
 }

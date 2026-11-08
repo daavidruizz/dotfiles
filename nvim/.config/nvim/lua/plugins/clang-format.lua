@@ -14,7 +14,11 @@ return {
       },
       formatters = {
         ["clang-format"] = {
-          prepend_args = { "--style={BasedOnStyle: LLVM, BreakBeforeBraces: Allman, IndentWidth: 4}" },
+          -- ReflowComments: false → no reescribe los comentarios (no rompe código comentado)
+          -- ColumnLimit: 120 → más margen antes de partir líneas (LLVM trae 80)
+          prepend_args = {
+            "--style={BasedOnStyle: LLVM, BreakBeforeBraces: Allman, IndentWidth: 4, ReflowComments: false, ColumnLimit: 120}",
+          },
         },
       },
     },
