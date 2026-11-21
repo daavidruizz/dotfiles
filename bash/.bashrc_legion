@@ -1,0 +1,6 @@
+#
+# ~/.bashrc_legion — config interactiva solo de archLEGION (cargado desde ~/.bashrc)
+#
+# Alias y funciones solo del portátil.
+# Ej.: alias bat='cat /sys/class/power_supply/BAT0/capacity'
+#

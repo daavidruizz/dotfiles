@@ -1,0 +1,8 @@
+#
+# ~/.bash_profile_msi — exports solo de archMSI (cargado desde ~/.bash_profile)
+#
+
+# LM Studio CLI (lms)
+export PATH="$PATH:$HOME/.lmstudio/bin"
+
+# ROCm: /opt/rocm/bin ya lo añade el paquete en /etc/profile.d/rocm.sh

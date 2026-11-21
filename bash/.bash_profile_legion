@@ -1,0 +1,6 @@
+#
+# ~/.bash_profile_legion — exports solo de archLEGION (cargado desde ~/.bash_profile)
+#
+# Variables de entorno que Hyprland y sus apps deben heredar.
+# Ej.: export PATH="$PATH:/ruta/solo/legion"
+#

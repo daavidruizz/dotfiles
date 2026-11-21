@@ -39,8 +39,10 @@ for i = 1, 10 do
 end
 
 -- Mouse
-hl.bind(MAIN_MOD .. " + mouse_down", hl.dsp.focus({ workspace = "m+1" }))
-hl.bind(MAIN_MOD .. " + mouse_up", hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(MAIN_MOD .. " + mouse_down", hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(MAIN_MOD .. " + mouse_up", hl.dsp.focus({ workspace = "m+1" }))
+hl.bind(MAIN_MOD .. " + mouse_left", hl.dsp.focus({ workspace = "m-1" }))
+hl.bind(MAIN_MOD .. " + mouse_right", hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(MAIN_MOD .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(MAIN_MOD .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 

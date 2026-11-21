@@ -1,0 +1,17 @@
+#
+# ~/.bashrc_msi — config interactiva solo de archMSI (cargado desde ~/.bashrc)
+#
+
+# Ojo: hypr/conf/env.lua pone LIBVA_DRIVER_NAME=nvidia para toda la sesión;
+# esto lo sobrescribe solo en las terminales.
+export LIBVA_DRIVER_NAME=radeonsi
+
+# Ollama (CUDA/ROCm)
+alias ollama-stop='pkill -f "ollama serve" && echo "Ollama detenido"'
+alias ollama-start='OLLAMA_LLM_LIBRARY="cuda_v13" ollama serve > /dev/null 2>&1 & sleep 2 && echo "Ollama listo"'
+alias chat-code='OLLAMA_LLM_LIBRARY="cuda_v13" ollama run qwen-coder'
+alias chat='OLLAMA_LLM_LIBRARY="cuda_v13" ollama run qwen2.5:7b'
+
+# llama.cpp (build ROCm)
+alias llama-cli="~/.cache/yay/llama-cpp-rocm-git/src/llama.cpp/build/bin/llama-cli"
+alias llama-server="~/.cache/yay/llama-cpp-rocm-git/src/llama.cpp/build/bin/llama-server"

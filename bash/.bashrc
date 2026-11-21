@@ -1,38 +1,10 @@
 #
-# ~/.bashrc
+# ~/.bashrc — se ejecuta en CADA terminal interactiva
+#
+# Solo alias, funciones, prompt. Las variables de entorno van en ~/.bash_profile.
 #
 
 [[ $- != *i* ]] && return
-
-# ────────────────────────────────────────────────
-# MACHINE
-# ────────────────────────────────────────────────
-machine="$(uname -n)"
-
-# ────────────────────────────────────────────────
-# HYPRLAND
-# ────────────────────────────────────────────────
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  if [ "${HOSTNAME}" = "${machine}" ]; then
-    exec start-hyprland
-  fi
-fi
-
-# ────────────────────────────────────────────────
-# EXPORTS
-# ────────────────────────────────────────────────
-
-export FILE_MANAGER=thunar
-export XDG_FILE_MANAGER=thunar
-export XDG_CURRENT_DESKTOP=Hyprland
-export XDG_SESSION_TYPE=wayland
-
-export PATH="$HOME/.local/bin:$PATH"
-
-# Load system locale
-if [ -f /etc/locale.conf ]; then
-  source /etc/locale.conf
-fi
 
 # ────────────────────────────────────────────────
 # ALIASES — general
@@ -107,24 +79,10 @@ if [[ "$TERM" == "xterm-kitty" ]] && [[ -z "$FASTFETCH_RUN" ]]; then
   fastfetch
 fi
 
-# ════════════════════════════════════════════════
-# MSI ONLY — eliminar o comentar en el Legion
-# ════════════════════════════════════════════════
+# ────────────────────────────────────────────────
+# ESPECÍFICO DE LA MÁQUINA — ~/.bashrc_msi / ~/.bashrc_legion
+# ────────────────────────────────────────────────
 
-export LIBVA_DRIVER_NAME=radeonsi
-
-# LM Studio
-export PATH="$PATH:/home/rzzz/.lmstudio/bin"
-
-# ROCm (AMD GPU compute)
-export PATH=$PATH:/opt/rocm/bin
-
-# Ollama (CUDA/ROCm)
-alias ollama-stop='pkill -f "ollama serve" && echo "Ollama detenido"'
-alias ollama-start='OLLAMA_LLM_LIBRARY="cuda_v13" ollama serve > /dev/null 2>&1 & sleep 2 && echo "Ollama listo"'
-alias chat-code='OLLAMA_LLM_LIBRARY="cuda_v13" ollama run qwen-coder'
-alias chat='OLLAMA_LLM_LIBRARY="cuda_v13" ollama run qwen2.5:7b'
-
-# llama.cpp (build ROCm)
-alias llama-cli="~/.cache/yay/llama-cpp-rocm-git/src/llama.cpp/build/bin/llama-cli"
-alias llama-server="~/.cache/yay/llama-cpp-rocm-git/src/llama.cpp/build/bin/llama-server"
+_host="${HOSTNAME,,}"
+_host="${_host#arch}"
+[[ -f ~/.bashrc_$_host ]] && . ~/.bashrc_$_host
